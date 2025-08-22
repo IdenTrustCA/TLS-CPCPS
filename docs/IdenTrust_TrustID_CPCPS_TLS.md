@@ -1,3 +1,287 @@
+-   [[1]{.toc-section-number} INTRODUCTION](#introduction){#toc-introduction}
+    -   [[1.1]{.toc-section-number} Overview](#overview){#toc-overview}
+    -   [[1.2]{.toc-section-number} Document Name and Identification](#document-name-and-identification){#toc-document-name-and-identification}
+        -   [[1.2.1]{.toc-section-number} Alphanumeric Identifier](#alphanumeric-identifier){#toc-alphanumeric-identifier}
+        -   [[1.2.2]{.toc-section-number} Object Identifier](#object-identifier){#toc-object-identifier}
+    -   [[1.3]{.toc-section-number} PKI Participants](#pki-participants){#toc-pki-participants}
+        -   [[1.3.1]{.toc-section-number} Certification Authorities](#certification-authorities){#toc-certification-authorities}
+        -   [[1.3.2]{.toc-section-number} Registration Authorities](#registration-authorities){#toc-registration-authorities}
+        -   [[1.3.3]{.toc-section-number} Subscribers](#subscribers){#toc-subscribers}
+        -   [[1.3.4]{.toc-section-number} Relying Parties](#relying-parties){#toc-relying-parties}
+        -   [[1.3.5]{.toc-section-number} Other Participants](#other-participants){#toc-other-participants}
+    -   [[1.4]{.toc-section-number} Certificate Usage](#certificate-usage){#toc-certificate-usage}
+        -   [[1.4.1]{.toc-section-number} Appropriate Certificate Uses](#appropriate-certificate-uses){#toc-appropriate-certificate-uses}
+        -   [[1.4.2]{.toc-section-number} Prohibited Certificate Uses](#prohibited-certificate-uses){#toc-prohibited-certificate-uses}
+    -   [[1.5]{.toc-section-number} Policy Administration](#policy-administration){#toc-policy-administration}
+        -   [[1.5.1]{.toc-section-number} Organization Administering the Document](#organization-administering-the-document){#toc-organization-administering-the-document}
+        -   [[1.5.2]{.toc-section-number} Contact Person](#contact-person){#toc-contact-person}
+        -   [[1.5.3]{.toc-section-number} Person Determining CPS Suitability for the Policy](#person-determining-cps-suitability-for-the-policy){#toc-person-determining-cps-suitability-for-the-policy}
+        -   [[1.5.4]{.toc-section-number} CP-CPS Approval Procedures](#cp-cps-approval-procedures){#toc-cp-cps-approval-procedures}
+    -   [[1.6]{.toc-section-number} Definitions and Acronyms](#definitions-and-acronyms){#toc-definitions-and-acronyms}
+        -   [[1.6.1]{.toc-section-number} Definitions](#definitions){#toc-definitions}
+        -   [[1.6.2]{.toc-section-number} Acronyms](#acronyms){#toc-acronyms}
+        -   [[1.6.3]{.toc-section-number} References](#references){#toc-references}
+        -   [[1.6.4]{.toc-section-number} Conventions](#conventions){#toc-conventions}
+-   [[2]{.toc-section-number} PUBLICATION AND REPOSITORY RESPONSIBILITIES](#publication-and-repository-responsibilities){#toc-publication-and-repository-responsibilities}
+    -   [[2.1]{.toc-section-number} Repositories](#repositories-1){#toc-repositories-1}
+    -   [[2.2]{.toc-section-number} Publication of Certification Information](#publication-of-certification-information){#toc-publication-of-certification-information}
+    -   [[2.3]{.toc-section-number} Time or Frequency of Publication](#time-or-frequency-of-publication){#toc-time-or-frequency-of-publication}
+    -   [[2.4]{.toc-section-number} Access Controls on Repositories](#access-controls-on-repositories){#toc-access-controls-on-repositories}
+-   [[3]{.toc-section-number} IDENTIFICATION AND AUTHENTICATION](#identification-and-authentication){#toc-identification-and-authentication}
+    -   [[3.1]{.toc-section-number} Naming](#naming){#toc-naming}
+        -   [[3.1.1]{.toc-section-number} Types of Names](#types-of-names){#toc-types-of-names}
+        -   [[3.1.2]{.toc-section-number} Need for Names to Be Meaningful](#need-for-names-to-be-meaningful){#toc-need-for-names-to-be-meaningful}
+        -   [[3.1.3]{.toc-section-number} Anonymity or Pseudonymity of Subscribers](#anonymity-or-pseudonymity-of-subscribers){#toc-anonymity-or-pseudonymity-of-subscribers}
+        -   [[3.1.4]{.toc-section-number} Rules for Interpreting Various Name Forms](#rules-for-interpreting-various-name-forms){#toc-rules-for-interpreting-various-name-forms}
+        -   [[3.1.5]{.toc-section-number} Uniqueness of Names](#uniqueness-of-names){#toc-uniqueness-of-names}
+        -   [[3.1.6]{.toc-section-number} Recognition, Authentication, and Role of Trademarks](#recognition-authentication-and-role-of-trademarks){#toc-recognition-authentication-and-role-of-trademarks}
+    -   [[3.2]{.toc-section-number} Initial Identity Validation](#initial-identity-validation){#toc-initial-identity-validation}
+        -   [[3.2.1]{.toc-section-number} Method to Prove Possession of Private Key](#method-to-prove-possession-of-private-key){#toc-method-to-prove-possession-of-private-key}
+        -   [[3.2.2]{.toc-section-number} Authentication of Organization and Domain Identity](#authentication-of-organization-and-domain-identity){#toc-authentication-of-organization-and-domain-identity}
+        -   [[3.2.3]{.toc-section-number} Authentication of Individual Identity](#authentication-of-individual-identity){#toc-authentication-of-individual-identity}
+        -   [[3.2.4]{.toc-section-number} Non-Verified Subscriber information](#non-verified-subscriber-information){#toc-non-verified-subscriber-information}
+        -   [[3.2.5]{.toc-section-number} Validation of Authority](#validation-of-authority){#toc-validation-of-authority}
+        -   [[3.2.6]{.toc-section-number} Criteria for Interoperation](#criteria-for-interoperation){#toc-criteria-for-interoperation}
+    -   [[3.3]{.toc-section-number} Identification and Authentication for Re-Key Requests](#identification-and-authentication-for-re-key-requests){#toc-identification-and-authentication-for-re-key-requests}
+        -   [[3.3.1]{.toc-section-number} Identification and Authentication for Routine Re-Key](#identification-and-authentication-for-routine-re-key){#toc-identification-and-authentication-for-routine-re-key}
+        -   [[3.3.2]{.toc-section-number} Identification and Authentication for Re-Key after Revocation](#identification-and-authentication-for-re-key-after-revocation){#toc-identification-and-authentication-for-re-key-after-revocation}
+    -   [[3.4]{.toc-section-number} Identification and Authentication for Revocation Requests](#identification-and-authentication-for-revocation-requests){#toc-identification-and-authentication-for-revocation-requests}
+-   [[4]{.toc-section-number} CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS](#certificate-life-cycle-operational-requirements){#toc-certificate-life-cycle-operational-requirements}
+    -   [[4.1]{.toc-section-number} Certificate Application](#certificate-application){#toc-certificate-application}
+        -   [[4.1.1]{.toc-section-number} Who Can Submit a Certificate Application](#who-can-submit-a-certificate-application){#toc-who-can-submit-a-certificate-application}
+        -   [[4.1.2]{.toc-section-number} Enrollment Process and Responsibilities](#enrollment-process-and-responsibilities){#toc-enrollment-process-and-responsibilities}
+    -   [[4.2]{.toc-section-number} Certificate Application Processing](#certificate-application-processing){#toc-certificate-application-processing}
+        -   [[4.2.1]{.toc-section-number} Performing Identification and Authentication Functions](#performing-identification-and-authentication-functions){#toc-performing-identification-and-authentication-functions}
+        -   [[4.2.2]{.toc-section-number} Approval or Rejection of Certificate Applications](#approval-or-rejection-of-certificate-applications){#toc-approval-or-rejection-of-certificate-applications}
+        -   [[4.2.3]{.toc-section-number} Time to Process Certificate Applications](#time-to-process-certificate-applications){#toc-time-to-process-certificate-applications}
+    -   [[4.3]{.toc-section-number} Certificate Issuance](#certificate-issuance){#toc-certificate-issuance}
+        -   [[4.3.1]{.toc-section-number} CA Actions During Certificate Issuance](#ca-actions-during-certificate-issuance){#toc-ca-actions-during-certificate-issuance}
+        -   [[4.3.2]{.toc-section-number} Notification to Subscriber by the CA of Issuance of Certificate](#notification-to-subscriber-by-the-ca-of-issuance-of-certificate){#toc-notification-to-subscriber-by-the-ca-of-issuance-of-certificate}
+    -   [[4.4]{.toc-section-number} Certificate Acceptance](#certificate-acceptance){#toc-certificate-acceptance}
+        -   [[4.4.1]{.toc-section-number} Conduct Constituting Certificate Acceptance](#conduct-constituting-certificate-acceptance){#toc-conduct-constituting-certificate-acceptance}
+        -   [[4.4.2]{.toc-section-number} Publication of the Certificate by the CA](#publication-of-the-certificate-by-the-ca){#toc-publication-of-the-certificate-by-the-ca}
+        -   [[4.4.3]{.toc-section-number} Notification of Certificate Issuance by the CA to Other Entities](#notification-of-certificate-issuance-by-the-ca-to-other-entities){#toc-notification-of-certificate-issuance-by-the-ca-to-other-entities}
+    -   [[4.5]{.toc-section-number} Key Pair and Certificate Usage](#key-pair-and-certificate-usage){#toc-key-pair-and-certificate-usage}
+        -   [[4.5.1]{.toc-section-number} Subscriber Private Key and Certificate Usage](#subscriber-private-key-and-certificate-usage){#toc-subscriber-private-key-and-certificate-usage}
+        -   [[4.5.2]{.toc-section-number} Relying Party Public Key and Certificate Usage](#relying-party-public-key-and-certificate-usage){#toc-relying-party-public-key-and-certificate-usage}
+    -   [[4.6]{.toc-section-number} Certificate Renewal](#certificate-renewal){#toc-certificate-renewal}
+        -   [[4.6.1]{.toc-section-number} Circumstance for Certificate Renewal](#circumstance-for-certificate-renewal){#toc-circumstance-for-certificate-renewal}
+        -   [[4.6.2]{.toc-section-number} Who May Request Renewal](#who-may-request-renewal){#toc-who-may-request-renewal}
+        -   [[4.6.3]{.toc-section-number} Processing Certificate Renewal Requests](#processing-certificate-renewal-requests){#toc-processing-certificate-renewal-requests}
+        -   [[4.6.4]{.toc-section-number} Notification of New Certificate Issuance to Subscriber](#notification-of-new-certificate-issuance-to-subscriber){#toc-notification-of-new-certificate-issuance-to-subscriber}
+        -   [[4.6.5]{.toc-section-number} Conduct Constituting Acceptance of a Renewal Certificate](#conduct-constituting-acceptance-of-a-renewal-certificate){#toc-conduct-constituting-acceptance-of-a-renewal-certificate}
+        -   [[4.6.6]{.toc-section-number} Publication of the Renewal Certificate by the CA](#publication-of-the-renewal-certificate-by-the-ca){#toc-publication-of-the-renewal-certificate-by-the-ca}
+        -   [[4.6.7]{.toc-section-number} Notification of Certificate Issuance by the CA to Other Entities](#notification-of-certificate-issuance-by-the-ca-to-other-entities-1){#toc-notification-of-certificate-issuance-by-the-ca-to-other-entities-1}
+    -   [[4.7]{.toc-section-number} Certificate Re-Key](#certificate-re-key){#toc-certificate-re-key}
+        -   [[4.7.1]{.toc-section-number} Circumstance for Certificate Re-Key](#circumstance-for-certificate-re-key){#toc-circumstance-for-certificate-re-key}
+        -   [[4.7.2]{.toc-section-number} Who May Request Certification of a New Public Key](#who-may-request-certification-of-a-new-public-key){#toc-who-may-request-certification-of-a-new-public-key}
+        -   [[4.7.3]{.toc-section-number} Processing Certificate Re-Keying Requests](#processing-certificate-re-keying-requests){#toc-processing-certificate-re-keying-requests}
+        -   [[4.7.4]{.toc-section-number} Notification of New Certificate Issuance to Subscriber](#notification-of-new-certificate-issuance-to-subscriber-1){#toc-notification-of-new-certificate-issuance-to-subscriber-1}
+        -   [[4.7.5]{.toc-section-number} Conduct Constituting Acceptance of a Re-Keyed Certificate](#conduct-constituting-acceptance-of-a-re-keyed-certificate){#toc-conduct-constituting-acceptance-of-a-re-keyed-certificate}
+        -   [[4.7.6]{.toc-section-number} Publication of the Re-Keyed Certificate by the CA](#publication-of-the-re-keyed-certificate-by-the-ca){#toc-publication-of-the-re-keyed-certificate-by-the-ca}
+        -   [[4.7.7]{.toc-section-number} Notification of Certificate Issuance by the CA to Other Entities](#notification-of-certificate-issuance-by-the-ca-to-other-entities-2){#toc-notification-of-certificate-issuance-by-the-ca-to-other-entities-2}
+    -   [[4.8]{.toc-section-number} Certificate Modification](#certificate-modification){#toc-certificate-modification}
+        -   [[4.8.1]{.toc-section-number} Circumstance for Certificate Modification](#circumstance-for-certificate-modification){#toc-circumstance-for-certificate-modification}
+        -   [[4.8.2]{.toc-section-number} Who May Request Certificate Modification](#who-may-request-certificate-modification){#toc-who-may-request-certificate-modification}
+        -   [[4.8.3]{.toc-section-number} Processing Certificate Modification Requests](#processing-certificate-modification-requests){#toc-processing-certificate-modification-requests}
+        -   [[4.8.4]{.toc-section-number} Notification of New Certificate Issuance to Subscriber](#notification-of-new-certificate-issuance-to-subscriber-2){#toc-notification-of-new-certificate-issuance-to-subscriber-2}
+        -   [[4.8.5]{.toc-section-number} Conduct Constituting Acceptance of a Modified Certificate](#conduct-constituting-acceptance-of-a-modified-certificate){#toc-conduct-constituting-acceptance-of-a-modified-certificate}
+        -   [[4.8.6]{.toc-section-number} Publication of the Modified Certificate by the CA](#publication-of-the-modified-certificate-by-the-ca){#toc-publication-of-the-modified-certificate-by-the-ca}
+        -   [[4.8.7]{.toc-section-number} Notification of Certificate Issuance by the CA to Other Entities](#notification-of-certificate-issuance-by-the-ca-to-other-entities-3){#toc-notification-of-certificate-issuance-by-the-ca-to-other-entities-3}
+    -   [[4.9]{.toc-section-number} Certificate Revocation and Suspension](#certificate-revocation-and-suspension){#toc-certificate-revocation-and-suspension}
+        -   [[4.9.1]{.toc-section-number} Circumstances for Revocation](#circumstances-for-revocation){#toc-circumstances-for-revocation}
+        -   [[4.9.2]{.toc-section-number} Who Can Request Revocation](#who-can-request-revocation){#toc-who-can-request-revocation}
+        -   [[4.9.3]{.toc-section-number} Procedure for Revocation Request](#procedure-for-revocation-request){#toc-procedure-for-revocation-request}
+        -   [[4.9.4]{.toc-section-number} Revocation Request Grace Period](#revocation-request-grace-period){#toc-revocation-request-grace-period}
+        -   [[4.9.5]{.toc-section-number} Time Within Which CA Must Process the Revocation Request](#time-within-which-ca-must-process-the-revocation-request){#toc-time-within-which-ca-must-process-the-revocation-request}
+        -   [[4.9.6]{.toc-section-number} Revocation Checking Requirements for Relying Parties](#revocation-checking-requirements-for-relying-parties){#toc-revocation-checking-requirements-for-relying-parties}
+        -   [[4.9.7]{.toc-section-number} CRL Issuance Frequency](#crl-issuance-frequency){#toc-crl-issuance-frequency}
+        -   [[4.9.8]{.toc-section-number} Maximum Latency for CRLs](#maximum-latency-for-crls){#toc-maximum-latency-for-crls}
+        -   [[4.9.9]{.toc-section-number} Online Revocation/Status Checking Availability](#online-revocationstatus-checking-availability){#toc-online-revocationstatus-checking-availability}
+        -   [[4.9.10]{.toc-section-number} Online Revocation Checking Requirements](#online-revocation-checking-requirements){#toc-online-revocation-checking-requirements}
+        -   [[4.9.11]{.toc-section-number} Other Forms of Revocation Advertisements Available](#other-forms-of-revocation-advertisements-available){#toc-other-forms-of-revocation-advertisements-available}
+        -   [[4.9.12]{.toc-section-number} Special Requirements for Re-Key Compromise](#special-requirements-for-re-key-compromise){#toc-special-requirements-for-re-key-compromise}
+        -   [[4.9.13]{.toc-section-number} Circumstances for Suspension](#circumstances-for-suspension){#toc-circumstances-for-suspension}
+        -   [[4.9.14]{.toc-section-number} Procedure for Suspension Request](#procedure-for-suspension-request){#toc-procedure-for-suspension-request}
+        -   [[4.9.15]{.toc-section-number} Limits on Suspension Period](#limits-on-suspension-period){#toc-limits-on-suspension-period}
+        -   [[4.9.16]{.toc-section-number} 4.9.16 Limits on Suspension Period](#limits-on-suspension-period-1){#toc-limits-on-suspension-period-1}
+    -   [[4.10]{.toc-section-number} Certificate Status Services](#certificate-status-services){#toc-certificate-status-services}
+        -   [[4.10.1]{.toc-section-number} Operational Characteristics](#operational-characteristics){#toc-operational-characteristics}
+        -   [[4.10.2]{.toc-section-number} Service Availability](#service-availability){#toc-service-availability}
+        -   [[4.10.3]{.toc-section-number} Optional Features](#optional-features){#toc-optional-features}
+    -   [[4.11]{.toc-section-number} End of Subscription](#end-of-subscription){#toc-end-of-subscription}
+    -   [[4.12]{.toc-section-number} Key Escrow and Recovery](#key-escrow-and-recovery){#toc-key-escrow-and-recovery}
+        -   [[4.12.1]{.toc-section-number} Key Escrow and Recovery Policy and Practices](#key-escrow-and-recovery-policy-and-practices){#toc-key-escrow-and-recovery-policy-and-practices}
+        -   [[4.12.2]{.toc-section-number} Session Key Encapsulation and Recovery Policy and Practices](#session-key-encapsulation-and-recovery-policy-and-practices){#toc-session-key-encapsulation-and-recovery-policy-and-practices}
+-   [[5]{.toc-section-number} FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS](#facility-management-and-operational-controls){#toc-facility-management-and-operational-controls}
+    -   [[5.1]{.toc-section-number} Physical SECURITY Controls](#physical-security-controls){#toc-physical-security-controls}
+        -   [[5.1.1]{.toc-section-number} Site Location and Construction](#site-location-and-construction){#toc-site-location-and-construction}
+        -   [[5.1.2]{.toc-section-number} Physical Access](#physical-access){#toc-physical-access}
+        -   [[5.1.3]{.toc-section-number} Power and Air Conditioning](#power-and-air-conditioning){#toc-power-and-air-conditioning}
+        -   [[5.1.4]{.toc-section-number} Water Exposures](#water-exposures){#toc-water-exposures}
+        -   [[5.1.5]{.toc-section-number} Fire Prevention and Protection](#fire-prevention-and-protection){#toc-fire-prevention-and-protection}
+        -   [[5.1.6]{.toc-section-number} Media Storage](#media-storage){#toc-media-storage}
+        -   [[5.1.7]{.toc-section-number} Waste Disposal](#waste-disposal){#toc-waste-disposal}
+        -   [[5.1.8]{.toc-section-number} Off-Site Backup](#off-site-backup){#toc-off-site-backup}
+    -   [[5.2]{.toc-section-number} Procedural Controls](#procedural-controls){#toc-procedural-controls}
+        -   [[5.2.1]{.toc-section-number} Trusted Roles](#trusted-roles){#toc-trusted-roles}
+        -   [[5.2.2]{.toc-section-number} Number of Persons Required per Task](#number-of-persons-required-per-task){#toc-number-of-persons-required-per-task}
+        -   [[5.2.3]{.toc-section-number} Identification and Authentication for Each Role](#identification-and-authentication-for-each-role){#toc-identification-and-authentication-for-each-role}
+        -   [[5.2.4]{.toc-section-number} Roles Requiring Separation of Duties](#roles-requiring-separation-of-duties){#toc-roles-requiring-separation-of-duties}
+    -   [[5.3]{.toc-section-number} Personnel Controls](#personnel-controls){#toc-personnel-controls}
+        -   [[5.3.1]{.toc-section-number} Qualifications, Experience, and Clearance Requirements](#qualifications-experience-and-clearance-requirements){#toc-qualifications-experience-and-clearance-requirements}
+        -   [[5.3.2]{.toc-section-number} Background Check Procedures](#background-check-procedures){#toc-background-check-procedures}
+        -   [[5.3.3]{.toc-section-number} Training Requirements and Procedures](#training-requirements-and-procedures){#toc-training-requirements-and-procedures}
+        -   [[5.3.4]{.toc-section-number} Retraining Frequency and Requirements](#retraining-frequency-and-requirements){#toc-retraining-frequency-and-requirements}
+        -   [[5.3.5]{.toc-section-number} Job Rotation Frequency and Sequence](#job-rotation-frequency-and-sequence){#toc-job-rotation-frequency-and-sequence}
+        -   [[5.3.6]{.toc-section-number} Sanctions for Unauthorized Actions](#sanctions-for-unauthorized-actions){#toc-sanctions-for-unauthorized-actions}
+        -   [[5.3.7]{.toc-section-number} Independent Contractor Requirements](#independent-contractor-requirements){#toc-independent-contractor-requirements}
+        -   [[5.3.8]{.toc-section-number} Documentation Supplied to Personnel](#documentation-supplied-to-personnel){#toc-documentation-supplied-to-personnel}
+    -   [[5.4]{.toc-section-number} Audit Logging Procedures](#audit-logging-procedures){#toc-audit-logging-procedures}
+        -   [[5.4.1]{.toc-section-number} Types of Events Recorded](#types-of-events-recorded){#toc-types-of-events-recorded}
+        -   [[5.4.2]{.toc-section-number} Frequency of Processing Log](#frequency-of-processing-log){#toc-frequency-of-processing-log}
+        -   [[5.4.3]{.toc-section-number} Retention Period for Audit Log](#retention-period-for-audit-log){#toc-retention-period-for-audit-log}
+        -   [[5.4.4]{.toc-section-number} Protection of Audit Log](#protection-of-audit-log){#toc-protection-of-audit-log}
+        -   [[5.4.5]{.toc-section-number} Audit Log Backup Procedures](#audit-log-backup-procedures){#toc-audit-log-backup-procedures}
+        -   [[5.4.6]{.toc-section-number} Audit Collection System (Internal vs. External)](#audit-collection-system-internal-vs.-external){#toc-audit-collection-system-internal-vs.-external}
+        -   [[5.4.7]{.toc-section-number} Notification to Event-Causing Subject](#notification-to-event-causing-subject){#toc-notification-to-event-causing-subject}
+        -   [[5.4.8]{.toc-section-number} Vulnerability Assessments](#vulnerability-assessments){#toc-vulnerability-assessments}
+    -   [[5.5]{.toc-section-number} Records Archival](#records-archival){#toc-records-archival}
+        -   [[5.5.1]{.toc-section-number} Types of Records Archived](#types-of-records-archived){#toc-types-of-records-archived}
+        -   [[5.5.2]{.toc-section-number} Retention Period for Archive](#retention-period-for-archive){#toc-retention-period-for-archive}
+        -   [[5.5.3]{.toc-section-number} Protection of Archive](#protection-of-archive){#toc-protection-of-archive}
+        -   [[5.5.4]{.toc-section-number} Archive Backup Procedures](#archive-backup-procedures){#toc-archive-backup-procedures}
+        -   [[5.5.5]{.toc-section-number} Requirements for Times-Stamping of Records](#requirements-for-times-stamping-of-records){#toc-requirements-for-times-stamping-of-records}
+        -   [[5.5.6]{.toc-section-number} Archive Collection System (Internal or External)](#archive-collection-system-internal-or-external){#toc-archive-collection-system-internal-or-external}
+        -   [[5.5.7]{.toc-section-number} Procedures to Obtain and Verify Archive Information](#procedures-to-obtain-and-verify-archive-information){#toc-procedures-to-obtain-and-verify-archive-information}
+    -   [[5.6]{.toc-section-number} Key Changeover](#key-changeover){#toc-key-changeover}
+    -   [[5.7]{.toc-section-number} Compromise and Disaster Recovery](#compromise-and-disaster-recovery){#toc-compromise-and-disaster-recovery}
+        -   [[5.7.1]{.toc-section-number} Incident and Compromise Handling Procedures](#incident-and-compromise-handling-procedures){#toc-incident-and-compromise-handling-procedures}
+        -   [[5.7.2]{.toc-section-number} Computing Resources, Software, and/or Data Are Corrupted](#computing-resources-software-andor-data-are-corrupted){#toc-computing-resources-software-andor-data-are-corrupted}
+        -   [[5.7.3]{.toc-section-number} Entity Private Key Compromise Procedures](#entity-private-key-compromise-procedures){#toc-entity-private-key-compromise-procedures}
+        -   [[5.7.4]{.toc-section-number} Business Continuity Capabilities After a Disaster](#business-continuity-capabilities-after-a-disaster){#toc-business-continuity-capabilities-after-a-disaster}
+    -   [[5.8]{.toc-section-number} CA or RA Termination](#ca-or-ra-termination){#toc-ca-or-ra-termination}
+-   [[6]{.toc-section-number} TECHNICAL SECURITY CONTROLS](#technical-security-controls){#toc-technical-security-controls}
+    -   [[6.1]{.toc-section-number} Key Pair Generation and Installation](#key-pair-generation-and-installation){#toc-key-pair-generation-and-installation}
+        -   [[6.1.1]{.toc-section-number} Key Pair Generation](#key-pair-generation){#toc-key-pair-generation}
+        -   [[6.1.2]{.toc-section-number} Private Key Delivery to Subscriber](#private-key-delivery-to-subscriber){#toc-private-key-delivery-to-subscriber}
+        -   [[6.1.3]{.toc-section-number} Public Key Delivery to Certificate Issuer](#public-key-delivery-to-certificate-issuer){#toc-public-key-delivery-to-certificate-issuer}
+        -   [[6.1.4]{.toc-section-number} CA Public Key Delivery to Relying Parties](#ca-public-key-delivery-to-relying-parties){#toc-ca-public-key-delivery-to-relying-parties}
+        -   [[6.1.5]{.toc-section-number} Key Sizes](#key-sizes){#toc-key-sizes}
+        -   [[6.1.6]{.toc-section-number} Public Key Parameters Generation and Quality Checking](#public-key-parameters-generation-and-quality-checking){#toc-public-key-parameters-generation-and-quality-checking}
+        -   [[6.1.7]{.toc-section-number} Key Usage Purposes (as per X509 v3 Key Usage Field)](#key-usage-purposes-as-per-x509-v3-key-usage-field){#toc-key-usage-purposes-as-per-x509-v3-key-usage-field}
+    -   [[6.2]{.toc-section-number} Private Key Protection and Cryptographic Module Engineering Controls](#private-key-protection-and-cryptographic-module-engineering-controls){#toc-private-key-protection-and-cryptographic-module-engineering-controls}
+        -   [[6.2.1]{.toc-section-number} Cryptographic Module Standards and Controls](#cryptographic-module-standards-and-controls){#toc-cryptographic-module-standards-and-controls}
+        -   [[6.2.2]{.toc-section-number} Private Key (N out of M) Multi-Person Control](#private-key-n-out-of-m-multi-person-control){#toc-private-key-n-out-of-m-multi-person-control}
+        -   [[6.2.3]{.toc-section-number} Private Key Escrow](#private-key-escrow){#toc-private-key-escrow}
+        -   [[6.2.4]{.toc-section-number} Private Key Backup](#private-key-backup){#toc-private-key-backup}
+        -   [[6.2.5]{.toc-section-number} Private Key Archival](#private-key-archival){#toc-private-key-archival}
+        -   [[6.2.6]{.toc-section-number} Private Key Transfer Into or From a Cryptographic Module](#private-key-transfer-into-or-from-a-cryptographic-module){#toc-private-key-transfer-into-or-from-a-cryptographic-module}
+        -   [[6.2.7]{.toc-section-number} Private Key Storage on Cryptographic Module](#private-key-storage-on-cryptographic-module){#toc-private-key-storage-on-cryptographic-module}
+        -   [[6.2.8]{.toc-section-number} Method of Activating Private Key](#method-of-activating-private-key){#toc-method-of-activating-private-key}
+        -   [[6.2.9]{.toc-section-number} Method of Deactivating Private Key](#method-of-deactivating-private-key){#toc-method-of-deactivating-private-key}
+        -   [[6.2.10]{.toc-section-number} Method of Destroying Private Key](#method-of-destroying-private-key){#toc-method-of-destroying-private-key}
+        -   [[6.2.11]{.toc-section-number} Cryptographic Module Rating](#cryptographic-module-rating){#toc-cryptographic-module-rating}
+    -   [[6.3]{.toc-section-number} Other Aspects of Key PAIR Management](#other-aspects-of-key-pair-management){#toc-other-aspects-of-key-pair-management}
+        -   [[6.3.1]{.toc-section-number} Public Key Archival](#public-key-archival){#toc-public-key-archival}
+        -   [[6.3.2]{.toc-section-number} Certificate Operational Periods and Key Pair Usage Periods](#certificate-operational-periods-and-key-pair-usage-periods){#toc-certificate-operational-periods-and-key-pair-usage-periods}
+    -   [[6.4]{.toc-section-number} Activation Data](#activation-data){#toc-activation-data}
+        -   [[6.4.1]{.toc-section-number} Activation Data Generation and Installation](#activation-data-generation-and-installation){#toc-activation-data-generation-and-installation}
+        -   [[6.4.2]{.toc-section-number} Activation Data Protection](#activation-data-protection){#toc-activation-data-protection}
+        -   [[6.4.3]{.toc-section-number} Other Aspects of Activation Data](#other-aspects-of-activation-data){#toc-other-aspects-of-activation-data}
+    -   [[6.5]{.toc-section-number} Computer Security Controls](#computer-security-controls){#toc-computer-security-controls}
+        -   [[6.5.1]{.toc-section-number} Specific Computer Security Technical Requirements](#specific-computer-security-technical-requirements){#toc-specific-computer-security-technical-requirements}
+        -   [[6.5.2]{.toc-section-number} Computer Security Rating](#computer-security-rating){#toc-computer-security-rating}
+    -   [[6.6]{.toc-section-number} Life Cycle Technical Controls](#life-cycle-technical-controls){#toc-life-cycle-technical-controls}
+        -   [[6.6.1]{.toc-section-number} System Development Controls](#system-development-controls){#toc-system-development-controls}
+        -   [[6.6.2]{.toc-section-number} Security Management Controls](#security-management-controls){#toc-security-management-controls}
+        -   [[6.6.3]{.toc-section-number} Life Cycle Security Controls](#life-cycle-security-controls){#toc-life-cycle-security-controls}
+    -   [[6.7]{.toc-section-number} Network Security Controls](#network-security-controls){#toc-network-security-controls}
+    -   [[6.8]{.toc-section-number} Time-stamping](#time-stamping){#toc-time-stamping}
+-   [[7]{.toc-section-number} CERTIFICATE, CRL, AND OCSP PROFILES](#certificate-crl-and-ocsp-profiles){#toc-certificate-crl-and-ocsp-profiles}
+    -   [[7.1]{.toc-section-number} Certificate Profile](#certificate-profile){#toc-certificate-profile}
+        -   [[7.1.1]{.toc-section-number} Version Number(s)](#version-numbers){#toc-version-numbers}
+        -   [[7.1.2]{.toc-section-number} Certificate Content and Extensions](#certificate-content-and-extensions){#toc-certificate-content-and-extensions}
+        -   [[7.1.3]{.toc-section-number} Algorithm Object Identifiers](#algorithm-object-identifiers){#toc-algorithm-object-identifiers}
+        -   [[7.1.4]{.toc-section-number} Name Forms](#name-forms){#toc-name-forms}
+        -   [[7.1.5]{.toc-section-number} Name Constraints](#name-constraints){#toc-name-constraints}
+        -   [[7.1.6]{.toc-section-number} Certificate Policy Object Identifier](#certificate-policy-object-identifier){#toc-certificate-policy-object-identifier}
+        -   [[7.1.7]{.toc-section-number} Usage of Policy Constraints Extension](#usage-of-policy-constraints-extension){#toc-usage-of-policy-constraints-extension}
+        -   [[7.1.8]{.toc-section-number} Policy Qualifiers Syntax and Semantics](#policy-qualifiers-syntax-and-semantics){#toc-policy-qualifiers-syntax-and-semantics}
+        -   [[7.1.9]{.toc-section-number} Processing Semantics for the Critical Certificate Policies Extension](#processing-semantics-for-the-critical-certificate-policies-extension){#toc-processing-semantics-for-the-critical-certificate-policies-extension}
+    -   [[7.2]{.toc-section-number} CRL Profile](#crl-profile){#toc-crl-profile}
+        -   [[7.2.1]{.toc-section-number} Version Number(s)](#version-numbers-1){#toc-version-numbers-1}
+        -   [[7.2.2]{.toc-section-number} CRL and CRL Entry Extensions](#crl-and-crl-entry-extensions){#toc-crl-and-crl-entry-extensions}
+    -   [[7.3]{.toc-section-number} OCSP Profile](#ocsp-profile){#toc-ocsp-profile}
+        -   [[7.3.1]{.toc-section-number} Version Number(s)](#version-numbers-2){#toc-version-numbers-2}
+        -   [[7.3.2]{.toc-section-number} OCSP Extensions](#ocsp-extensions){#toc-ocsp-extensions}
+-   [[8]{.toc-section-number} COMPLIANCE AUDIT AND OTHER ASSESSMENTS](#compliance-audit-and-other-assessments){#toc-compliance-audit-and-other-assessments}
+    -   [[8.1]{.toc-section-number} Frequency or Circumstances of Assessment](#frequency-or-circumstances-of-assessment){#toc-frequency-or-circumstances-of-assessment}
+    -   [[8.2]{.toc-section-number} Identity/Qualifications of Assessor](#identityqualifications-of-assessor){#toc-identityqualifications-of-assessor}
+    -   [[8.3]{.toc-section-number} Assessor's relationship to assessed entity](#assessors-relationship-to-assessed-entity){#toc-assessors-relationship-to-assessed-entity}
+    -   [[8.4]{.toc-section-number} Topics Covered by Assessment](#topics-covered-by-assessment){#toc-topics-covered-by-assessment}
+    -   [[8.5]{.toc-section-number} Actions Taken as a Result of Deficiency](#actions-taken-as-a-result-of-deficiency){#toc-actions-taken-as-a-result-of-deficiency}
+        -   [[8.5.1]{.toc-section-number} Actions Taken as a Result of Internal Audit Deficiency](#actions-taken-as-a-result-of-internal-audit-deficiency){#toc-actions-taken-as-a-result-of-internal-audit-deficiency}
+    -   [[8.6]{.toc-section-number} Communication of Results](#communication-of-results){#toc-communication-of-results}
+    -   [[8.7]{.toc-section-number} Self-Audits](#self-audits){#toc-self-audits}
+-   [[9]{.toc-section-number} OTHER BUSINESS AND LEGAL MATTERS](#other-business-and-legal-matters){#toc-other-business-and-legal-matters}
+    -   [[9.1]{.toc-section-number} Fees](#fees){#toc-fees}
+        -   [[9.1.1]{.toc-section-number} Certificate Issuance or Renewal Fees](#certificate-issuance-or-renewal-fees){#toc-certificate-issuance-or-renewal-fees}
+        -   [[9.1.2]{.toc-section-number} Certificate Access Fees](#certificate-access-fees){#toc-certificate-access-fees}
+        -   [[9.1.3]{.toc-section-number} Revocation or Status Information Access Fees](#revocation-or-status-information-access-fees){#toc-revocation-or-status-information-access-fees}
+        -   [[9.1.4]{.toc-section-number} Fees for Other Services](#fees-for-other-services){#toc-fees-for-other-services}
+        -   [[9.1.5]{.toc-section-number} Refund Policy](#refund-policy){#toc-refund-policy}
+    -   [[9.2]{.toc-section-number} Financial Responsibility](#financial-responsibility){#toc-financial-responsibility}
+        -   [[9.2.1]{.toc-section-number} Insurance Coverage](#insurance-coverage){#toc-insurance-coverage}
+        -   [[9.2.2]{.toc-section-number} Other Assets](#other-assets){#toc-other-assets}
+        -   [[9.2.3]{.toc-section-number} Insurance or Warranty Coverage for End-Entities](#insurance-or-warranty-coverage-for-end-entities){#toc-insurance-or-warranty-coverage-for-end-entities}
+    -   [[9.3]{.toc-section-number} Confidentiality of Business Information](#confidentiality-of-business-information){#toc-confidentiality-of-business-information}
+        -   [[9.3.1]{.toc-section-number} Scope of Confidential Information](#scope-of-confidential-information){#toc-scope-of-confidential-information}
+        -   [[9.3.2]{.toc-section-number} Information Not Within the Scope of Confidential Information](#information-not-within-the-scope-of-confidential-information){#toc-information-not-within-the-scope-of-confidential-information}
+        -   [[9.3.3]{.toc-section-number} Responsibility to Protect Confidential Information](#responsibility-to-protect-confidential-information){#toc-responsibility-to-protect-confidential-information}
+    -   [[9.4]{.toc-section-number} Privacy of Personal Information](#privacy-of-personal-information){#toc-privacy-of-personal-information}
+        -   [[9.4.1]{.toc-section-number} Privacy Plan](#privacy-plan){#toc-privacy-plan}
+        -   [[9.4.2]{.toc-section-number} Information Treated As Private](#information-treated-as-private){#toc-information-treated-as-private}
+        -   [[9.4.3]{.toc-section-number} Information Not Deemed Private](#information-not-deemed-private){#toc-information-not-deemed-private}
+        -   [[9.4.4]{.toc-section-number} Responsibility to Protect Private Information](#responsibility-to-protect-private-information){#toc-responsibility-to-protect-private-information}
+        -   [[9.4.5]{.toc-section-number} Notice and Consent to Use Private Information](#notice-and-consent-to-use-private-information){#toc-notice-and-consent-to-use-private-information}
+        -   [[9.4.6]{.toc-section-number} Disclosure Pursuant to Judicial or Administrative Process](#disclosure-pursuant-to-judicial-or-administrative-process){#toc-disclosure-pursuant-to-judicial-or-administrative-process}
+        -   [[9.4.7]{.toc-section-number} Other Information Disclosure Circumstances](#other-information-disclosure-circumstances){#toc-other-information-disclosure-circumstances}
+    -   [[9.5]{.toc-section-number} Intellectual Property Rights](#intellectual-property-rights){#toc-intellectual-property-rights}
+    -   [[9.6]{.toc-section-number} Representations and Warranties](#representations-and-warranties){#toc-representations-and-warranties}
+        -   [[9.6.1]{.toc-section-number} CA Representations and Warranties](#ca-representations-and-warranties){#toc-ca-representations-and-warranties}
+        -   [[9.6.2]{.toc-section-number} RA Representations and Warranties](#ra-representations-and-warranties){#toc-ra-representations-and-warranties}
+        -   [[9.6.3]{.toc-section-number} Subscriber Representations and Warranties](#subscriber-representations-and-warranties){#toc-subscriber-representations-and-warranties}
+        -   [[9.6.4]{.toc-section-number} Relying Party Representations and Warranties](#relying-party-representations-and-warranties){#toc-relying-party-representations-and-warranties}
+        -   [[9.6.5]{.toc-section-number} Representations and Warranties of Other Participants](#representations-and-warranties-of-other-participants){#toc-representations-and-warranties-of-other-participants}
+    -   [[9.7]{.toc-section-number} Disclaimer of Warranties](#disclaimer-of-warranties){#toc-disclaimer-of-warranties}
+    -   [[9.8]{.toc-section-number} Limitations of Liability](#limitations-of-liability){#toc-limitations-of-liability}
+    -   [[9.9]{.toc-section-number} Indemnities](#indemnities){#toc-indemnities}
+    -   [[9.10]{.toc-section-number} Term and Termination](#term-and-termination){#toc-term-and-termination}
+        -   [[9.10.1]{.toc-section-number} Term](#term){#toc-term}
+        -   [[9.10.2]{.toc-section-number} Termination](#termination){#toc-termination}
+        -   [[9.10.3]{.toc-section-number} Effect of Termination and Survival](#effect-of-termination-and-survival){#toc-effect-of-termination-and-survival}
+    -   [[9.11]{.toc-section-number} Individual Notices and Communications with Participants](#individual-notices-and-communications-with-participants){#toc-individual-notices-and-communications-with-participants}
+        -   [[9.11.1]{.toc-section-number} Notices by Individual Participants to IdenTrust](#notices-by-individual-participants-to-identrust){#toc-notices-by-individual-participants-to-identrust}
+        -   [[9.11.2]{.toc-section-number} Notices by IdenTrust to Individual Participants](#notices-by-identrust-to-individual-participants){#toc-notices-by-identrust-to-individual-participants}
+        -   [[9.11.3]{.toc-section-number} Notices Delivery Method](#notices-delivery-method){#toc-notices-delivery-method}
+    -   [[9.12]{.toc-section-number} Amendments](#amendments){#toc-amendments}
+        -   [[9.12.1]{.toc-section-number} Procedure for Amendment](#procedure-for-amendment){#toc-procedure-for-amendment}
+        -   [[9.12.2]{.toc-section-number} Notification Mechanism and Period](#notification-mechanism-and-period){#toc-notification-mechanism-and-period}
+        -   [[9.12.3]{.toc-section-number} Circumstances under Which OID Must Be Changed](#circumstances-under-which-oid-must-be-changed){#toc-circumstances-under-which-oid-must-be-changed}
+    -   [[9.13]{.toc-section-number} Dispute Resolution Provisions](#dispute-resolution-provisions){#toc-dispute-resolution-provisions}
+        -   [[9.13.1]{.toc-section-number} Specific Provisions/ Incorporation of Policy](#specific-provisions-incorporation-of-policy){#toc-specific-provisions-incorporation-of-policy}
+    -   [[9.14]{.toc-section-number} Governing Law](#governing-law){#toc-governing-law}
+    -   [[9.15]{.toc-section-number} Compliance with Applicable Law](#compliance-with-applicable-law){#toc-compliance-with-applicable-law}
+    -   [[9.16]{.toc-section-number} Miscellaneous Provisions](#miscellaneous-provisions){#toc-miscellaneous-provisions}
+        -   [[9.16.1]{.toc-section-number} Entire Agreement](#entire-agreement){#toc-entire-agreement}
+        -   [[9.16.2]{.toc-section-number} Assignment](#assignment){#toc-assignment}
+        -   [[9.16.3]{.toc-section-number} Severability](#severability){#toc-severability}
+        -   [[9.16.4]{.toc-section-number} Enforcement (Attorney Fees and Waiver of Rights)](#enforcement-attorney-fees-and-waiver-of-rights){#toc-enforcement-attorney-fees-and-waiver-of-rights}
+        -   [[9.16.5]{.toc-section-number} Force Majeure](#force-majeure){#toc-force-majeure}
+    -   [[9.17]{.toc-section-number} Other Provisions](#other-provisions){#toc-other-provisions}
+        -   [[9.17.1]{.toc-section-number} Legal Validity of Certificates](#legal-validity-of-certificates){#toc-legal-validity-of-certificates}
+
   -----------------------------------------------------------------------
                                               **IdenTrust Services LLC.**
   -----------------------------------------------------------------------
@@ -6,7 +290,7 @@
                                                         **July DD, 2025**
   -----------------------------------------------------------------------
 
-**TrustID^®\ ^**
+**TrustID^® ^**
 
 **TLS Certificate Policy / Certification Practice**
 
@@ -14,571 +298,571 @@
 
 Table of Contents
 
-[1 INTRODUCTION [10](#introduction)](#introduction)
+[1 INTRODUCTION \[10\](#introduction)](#introduction)
 
-[1.1 Overview [10](#overview)](#overview)
+[1.1 Overview \[10\](#overview)](#overview)
 
-[1.2 Document Name and Identification [11](#document-name-and-identification)](#document-name-and-identification)
+[1.2 Document Name and Identification \[11\](#document-name-and-identification)](#document-name-and-identification)
 
-[1.2.1 Alphanumeric Identifier [11](#alphanumeric-identifier)](#alphanumeric-identifier)
+[1.2.1 Alphanumeric Identifier \[11\](#alphanumeric-identifier)](#alphanumeric-identifier)
 
-[1.2.2 Object Identifier [11](#object-identifier)](#object-identifier)
+[1.2.2 Object Identifier \[11\](#object-identifier)](#object-identifier)
 
-[1.3 PKI Participants [12](#pki-participants)](#pki-participants)
+[1.3 PKI Participants \[12\](#pki-participants)](#pki-participants)
 
-[1.3.1 Certification Authorities [12](#certification-authorities)](#certification-authorities)
+[1.3.1 Certification Authorities \[12\](#certification-authorities)](#certification-authorities)
 
-[1.3.2 Registration Authorities [12](#registration-authorities)](#registration-authorities)
+[1.3.2 Registration Authorities \[12\](#registration-authorities)](#registration-authorities)
 
-[1.3.3 Subscribers [13](#subscribers)](#subscribers)
+[1.3.3 Subscribers \[13\](#subscribers)](#subscribers)
 
-[1.3.4 Relying Parties [13](#relying-parties)](#relying-parties)
+[1.3.4 Relying Parties \[13\](#relying-parties)](#relying-parties)
 
-[1.3.5 Other Participants [14](#other-participants)](#other-participants)
+[1.3.5 Other Participants \[14\](#other-participants)](#other-participants)
 
-[1.4 Certificate Usage [15](#certificate-usage)](#certificate-usage)
+[1.4 Certificate Usage \[15\](#certificate-usage)](#certificate-usage)
 
-[1.4.1 Appropriate Certificate Uses [15](#appropriate-certificate-uses)](#appropriate-certificate-uses)
+[1.4.1 Appropriate Certificate Uses \[15\](#appropriate-certificate-uses)](#appropriate-certificate-uses)
 
-[1.4.2 Prohibited Certificate Uses [15](#prohibited-certificate-uses)](#prohibited-certificate-uses)
+[1.4.2 Prohibited Certificate Uses \[15\](#prohibited-certificate-uses)](#prohibited-certificate-uses)
 
-[1.5 Policy Administration [15](#policy-administration)](#policy-administration)
+[1.5 Policy Administration \[15\](#policy-administration)](#policy-administration)
 
-[1.5.1 Organization Administering the Document [15](#organization-administering-the-document)](#organization-administering-the-document)
+[1.5.1 Organization Administering the Document \[15\](#organization-administering-the-document)](#organization-administering-the-document)
 
-[1.5.2 Contact Person [15](#contact-person)](#contact-person)
+[1.5.2 Contact Person \[15\](#contact-person)](#contact-person)
 
-[1.5.3 Person Determining CPS Suitability for the Policy [16](#person-determining-cps-suitability-for-the-policy)](#person-determining-cps-suitability-for-the-policy)
+[1.5.3 Person Determining CPS Suitability for the Policy \[16\](#person-determining-cps-suitability-for-the-policy)](#person-determining-cps-suitability-for-the-policy)
 
-[1.5.4 CP-CPS Approval Procedures [16](#cp-cps-approval-procedures)](#cp-cps-approval-procedures)
+[1.5.4 CP-CPS Approval Procedures \[16\](#cp-cps-approval-procedures)](#cp-cps-approval-procedures)
 
-[1.6 Definitions and Acronyms [16](#definitions-and-acronyms)](#definitions-and-acronyms)
+[1.6 Definitions and Acronyms \[16\](#definitions-and-acronyms)](#definitions-and-acronyms)
 
-[1.6.1 Definitions [16](#definitions)](#definitions)
+[1.6.1 Definitions \[16\](#definitions)](#definitions)
 
-[1.6.2 Acronyms [29](#acronyms)](#acronyms)
+[1.6.2 Acronyms \[29\](#acronyms)](#acronyms)
 
-[1.6.3 References [30](#references)](#references)
+[1.6.3 References \[30\](#references)](#references)
 
-[1.6.4 Conventions [30](#conventions)](#conventions)
+[1.6.4 Conventions \[30\](#conventions)](#conventions)
 
-[2 PUBLICATION AND REPOSITORY RESPONSIBILITIES [31](#publication-and-repository-responsibilities)](#publication-and-repository-responsibilities)
+[2 PUBLICATION AND REPOSITORY RESPONSIBILITIES \[31\](#publication-and-repository-responsibilities)](#publication-and-repository-responsibilities)
 
-[2.1 Repositories [31](#repositories-1)](#repositories-1)
+[2.1 Repositories \[31\](#repositories-1)](#repositories-1)
 
-[2.2 Publication of Certification Information [31](#publication-of-certification-information)](#publication-of-certification-information)
+[2.2 Publication of Certification Information \[31\](#publication-of-certification-information)](#publication-of-certification-information)
 
-[2.3 Time or Frequency of Publication [32](#time-or-frequency-of-publication)](#time-or-frequency-of-publication)
+[2.3 Time or Frequency of Publication \[32\](#time-or-frequency-of-publication)](#time-or-frequency-of-publication)
 
-[2.4 Access Controls on Repositories [32](#access-controls-on-repositories)](#access-controls-on-repositories)
+[2.4 Access Controls on Repositories \[32\](#access-controls-on-repositories)](#access-controls-on-repositories)
 
-[3 IDENTIFICATION AND AUTHENTICATION [33](#identification-and-authentication)](#identification-and-authentication)
+[3 IDENTIFICATION AND AUTHENTICATION \[33\](#identification-and-authentication)](#identification-and-authentication)
 
-[3.1 Naming [33](#naming)](#naming)
+[3.1 Naming \[33\](#naming)](#naming)
 
-[3.1.1 Types of Names [33](#types-of-names)](#types-of-names)
+[3.1.1 Types of Names \[33\](#types-of-names)](#types-of-names)
 
-[3.1.2 Need for Names to Be Meaningful [33](#need-for-names-to-be-meaningful)](#need-for-names-to-be-meaningful)
+[3.1.2 Need for Names to Be Meaningful \[33\](#need-for-names-to-be-meaningful)](#need-for-names-to-be-meaningful)
 
-[3.1.3 Anonymity or Pseudonymity of Subscribers [33](#anonymity-or-pseudonymity-of-subscribers)](#anonymity-or-pseudonymity-of-subscribers)
+[3.1.3 Anonymity or Pseudonymity of Subscribers \[33\](#anonymity-or-pseudonymity-of-subscribers)](#anonymity-or-pseudonymity-of-subscribers)
 
-[3.1.4 Rules for Interpreting Various Name Forms [33](#rules-for-interpreting-various-name-forms)](#rules-for-interpreting-various-name-forms)
+[3.1.4 Rules for Interpreting Various Name Forms \[33\](#rules-for-interpreting-various-name-forms)](#rules-for-interpreting-various-name-forms)
 
-[3.1.5 Uniqueness of Names [33](#uniqueness-of-names)](#uniqueness-of-names)
+[3.1.5 Uniqueness of Names \[33\](#uniqueness-of-names)](#uniqueness-of-names)
 
-[3.1.6 Recognition, Authentication, and Role of Trademarks [34](#recognition-authentication-and-role-of-trademarks)](#recognition-authentication-and-role-of-trademarks)
+[3.1.6 Recognition, Authentication, and Role of Trademarks \[34\](#recognition-authentication-and-role-of-trademarks)](#recognition-authentication-and-role-of-trademarks)
 
-[3.2 Initial Identity Validation [34](#initial-identity-validation)](#initial-identity-validation)
+[3.2 Initial Identity Validation \[34\](#initial-identity-validation)](#initial-identity-validation)
 
-[3.2.1 Method to Prove Possession of Private Key [35](#method-to-prove-possession-of-private-key)](#method-to-prove-possession-of-private-key)
+[3.2.1 Method to Prove Possession of Private Key \[35\](#method-to-prove-possession-of-private-key)](#method-to-prove-possession-of-private-key)
 
-[3.2.2 Authentication of Organization and Domain Identity [35](#authentication-of-organization-and-domain-identity)](#authentication-of-organization-and-domain-identity)
+[3.2.2 Authentication of Organization and Domain Identity \[35\](#authentication-of-organization-and-domain-identity)](#authentication-of-organization-and-domain-identity)
 
-[3.2.3 Authentication of Individual Identity [46](#authentication-of-individual-identity)](#authentication-of-individual-identity)
+[3.2.3 Authentication of Individual Identity \[46\](#authentication-of-individual-identity)](#authentication-of-individual-identity)
 
-[3.2.4 Non-Verified Subscriber information [47](#non-verified-subscriber-information)](#non-verified-subscriber-information)
+[3.2.4 Non-Verified Subscriber information \[47\](#non-verified-subscriber-information)](#non-verified-subscriber-information)
 
-[3.2.5 Validation of Authority [47](#validation-of-authority)](#validation-of-authority)
+[3.2.5 Validation of Authority \[47\](#validation-of-authority)](#validation-of-authority)
 
-[3.2.6 Criteria for Interoperation [49](#criteria-for-interoperation)](#criteria-for-interoperation)
+[3.2.6 Criteria for Interoperation \[49\](#criteria-for-interoperation)](#criteria-for-interoperation)
 
-[3.3 Identification and Authentication for Re-Key Requests [50](#identification-and-authentication-for-re-key-requests)](#identification-and-authentication-for-re-key-requests)
+[3.3 Identification and Authentication for Re-Key Requests \[50\](#identification-and-authentication-for-re-key-requests)](#identification-and-authentication-for-re-key-requests)
 
-[3.3.1 Identification and Authentication for Routine Re-Key [50](#identification-and-authentication-for-routine-re-key)](#identification-and-authentication-for-routine-re-key)
+[3.3.1 Identification and Authentication for Routine Re-Key \[50\](#identification-and-authentication-for-routine-re-key)](#identification-and-authentication-for-routine-re-key)
 
-[3.3.2 Identification and Authentication for Re-Key after Revocation [50](#identification-and-authentication-for-re-key-after-revocation)](#identification-and-authentication-for-re-key-after-revocation)
+[3.3.2 Identification and Authentication for Re-Key after Revocation \[50\](#identification-and-authentication-for-re-key-after-revocation)](#identification-and-authentication-for-re-key-after-revocation)
 
-[3.4 Identification and Authentication for Revocation Requests [50](#identification-and-authentication-for-revocation-requests)](#identification-and-authentication-for-revocation-requests)
+[3.4 Identification and Authentication for Revocation Requests \[50\](#identification-and-authentication-for-revocation-requests)](#identification-and-authentication-for-revocation-requests)
 
-[4 CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS [52](#certificate-life-cycle-operational-requirements)](#certificate-life-cycle-operational-requirements)
+[4 CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS \[52\](#certificate-life-cycle-operational-requirements)](#certificate-life-cycle-operational-requirements)
 
-[4.1 Certificate Application [52](#certificate-application)](#certificate-application)
+[4.1 Certificate Application \[52\](#certificate-application)](#certificate-application)
 
-[4.1.1 Who Can Submit a Certificate Application [52](#who-can-submit-a-certificate-application)](#who-can-submit-a-certificate-application)
+[4.1.1 Who Can Submit a Certificate Application \[52\](#who-can-submit-a-certificate-application)](#who-can-submit-a-certificate-application)
 
-[4.1.2 Enrollment Process and Responsibilities [52](#enrollment-process-and-responsibilities)](#enrollment-process-and-responsibilities)
+[4.1.2 Enrollment Process and Responsibilities \[52\](#enrollment-process-and-responsibilities)](#enrollment-process-and-responsibilities)
 
-[4.2 Certificate Application Processing [52](#certificate-application-processing)](#certificate-application-processing)
+[4.2 Certificate Application Processing \[52\](#certificate-application-processing)](#certificate-application-processing)
 
-[4.2.1 Performing Identification and Authentication Functions [53](#performing-identification-and-authentication-functions)](#performing-identification-and-authentication-functions)
+[4.2.1 Performing Identification and Authentication Functions \[53\](#performing-identification-and-authentication-functions)](#performing-identification-and-authentication-functions)
 
-[4.2.2 Approval or Rejection of Certificate Applications [55](#approval-or-rejection-of-certificate-applications)](#approval-or-rejection-of-certificate-applications)
+[4.2.2 Approval or Rejection of Certificate Applications \[55\](#approval-or-rejection-of-certificate-applications)](#approval-or-rejection-of-certificate-applications)
 
-[4.2.3 Time to Process Certificate Applications [56](#time-to-process-certificate-applications)](#time-to-process-certificate-applications)
+[4.2.3 Time to Process Certificate Applications \[56\](#time-to-process-certificate-applications)](#time-to-process-certificate-applications)
 
-[4.3 Certificate Issuance [56](#certificate-issuance)](#certificate-issuance)
+[4.3 Certificate Issuance \[56\](#certificate-issuance)](#certificate-issuance)
 
-[4.3.1 CA Actions During Certificate Issuance [56](#ca-actions-during-certificate-issuance)](#ca-actions-during-certificate-issuance)
+[4.3.1 CA Actions During Certificate Issuance \[56\](#ca-actions-during-certificate-issuance)](#ca-actions-during-certificate-issuance)
 
-[4.3.2 Notification to Subscriber by the CA of Issuance of Certificate [58](#notification-to-subscriber-by-the-ca-of-issuance-of-certificate)](#notification-to-subscriber-by-the-ca-of-issuance-of-certificate)
+[4.3.2 Notification to Subscriber by the CA of Issuance of Certificate \[58\](#notification-to-subscriber-by-the-ca-of-issuance-of-certificate)](#notification-to-subscriber-by-the-ca-of-issuance-of-certificate)
 
-[4.4 Certificate Acceptance [58](#certificate-acceptance)](#certificate-acceptance)
+[4.4 Certificate Acceptance \[58\](#certificate-acceptance)](#certificate-acceptance)
 
-[4.4.1 Conduct Constituting Certificate Acceptance [58](#conduct-constituting-certificate-acceptance)](#conduct-constituting-certificate-acceptance)
+[4.4.1 Conduct Constituting Certificate Acceptance \[58\](#conduct-constituting-certificate-acceptance)](#conduct-constituting-certificate-acceptance)
 
-[4.4.2 Publication of the Certificate by the CA [58](#publication-of-the-certificate-by-the-ca)](#publication-of-the-certificate-by-the-ca)
+[4.4.2 Publication of the Certificate by the CA \[58\](#publication-of-the-certificate-by-the-ca)](#publication-of-the-certificate-by-the-ca)
 
-[4.4.3 Notification of Certificate Issuance by the CA to Other Entities [58](#notification-of-certificate-issuance-by-the-ca-to-other-entities)](#notification-of-certificate-issuance-by-the-ca-to-other-entities)
+[4.4.3 Notification of Certificate Issuance by the CA to Other Entities \[58\](#notification-of-certificate-issuance-by-the-ca-to-other-entities)](#notification-of-certificate-issuance-by-the-ca-to-other-entities)
 
-[4.5 Key Pair and Certificate Usage [58](#key-pair-and-certificate-usage)](#key-pair-and-certificate-usage)
+[4.5 Key Pair and Certificate Usage \[58\](#key-pair-and-certificate-usage)](#key-pair-and-certificate-usage)
 
-[4.5.1 Subscriber Private Key and Certificate Usage [58](#subscriber-private-key-and-certificate-usage)](#subscriber-private-key-and-certificate-usage)
+[4.5.1 Subscriber Private Key and Certificate Usage \[58\](#subscriber-private-key-and-certificate-usage)](#subscriber-private-key-and-certificate-usage)
 
-[4.5.2 Relying Party Public Key and Certificate Usage [58](#relying-party-public-key-and-certificate-usage)](#relying-party-public-key-and-certificate-usage)
+[4.5.2 Relying Party Public Key and Certificate Usage \[58\](#relying-party-public-key-and-certificate-usage)](#relying-party-public-key-and-certificate-usage)
 
-[4.6 Certificate Renewal [59](#certificate-renewal)](#certificate-renewal)
+[4.6 Certificate Renewal \[59\](#certificate-renewal)](#certificate-renewal)
 
-[4.6.1 Circumstance for Certificate Renewal [59](#circumstance-for-certificate-renewal)](#circumstance-for-certificate-renewal)
+[4.6.1 Circumstance for Certificate Renewal \[59\](#circumstance-for-certificate-renewal)](#circumstance-for-certificate-renewal)
 
-[4.6.2 Who May Request Renewal [59](#who-may-request-renewal)](#who-may-request-renewal)
+[4.6.2 Who May Request Renewal \[59\](#who-may-request-renewal)](#who-may-request-renewal)
 
-[4.6.3 Processing Certificate Renewal Requests [59](#processing-certificate-renewal-requests)](#processing-certificate-renewal-requests)
+[4.6.3 Processing Certificate Renewal Requests \[59\](#processing-certificate-renewal-requests)](#processing-certificate-renewal-requests)
 
-[4.6.4 Notification of New Certificate Issuance to Subscriber [59](#notification-of-new-certificate-issuance-to-subscriber)](#notification-of-new-certificate-issuance-to-subscriber)
+[4.6.4 Notification of New Certificate Issuance to Subscriber \[59\](#notification-of-new-certificate-issuance-to-subscriber)](#notification-of-new-certificate-issuance-to-subscriber)
 
-[4.6.5 Conduct Constituting Acceptance of a Renewal Certificate [59](#conduct-constituting-acceptance-of-a-renewal-certificate)](#conduct-constituting-acceptance-of-a-renewal-certificate)
+[4.6.5 Conduct Constituting Acceptance of a Renewal Certificate \[59\](#conduct-constituting-acceptance-of-a-renewal-certificate)](#conduct-constituting-acceptance-of-a-renewal-certificate)
 
-[4.6.6 Publication of the Renewal Certificate by the CA [59](#publication-of-the-renewal-certificate-by-the-ca)](#publication-of-the-renewal-certificate-by-the-ca)
+[4.6.6 Publication of the Renewal Certificate by the CA \[59\](#publication-of-the-renewal-certificate-by-the-ca)](#publication-of-the-renewal-certificate-by-the-ca)
 
-[4.6.7 Notification of Certificate Issuance by the CA to Other Entities [59](#notification-of-certificate-issuance-by-the-ca-to-other-entities-1)](#notification-of-certificate-issuance-by-the-ca-to-other-entities-1)
+[4.6.7 Notification of Certificate Issuance by the CA to Other Entities \[59\](#notification-of-certificate-issuance-by-the-ca-to-other-entities-1)](#notification-of-certificate-issuance-by-the-ca-to-other-entities-1)
 
-[4.7 Certificate Re-Key [59](#certificate-re-key)](#certificate-re-key)
+[4.7 Certificate Re-Key \[59\](#certificate-re-key)](#certificate-re-key)
 
-[4.7.1 Circumstance for Certificate Re-Key [60](#circumstance-for-certificate-re-key)](#circumstance-for-certificate-re-key)
+[4.7.1 Circumstance for Certificate Re-Key \[60\](#circumstance-for-certificate-re-key)](#circumstance-for-certificate-re-key)
 
-[4.7.2 Who May Request Certification of a New Public Key [60](#who-may-request-certification-of-a-new-public-key)](#who-may-request-certification-of-a-new-public-key)
+[4.7.2 Who May Request Certification of a New Public Key \[60\](#who-may-request-certification-of-a-new-public-key)](#who-may-request-certification-of-a-new-public-key)
 
-[4.7.3 Processing Certificate Re-Keying Requests [60](#processing-certificate-re-keying-requests)](#processing-certificate-re-keying-requests)
+[4.7.3 Processing Certificate Re-Keying Requests \[60\](#processing-certificate-re-keying-requests)](#processing-certificate-re-keying-requests)
 
-[4.7.4 Notification of New Certificate Issuance to Subscriber [60](#notification-of-new-certificate-issuance-to-subscriber-1)](#notification-of-new-certificate-issuance-to-subscriber-1)
+[4.7.4 Notification of New Certificate Issuance to Subscriber \[60\](#notification-of-new-certificate-issuance-to-subscriber-1)](#notification-of-new-certificate-issuance-to-subscriber-1)
 
-[4.7.5 Conduct Constituting Acceptance of a Re-Keyed Certificate [60](#conduct-constituting-acceptance-of-a-re-keyed-certificate)](#conduct-constituting-acceptance-of-a-re-keyed-certificate)
+[4.7.5 Conduct Constituting Acceptance of a Re-Keyed Certificate \[60\](#conduct-constituting-acceptance-of-a-re-keyed-certificate)](#conduct-constituting-acceptance-of-a-re-keyed-certificate)
 
-[4.7.6 Publication of the Re-Keyed Certificate by the CA [60](#publication-of-the-re-keyed-certificate-by-the-ca)](#publication-of-the-re-keyed-certificate-by-the-ca)
+[4.7.6 Publication of the Re-Keyed Certificate by the CA \[60\](#publication-of-the-re-keyed-certificate-by-the-ca)](#publication-of-the-re-keyed-certificate-by-the-ca)
 
-[4.7.7 Notification of Certificate Issuance by the CA to Other Entities [60](#notification-of-certificate-issuance-by-the-ca-to-other-entities-2)](#notification-of-certificate-issuance-by-the-ca-to-other-entities-2)
+[4.7.7 Notification of Certificate Issuance by the CA to Other Entities \[60\](#notification-of-certificate-issuance-by-the-ca-to-other-entities-2)](#notification-of-certificate-issuance-by-the-ca-to-other-entities-2)
 
-[4.8 Certificate Modification [60](#certificate-modification)](#certificate-modification)
+[4.8 Certificate Modification \[60\](#certificate-modification)](#certificate-modification)
 
-[4.8.1 Circumstance for Certificate Modification [60](#circumstance-for-certificate-modification)](#circumstance-for-certificate-modification)
+[4.8.1 Circumstance for Certificate Modification \[60\](#circumstance-for-certificate-modification)](#circumstance-for-certificate-modification)
 
-[4.8.2 Who May Request Certificate Modification [61](#who-may-request-certificate-modification)](#who-may-request-certificate-modification)
+[4.8.2 Who May Request Certificate Modification \[61\](#who-may-request-certificate-modification)](#who-may-request-certificate-modification)
 
-[4.8.3 Processing Certificate Modification Requests [61](#processing-certificate-modification-requests)](#processing-certificate-modification-requests)
+[4.8.3 Processing Certificate Modification Requests \[61\](#processing-certificate-modification-requests)](#processing-certificate-modification-requests)
 
-[4.8.4 Notification of New Certificate Issuance to Subscriber [61](#notification-of-new-certificate-issuance-to-subscriber-2)](#notification-of-new-certificate-issuance-to-subscriber-2)
+[4.8.4 Notification of New Certificate Issuance to Subscriber \[61\](#notification-of-new-certificate-issuance-to-subscriber-2)](#notification-of-new-certificate-issuance-to-subscriber-2)
 
-[4.8.5 Conduct Constituting Acceptance of a Modified Certificate [61](#conduct-constituting-acceptance-of-a-modified-certificate)](#conduct-constituting-acceptance-of-a-modified-certificate)
+[4.8.5 Conduct Constituting Acceptance of a Modified Certificate \[61\](#conduct-constituting-acceptance-of-a-modified-certificate)](#conduct-constituting-acceptance-of-a-modified-certificate)
 
-[4.8.6 Publication of the Modified Certificate by the CA [61](#publication-of-the-modified-certificate-by-the-ca)](#publication-of-the-modified-certificate-by-the-ca)
+[4.8.6 Publication of the Modified Certificate by the CA \[61\](#publication-of-the-modified-certificate-by-the-ca)](#publication-of-the-modified-certificate-by-the-ca)
 
-[4.8.7 Notification of Certificate Issuance by the CA to Other Entities [61](#notification-of-certificate-issuance-by-the-ca-to-other-entities-3)](#notification-of-certificate-issuance-by-the-ca-to-other-entities-3)
+[4.8.7 Notification of Certificate Issuance by the CA to Other Entities \[61\](#notification-of-certificate-issuance-by-the-ca-to-other-entities-3)](#notification-of-certificate-issuance-by-the-ca-to-other-entities-3)
 
-[4.9 Certificate Revocation and Suspension [61](#certificate-revocation-and-suspension)](#certificate-revocation-and-suspension)
+[4.9 Certificate Revocation and Suspension \[61\](#certificate-revocation-and-suspension)](#certificate-revocation-and-suspension)
 
-[4.9.1 Circumstances for Revocation [61](#circumstances-for-revocation)](#circumstances-for-revocation)
+[4.9.1 Circumstances for Revocation \[61\](#circumstances-for-revocation)](#circumstances-for-revocation)
 
-[4.9.2 Who Can Request Revocation [63](#who-can-request-revocation)](#who-can-request-revocation)
+[4.9.2 Who Can Request Revocation \[63\](#who-can-request-revocation)](#who-can-request-revocation)
 
-[4.9.3 Procedure for Revocation Request [63](#procedure-for-revocation-request)](#procedure-for-revocation-request)
+[4.9.3 Procedure for Revocation Request \[63\](#procedure-for-revocation-request)](#procedure-for-revocation-request)
 
-[4.9.4 Revocation Request Grace Period [64](#revocation-request-grace-period)](#revocation-request-grace-period)
+[4.9.4 Revocation Request Grace Period \[64\](#revocation-request-grace-period)](#revocation-request-grace-period)
 
-[4.9.5 Time Within Which CA Must Process the Revocation Request [65](#time-within-which-ca-must-process-the-revocation-request)](#time-within-which-ca-must-process-the-revocation-request)
+[4.9.5 Time Within Which CA Must Process the Revocation Request \[65\](#time-within-which-ca-must-process-the-revocation-request)](#time-within-which-ca-must-process-the-revocation-request)
 
-[4.9.6 Revocation Checking Requirements for Relying Parties [65](#revocation-checking-requirements-for-relying-parties)](#revocation-checking-requirements-for-relying-parties)
+[4.9.6 Revocation Checking Requirements for Relying Parties \[65\](#revocation-checking-requirements-for-relying-parties)](#revocation-checking-requirements-for-relying-parties)
 
-[4.9.7 CRL Issuance Frequency [65](#crl-issuance-frequency)](#crl-issuance-frequency)
+[4.9.7 CRL Issuance Frequency \[65\](#crl-issuance-frequency)](#crl-issuance-frequency)
 
-[4.9.8 Maximum Latency for CRLs [66](#maximum-latency-for-crls)](#maximum-latency-for-crls)
+[4.9.8 Maximum Latency for CRLs \[66\](#maximum-latency-for-crls)](#maximum-latency-for-crls)
 
-[4.9.9 Online Revocation/Status Checking Availability [66](#online-revocationstatus-checking-availability)](#online-revocationstatus-checking-availability)
+[4.9.9 Online Revocation/Status Checking Availability \[66\](#online-revocationstatus-checking-availability)](#online-revocationstatus-checking-availability)
 
-[4.9.10 Online Revocation Checking Requirements [67](#online-revocation-checking-requirements)](#online-revocation-checking-requirements)
+[4.9.10 Online Revocation Checking Requirements \[67\](#online-revocation-checking-requirements)](#online-revocation-checking-requirements)
 
-[4.9.11 Other Forms of Revocation Advertisements Available [67](#other-forms-of-revocation-advertisements-available)](#other-forms-of-revocation-advertisements-available)
+[4.9.11 Other Forms of Revocation Advertisements Available \[67\](#other-forms-of-revocation-advertisements-available)](#other-forms-of-revocation-advertisements-available)
 
-[4.9.12 Special Requirements for Re-Key Compromise [67](#special-requirements-for-re-key-compromise)](#special-requirements-for-re-key-compromise)
+[4.9.12 Special Requirements for Re-Key Compromise \[67\](#special-requirements-for-re-key-compromise)](#special-requirements-for-re-key-compromise)
 
-[4.9.13 Circumstances for Suspension [67](#circumstances-for-suspension)](#circumstances-for-suspension)
+[4.9.13 Circumstances for Suspension \[67\](#circumstances-for-suspension)](#circumstances-for-suspension)
 
-[4.9.14 Procedure for Suspension Request [67](#procedure-for-suspension-request)](#procedure-for-suspension-request)
+[4.9.14 Procedure for Suspension Request \[67\](#procedure-for-suspension-request)](#procedure-for-suspension-request)
 
-[4.9.15 Limits on Suspension Period [67](#limits-on-suspension-period)](#limits-on-suspension-period)
+[4.9.15 Limits on Suspension Period \[67\](#limits-on-suspension-period)](#limits-on-suspension-period)
 
-[4.9.16 Limits on Suspension Period [68](#limits-on-suspension-period-1)](#limits-on-suspension-period-1)
+[4.9.16 Limits on Suspension Period \[68\](#limits-on-suspension-period-1)](#limits-on-suspension-period-1)
 
-[4.10 Certificate Status Services [68](#certificate-status-services)](#certificate-status-services)
+[4.10 Certificate Status Services \[68\](#certificate-status-services)](#certificate-status-services)
 
-[4.10.1 Operational Characteristics [68](#operational-characteristics)](#operational-characteristics)
+[4.10.1 Operational Characteristics \[68\](#operational-characteristics)](#operational-characteristics)
 
-[4.10.2 Service Availability [68](#service-availability)](#service-availability)
+[4.10.2 Service Availability \[68\](#service-availability)](#service-availability)
 
-[4.10.3 Optional Features [69](#optional-features)](#optional-features)
+[4.10.3 Optional Features \[69\](#optional-features)](#optional-features)
 
-[4.11 End of Subscription [69](#end-of-subscription)](#end-of-subscription)
+[4.11 End of Subscription \[69\](#end-of-subscription)](#end-of-subscription)
 
-[4.12 Key Escrow and Recovery [69](#key-escrow-and-recovery)](#key-escrow-and-recovery)
+[4.12 Key Escrow and Recovery \[69\](#key-escrow-and-recovery)](#key-escrow-and-recovery)
 
-[4.12.1 Key Escrow and Recovery Policy and Practices [69](#key-escrow-and-recovery-policy-and-practices)](#key-escrow-and-recovery-policy-and-practices)
+[4.12.1 Key Escrow and Recovery Policy and Practices \[69\](#key-escrow-and-recovery-policy-and-practices)](#key-escrow-and-recovery-policy-and-practices)
 
-[4.12.2 Session Key Encapsulation and Recovery Policy and Practices [69](#session-key-encapsulation-and-recovery-policy-and-practices)](#session-key-encapsulation-and-recovery-policy-and-practices)
+[4.12.2 Session Key Encapsulation and Recovery Policy and Practices \[69\](#session-key-encapsulation-and-recovery-policy-and-practices)](#session-key-encapsulation-and-recovery-policy-and-practices)
 
-[5 FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS [70](#facility-management-and-operational-controls)](#facility-management-and-operational-controls)
+[5 FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS \[70\](#facility-management-and-operational-controls)](#facility-management-and-operational-controls)
 
-[5.1 Physical SECURITY Controls [70](#physical-security-controls)](#physical-security-controls)
+[5.1 Physical SECURITY Controls \[70\](#physical-security-controls)](#physical-security-controls)
 
-[5.1.1 Site Location and Construction [70](#site-location-and-construction)](#site-location-and-construction)
+[5.1.1 Site Location and Construction \[70\](#site-location-and-construction)](#site-location-and-construction)
 
-[5.1.2 Physical Access [71](#physical-access)](#physical-access)
+[5.1.2 Physical Access \[71\](#physical-access)](#physical-access)
 
-[5.1.3 Power and Air Conditioning [71](#power-and-air-conditioning)](#power-and-air-conditioning)
+[5.1.3 Power and Air Conditioning \[71\](#power-and-air-conditioning)](#power-and-air-conditioning)
 
-[5.1.4 Water Exposures [71](#water-exposures)](#water-exposures)
+[5.1.4 Water Exposures \[71\](#water-exposures)](#water-exposures)
 
-[5.1.5 Fire Prevention and Protection [71](#fire-prevention-and-protection)](#fire-prevention-and-protection)
+[5.1.5 Fire Prevention and Protection \[71\](#fire-prevention-and-protection)](#fire-prevention-and-protection)
 
-[5.1.6 Media Storage [72](#media-storage)](#media-storage)
+[5.1.6 Media Storage \[72\](#media-storage)](#media-storage)
 
-[5.1.7 Waste Disposal [72](#waste-disposal)](#waste-disposal)
+[5.1.7 Waste Disposal \[72\](#waste-disposal)](#waste-disposal)
 
-[5.1.8 Off-Site Backup [73](#off-site-backup)](#off-site-backup)
+[5.1.8 Off-Site Backup \[73\](#off-site-backup)](#off-site-backup)
 
-[5.2 Procedural Controls [73](#procedural-controls)](#procedural-controls)
+[5.2 Procedural Controls \[73\](#procedural-controls)](#procedural-controls)
 
-[5.2.1 Trusted Roles [73](#trusted-roles)](#trusted-roles)
+[5.2.1 Trusted Roles \[73\](#trusted-roles)](#trusted-roles)
 
-[5.2.2 Number of Persons Required per Task [73](#number-of-persons-required-per-task)](#number-of-persons-required-per-task)
+[5.2.2 Number of Persons Required per Task \[73\](#number-of-persons-required-per-task)](#number-of-persons-required-per-task)
 
-[5.2.3 Identification and Authentication for Each Role [74](#identification-and-authentication-for-each-role)](#identification-and-authentication-for-each-role)
+[5.2.3 Identification and Authentication for Each Role \[74\](#identification-and-authentication-for-each-role)](#identification-and-authentication-for-each-role)
 
-[5.2.4 Roles Requiring Separation of Duties [74](#roles-requiring-separation-of-duties)](#roles-requiring-separation-of-duties)
+[5.2.4 Roles Requiring Separation of Duties \[74\](#roles-requiring-separation-of-duties)](#roles-requiring-separation-of-duties)
 
-[5.3 Personnel Controls [75](#personnel-controls)](#personnel-controls)
+[5.3 Personnel Controls \[75\](#personnel-controls)](#personnel-controls)
 
-[5.3.1 Qualifications, Experience, and Clearance Requirements [75](#qualifications-experience-and-clearance-requirements)](#qualifications-experience-and-clearance-requirements)
+[5.3.1 Qualifications, Experience, and Clearance Requirements \[75\](#qualifications-experience-and-clearance-requirements)](#qualifications-experience-and-clearance-requirements)
 
-[5.3.2 Background Check Procedures [76](#background-check-procedures)](#background-check-procedures)
+[5.3.2 Background Check Procedures \[76\](#background-check-procedures)](#background-check-procedures)
 
-[5.3.3 Training Requirements and Procedures [76](#training-requirements-and-procedures)](#training-requirements-and-procedures)
+[5.3.3 Training Requirements and Procedures \[76\](#training-requirements-and-procedures)](#training-requirements-and-procedures)
 
-[5.3.4 Retraining Frequency and Requirements [77](#retraining-frequency-and-requirements)](#retraining-frequency-and-requirements)
+[5.3.4 Retraining Frequency and Requirements \[77\](#retraining-frequency-and-requirements)](#retraining-frequency-and-requirements)
 
-[5.3.5 Job Rotation Frequency and Sequence [77](#job-rotation-frequency-and-sequence)](#job-rotation-frequency-and-sequence)
+[5.3.5 Job Rotation Frequency and Sequence \[77\](#job-rotation-frequency-and-sequence)](#job-rotation-frequency-and-sequence)
 
-[5.3.6 Sanctions for Unauthorized Actions [77](#sanctions-for-unauthorized-actions)](#sanctions-for-unauthorized-actions)
+[5.3.6 Sanctions for Unauthorized Actions \[77\](#sanctions-for-unauthorized-actions)](#sanctions-for-unauthorized-actions)
 
-[5.3.7 Independent Contractor Requirements [78](#independent-contractor-requirements)](#independent-contractor-requirements)
+[5.3.7 Independent Contractor Requirements \[78\](#independent-contractor-requirements)](#independent-contractor-requirements)
 
-[5.3.8 Documentation Supplied to Personnel [78](#documentation-supplied-to-personnel)](#documentation-supplied-to-personnel)
+[5.3.8 Documentation Supplied to Personnel \[78\](#documentation-supplied-to-personnel)](#documentation-supplied-to-personnel)
 
-[5.4 Audit Logging Procedures [78](#audit-logging-procedures)](#audit-logging-procedures)
+[5.4 Audit Logging Procedures \[78\](#audit-logging-procedures)](#audit-logging-procedures)
 
-[5.4.1 Types of Events Recorded [78](#types-of-events-recorded)](#types-of-events-recorded)
+[5.4.1 Types of Events Recorded \[78\](#types-of-events-recorded)](#types-of-events-recorded)
 
-[5.4.2 Frequency of Processing Log [80](#frequency-of-processing-log)](#frequency-of-processing-log)
+[5.4.2 Frequency of Processing Log \[80\](#frequency-of-processing-log)](#frequency-of-processing-log)
 
-[5.4.3 Retention Period for Audit Log [81](#retention-period-for-audit-log)](#retention-period-for-audit-log)
+[5.4.3 Retention Period for Audit Log \[81\](#retention-period-for-audit-log)](#retention-period-for-audit-log)
 
-[5.4.4 Protection of Audit Log [81](#protection-of-audit-log)](#protection-of-audit-log)
+[5.4.4 Protection of Audit Log \[81\](#protection-of-audit-log)](#protection-of-audit-log)
 
-[5.4.5 Audit Log Backup Procedures [82](#audit-log-backup-procedures)](#audit-log-backup-procedures)
+[5.4.5 Audit Log Backup Procedures \[82\](#audit-log-backup-procedures)](#audit-log-backup-procedures)
 
-[5.4.6 Audit Collection System (Internal vs. External) [82](#audit-collection-system-internal-vs.-external)](#audit-collection-system-internal-vs.-external)
+[5.4.6 Audit Collection System (Internal vs. External) \[82\](#audit-collection-system-internal-vs.-external)](#X431cca1faf43ea1eb4b5ce60e9b56517ec7acaf)
 
-[5.4.7 Notification to Event-Causing Subject [82](#notification-to-event-causing-subject)](#notification-to-event-causing-subject)
+[5.4.7 Notification to Event-Causing Subject \[82\](#notification-to-event-causing-subject)](#notification-to-event-causing-subject)
 
-[5.4.8 Vulnerability Assessments [82](#vulnerability-assessments)](#vulnerability-assessments)
+[5.4.8 Vulnerability Assessments \[82\](#vulnerability-assessments)](#vulnerability-assessments)
 
-[5.5 Records Archival [83](#records-archival)](#records-archival)
+[5.5 Records Archival \[83\](#records-archival)](#records-archival)
 
-[5.5.1 Types of Records Archived [83](#types-of-records-archived)](#types-of-records-archived)
+[5.5.1 Types of Records Archived \[83\](#types-of-records-archived)](#types-of-records-archived)
 
-[5.5.2 Retention Period for Archive [84](#retention-period-for-archive)](#retention-period-for-archive)
+[5.5.2 Retention Period for Archive \[84\](#retention-period-for-archive)](#retention-period-for-archive)
 
-[5.5.3 Protection of Archive [85](#protection-of-archive)](#protection-of-archive)
+[5.5.3 Protection of Archive \[85\](#protection-of-archive)](#protection-of-archive)
 
-[5.5.4 Archive Backup Procedures [85](#archive-backup-procedures)](#archive-backup-procedures)
+[5.5.4 Archive Backup Procedures \[85\](#archive-backup-procedures)](#archive-backup-procedures)
 
-[5.5.5 Requirements for Times-Stamping of Records [85](#requirements-for-times-stamping-of-records)](#requirements-for-times-stamping-of-records)
+[5.5.5 Requirements for Times-Stamping of Records \[85\](#requirements-for-times-stamping-of-records)](#requirements-for-times-stamping-of-records)
 
-[5.5.6 Archive Collection System (Internal or External) [85](#archive-collection-system-internal-or-external)](#archive-collection-system-internal-or-external)
+[5.5.6 Archive Collection System (Internal or External) \[85\](#archive-collection-system-internal-or-external)](#archive-collection-system-internal-or-external)
 
-[5.5.7 Procedures to Obtain and Verify Archive Information [86](#procedures-to-obtain-and-verify-archive-information)](#procedures-to-obtain-and-verify-archive-information)
+[5.5.7 Procedures to Obtain and Verify Archive Information \[86\](#procedures-to-obtain-and-verify-archive-information)](#procedures-to-obtain-and-verify-archive-information)
 
-[5.6 Key Changeover [86](#key-changeover)](#key-changeover)
+[5.6 Key Changeover \[86\](#key-changeover)](#key-changeover)
 
-[5.7 Compromise and Disaster Recovery [86](#compromise-and-disaster-recovery)](#compromise-and-disaster-recovery)
+[5.7 Compromise and Disaster Recovery \[86\](#compromise-and-disaster-recovery)](#compromise-and-disaster-recovery)
 
-[5.7.1 Incident and Compromise Handling Procedures [86](#incident-and-compromise-handling-procedures)](#incident-and-compromise-handling-procedures)
+[5.7.1 Incident and Compromise Handling Procedures \[86\](#incident-and-compromise-handling-procedures)](#incident-and-compromise-handling-procedures)
 
-[5.7.2 Computing Resources, Software, and/or Data Are Corrupted [87](#computing-resources-software-andor-data-are-corrupted)](#computing-resources-software-andor-data-are-corrupted)
+[5.7.2 Computing Resources, Software, and/or Data Are Corrupted \[87\](#computing-resources-software-andor-data-are-corrupted)](#computing-resources-software-andor-data-are-corrupted)
 
-[5.7.3 Entity Private Key Compromise Procedures [88](#entity-private-key-compromise-procedures)](#entity-private-key-compromise-procedures)
+[5.7.3 Entity Private Key Compromise Procedures \[88\](#entity-private-key-compromise-procedures)](#entity-private-key-compromise-procedures)
 
-[5.7.4 Business Continuity Capabilities After a Disaster [88](#business-continuity-capabilities-after-a-disaster)](#business-continuity-capabilities-after-a-disaster)
+[5.7.4 Business Continuity Capabilities After a Disaster \[88\](#business-continuity-capabilities-after-a-disaster)](#business-continuity-capabilities-after-a-disaster)
 
-[5.8 CA or RA Termination [88](#ca-or-ra-termination)](#ca-or-ra-termination)
+[5.8 CA or RA Termination \[88\](#ca-or-ra-termination)](#ca-or-ra-termination)
 
-[6 TECHNICAL SECURITY CONTROLS [89](#technical-security-controls)](#technical-security-controls)
+[6 TECHNICAL SECURITY CONTROLS \[89\](#technical-security-controls)](#technical-security-controls)
 
-[6.1 Key Pair Generation and Installation [89](#key-pair-generation-and-installation)](#key-pair-generation-and-installation)
+[6.1 Key Pair Generation and Installation \[89\](#key-pair-generation-and-installation)](#key-pair-generation-and-installation)
 
-[6.1.1 Key Pair Generation [89](#key-pair-generation)](#key-pair-generation)
+[6.1.1 Key Pair Generation \[89\](#key-pair-generation)](#key-pair-generation)
 
-[6.1.2 Private Key Delivery to Subscriber [91](#private-key-delivery-to-subscriber)](#private-key-delivery-to-subscriber)
+[6.1.2 Private Key Delivery to Subscriber \[91\](#private-key-delivery-to-subscriber)](#private-key-delivery-to-subscriber)
 
-[6.1.3 Public Key Delivery to Certificate Issuer [91](#public-key-delivery-to-certificate-issuer)](#public-key-delivery-to-certificate-issuer)
+[6.1.3 Public Key Delivery to Certificate Issuer \[91\](#public-key-delivery-to-certificate-issuer)](#public-key-delivery-to-certificate-issuer)
 
-[6.1.4 CA Public Key Delivery to Relying Parties [92](#ca-public-key-delivery-to-relying-parties)](#ca-public-key-delivery-to-relying-parties)
+[6.1.4 CA Public Key Delivery to Relying Parties \[92\](#ca-public-key-delivery-to-relying-parties)](#ca-public-key-delivery-to-relying-parties)
 
-[6.1.5 Key Sizes [92](#key-sizes)](#key-sizes)
+[6.1.5 Key Sizes \[92\](#key-sizes)](#key-sizes)
 
-[6.1.6 Public Key Parameters Generation and Quality Checking [92](#public-key-parameters-generation-and-quality-checking)](#public-key-parameters-generation-and-quality-checking)
+[6.1.6 Public Key Parameters Generation and Quality Checking \[92\](#public-key-parameters-generation-and-quality-checking)](#public-key-parameters-generation-and-quality-checking)
 
-[6.1.7 Key Usage Purposes (as per X509 v3 Key Usage Field) [93](#key-usage-purposes-as-per-x509-v3-key-usage-field)](#key-usage-purposes-as-per-x509-v3-key-usage-field)
+[6.1.7 Key Usage Purposes (as per X509 v3 Key Usage Field) \[93\](#key-usage-purposes-as-per-x509-v3-key-usage-field)](#key-usage-purposes-as-per-x509-v3-key-usage-field)
 
-[6.2 Private Key Protection and Cryptographic Module Engineering Controls [93](#private-key-protection-and-cryptographic-module-engineering-controls)](#private-key-protection-and-cryptographic-module-engineering-controls)
+[6.2 Private Key Protection and Cryptographic Module Engineering Controls \[93\](#private-key-protection-and-cryptographic-module-engineering-controls)](#private-key-protection-and-cryptographic-module-engineering-controls)
 
-[6.2.1 Cryptographic Module Standards and Controls [93](#cryptographic-module-standards-and-controls)](#cryptographic-module-standards-and-controls)
+[6.2.1 Cryptographic Module Standards and Controls \[93\](#cryptographic-module-standards-and-controls)](#cryptographic-module-standards-and-controls)
 
-[6.2.2 Private Key (N out of M) Multi-Person Control [93](#private-key-n-out-of-m-multi-person-control)](#private-key-n-out-of-m-multi-person-control)
+[6.2.2 Private Key (N out of M) Multi-Person Control \[93\](#private-key-n-out-of-m-multi-person-control)](#private-key-n-out-of-m-multi-person-control)
 
-[6.2.3 Private Key Escrow [94](#private-key-escrow)](#private-key-escrow)
+[6.2.3 Private Key Escrow \[94\](#private-key-escrow)](#private-key-escrow)
 
-[6.2.4 Private Key Backup [94](#private-key-backup)](#private-key-backup)
+[6.2.4 Private Key Backup \[94\](#private-key-backup)](#private-key-backup)
 
-[6.2.5 Private Key Archival [94](#private-key-archival)](#private-key-archival)
+[6.2.5 Private Key Archival \[94\](#private-key-archival)](#private-key-archival)
 
-[6.2.6 Private Key Transfer Into or From a Cryptographic Module [94](#private-key-transfer-into-or-from-a-cryptographic-module)](#private-key-transfer-into-or-from-a-cryptographic-module)
+[6.2.6 Private Key Transfer Into or From a Cryptographic Module \[94\](#private-key-transfer-into-or-from-a-cryptographic-module)](#private-key-transfer-into-or-from-a-cryptographic-module)
 
-[6.2.7 Private Key Storage on Cryptographic Module [95](#private-key-storage-on-cryptographic-module)](#private-key-storage-on-cryptographic-module)
+[6.2.7 Private Key Storage on Cryptographic Module \[95\](#private-key-storage-on-cryptographic-module)](#private-key-storage-on-cryptographic-module)
 
-[6.2.8 Method of Activating Private Key [95](#method-of-activating-private-key)](#method-of-activating-private-key)
+[6.2.8 Method of Activating Private Key \[95\](#method-of-activating-private-key)](#method-of-activating-private-key)
 
-[6.2.9 Method of Deactivating Private Key [95](#method-of-deactivating-private-key)](#method-of-deactivating-private-key)
+[6.2.9 Method of Deactivating Private Key \[95\](#method-of-deactivating-private-key)](#method-of-deactivating-private-key)
 
-[6.2.10 Method of Destroying Private Key [95](#method-of-destroying-private-key)](#method-of-destroying-private-key)
+[6.2.10 Method of Destroying Private Key \[95\](#method-of-destroying-private-key)](#method-of-destroying-private-key)
 
-[6.2.11 Cryptographic Module Rating [96](#cryptographic-module-rating)](#cryptographic-module-rating)
+[6.2.11 Cryptographic Module Rating \[96\](#cryptographic-module-rating)](#cryptographic-module-rating)
 
-[6.3 Other Aspects of Key PAIR Management [96](#other-aspects-of-key-pair-management)](#other-aspects-of-key-pair-management)
+[6.3 Other Aspects of Key PAIR Management \[96\](#other-aspects-of-key-pair-management)](#other-aspects-of-key-pair-management)
 
-[6.3.1 Public Key Archival [96](#public-key-archival)](#public-key-archival)
+[6.3.1 Public Key Archival \[96\](#public-key-archival)](#public-key-archival)
 
-[6.3.2 Certificate Operational Periods and Key Pair Usage Periods [96](#certificate-operational-periods-and-key-pair-usage-periods)](#certificate-operational-periods-and-key-pair-usage-periods)
+[6.3.2 Certificate Operational Periods and Key Pair Usage Periods \[96\](#certificate-operational-periods-and-key-pair-usage-periods)](#certificate-operational-periods-and-key-pair-usage-periods)
 
-[6.4 Activation Data [96](#activation-data)](#activation-data)
+[6.4 Activation Data \[96\](#activation-data)](#activation-data)
 
-[6.4.1 Activation Data Generation and Installation [96](#activation-data-generation-and-installation)](#activation-data-generation-and-installation)
+[6.4.1 Activation Data Generation and Installation \[96\](#activation-data-generation-and-installation)](#activation-data-generation-and-installation)
 
-[6.4.2 Activation Data Protection [97](#activation-data-protection)](#activation-data-protection)
+[6.4.2 Activation Data Protection \[97\](#activation-data-protection)](#activation-data-protection)
 
-[6.4.3 Other Aspects of Activation Data [97](#other-aspects-of-activation-data)](#other-aspects-of-activation-data)
+[6.4.3 Other Aspects of Activation Data \[97\](#other-aspects-of-activation-data)](#other-aspects-of-activation-data)
 
-[6.5 Computer Security Controls [97](#computer-security-controls)](#computer-security-controls)
+[6.5 Computer Security Controls \[97\](#computer-security-controls)](#computer-security-controls)
 
-[6.5.1 Specific Computer Security Technical Requirements [97](#specific-computer-security-technical-requirements)](#specific-computer-security-technical-requirements)
+[6.5.1 Specific Computer Security Technical Requirements \[97\](#specific-computer-security-technical-requirements)](#specific-computer-security-technical-requirements)
 
-[6.5.2 Computer Security Rating [97](#computer-security-rating)](#computer-security-rating)
+[6.5.2 Computer Security Rating \[97\](#computer-security-rating)](#computer-security-rating)
 
-[6.6 Life Cycle Technical Controls [97](#life-cycle-technical-controls)](#life-cycle-technical-controls)
+[6.6 Life Cycle Technical Controls \[97\](#life-cycle-technical-controls)](#life-cycle-technical-controls)
 
-[6.6.1 System Development Controls [97](#system-development-controls)](#system-development-controls)
+[6.6.1 System Development Controls \[97\](#system-development-controls)](#system-development-controls)
 
-[6.6.2 Security Management Controls [98](#security-management-controls)](#security-management-controls)
+[6.6.2 Security Management Controls \[98\](#security-management-controls)](#security-management-controls)
 
-[6.6.3 Life Cycle Security Controls [98](#life-cycle-security-controls)](#life-cycle-security-controls)
+[6.6.3 Life Cycle Security Controls \[98\](#life-cycle-security-controls)](#life-cycle-security-controls)
 
-[6.7 Network Security Controls [98](#network-security-controls)](#network-security-controls)
+[6.7 Network Security Controls \[98\](#network-security-controls)](#network-security-controls)
 
-[6.8 Time-stamping [99](#time-stamping)](#time-stamping)
+[6.8 Time-stamping \[99\](#time-stamping)](#time-stamping)
 
-[7 CERTIFICATE, CRL, AND OCSP PROFILES [100](#certificate-crl-and-ocsp-profiles)](#certificate-crl-and-ocsp-profiles)
+[7 CERTIFICATE, CRL, AND OCSP PROFILES \[100\](#certificate-crl-and-ocsp-profiles)](#certificate-crl-and-ocsp-profiles)
 
-[7.1 Certificate Profile [100](#certificate-profile)](#certificate-profile)
+[7.1 Certificate Profile \[100\](#certificate-profile)](#certificate-profile)
 
-[7.1.1 Version Number(s) [100](#version-numbers)](#version-numbers)
+[7.1.1 Version Number(s) \[100\](#version-numbers)](#version-numbers)
 
-[7.1.2 Certificate Content and Extensions [100](#certificate-content-and-extensions)](#certificate-content-and-extensions)
+[7.1.2 Certificate Content and Extensions \[100\](#certificate-content-and-extensions)](#certificate-content-and-extensions)
 
-[7.1.3 Algorithm Object Identifiers [100](#algorithm-object-identifiers)](#algorithm-object-identifiers)
+[7.1.3 Algorithm Object Identifiers \[100\](#algorithm-object-identifiers)](#algorithm-object-identifiers)
 
-[7.1.4 Name Forms [103](#name-forms)](#name-forms)
+[7.1.4 Name Forms \[103\](#name-forms)](#name-forms)
 
-[7.1.5 Name Constraints [104](#name-constraints)](#name-constraints)
+[7.1.5 Name Constraints \[104\](#name-constraints)](#name-constraints)
 
-[7.1.6 Certificate Policy Object Identifier [104](#certificate-policy-object-identifier)](#certificate-policy-object-identifier)
+[7.1.6 Certificate Policy Object Identifier \[104\](#certificate-policy-object-identifier)](#certificate-policy-object-identifier)
 
-[7.1.7 Usage of Policy Constraints Extension [104](#usage-of-policy-constraints-extension)](#usage-of-policy-constraints-extension)
+[7.1.7 Usage of Policy Constraints Extension \[104\](#usage-of-policy-constraints-extension)](#usage-of-policy-constraints-extension)
 
-[7.1.8 Policy Qualifiers Syntax and Semantics [104](#policy-qualifiers-syntax-and-semantics)](#policy-qualifiers-syntax-and-semantics)
+[7.1.8 Policy Qualifiers Syntax and Semantics \[104\](#policy-qualifiers-syntax-and-semantics)](#policy-qualifiers-syntax-and-semantics)
 
-[7.1.9 Processing Semantics for the Critical Certificate Policies Extension [104](#processing-semantics-for-the-critical-certificate-policies-extension)](#processing-semantics-for-the-critical-certificate-policies-extension)
+[7.1.9 Processing Semantics for the Critical Certificate Policies Extension \[104\](#processing-semantics-for-the-critical-certificate-policies-extension)](#processing-semantics-for-the-critical-certificate-policies-extension)
 
-[7.2 CRL Profile [105](#crl-profile)](#crl-profile)
+[7.2 CRL Profile \[105\](#crl-profile)](#crl-profile)
 
-[7.2.1 Version Number(s) [105](#version-numbers-1)](#version-numbers-1)
+[7.2.1 Version Number(s) \[105\](#version-numbers-1)](#version-numbers-1)
 
-[7.2.2 CRL and CRL Entry Extensions [106](#crl-and-crl-entry-extensions)](#crl-and-crl-entry-extensions)
+[7.2.2 CRL and CRL Entry Extensions \[106\](#crl-and-crl-entry-extensions)](#crl-and-crl-entry-extensions)
 
-[7.3 OCSP Profile [106](#ocsp-profile)](#ocsp-profile)
+[7.3 OCSP Profile \[106\](#ocsp-profile)](#ocsp-profile)
 
-[7.3.1 Version Number(s) [106](#version-numbers-2)](#version-numbers-2)
+[7.3.1 Version Number(s) \[106\](#version-numbers-2)](#version-numbers-2)
 
-[7.3.2 OCSP Extensions [106](#ocsp-extensions)](#ocsp-extensions)
+[7.3.2 OCSP Extensions \[106\](#ocsp-extensions)](#ocsp-extensions)
 
-[8 COMPLIANCE AUDIT AND OTHER ASSESSMENTS [107](#compliance-audit-and-other-assessments)](#compliance-audit-and-other-assessments)
+[8 COMPLIANCE AUDIT AND OTHER ASSESSMENTS \[107\](#compliance-audit-and-other-assessments)](#compliance-audit-and-other-assessments)
 
-[8.1 Frequency or Circumstances of Assessment [107](#frequency-or-circumstances-of-assessment)](#frequency-or-circumstances-of-assessment)
+[8.1 Frequency or Circumstances of Assessment \[107\](#frequency-or-circumstances-of-assessment)](#frequency-or-circumstances-of-assessment)
 
-[8.2 Identity/Qualifications of Assessor [108](#identityqualifications-of-assessor)](#identityqualifications-of-assessor)
+[8.2 Identity/Qualifications of Assessor \[108\](#identityqualifications-of-assessor)](#identityqualifications-of-assessor)
 
-[8.3 Assessor's relationship to assessed entity [109](#assessors-relationship-to-assessed-entity)](#assessors-relationship-to-assessed-entity)
+[8.3 Assessor's relationship to assessed entity \[109\](#assessors-relationship-to-assessed-entity)](#assessors-relationship-to-assessed-entity)
 
-[8.4 Topics Covered by Assessment [109](#topics-covered-by-assessment)](#topics-covered-by-assessment)
+[8.4 Topics Covered by Assessment \[109\](#topics-covered-by-assessment)](#topics-covered-by-assessment)
 
-[8.5 Actions Taken as a Result of Deficiency [110](#actions-taken-as-a-result-of-deficiency)](#actions-taken-as-a-result-of-deficiency)
+[8.5 Actions Taken as a Result of Deficiency \[110\](#actions-taken-as-a-result-of-deficiency)](#actions-taken-as-a-result-of-deficiency)
 
-[8.5.1 Actions Taken as a Result of Internal Audit Deficiency [110](#actions-taken-as-a-result-of-internal-audit-deficiency)](#actions-taken-as-a-result-of-internal-audit-deficiency)
+[8.5.1 Actions Taken as a Result of Internal Audit Deficiency \[110\](#actions-taken-as-a-result-of-internal-audit-deficiency)](#actions-taken-as-a-result-of-internal-audit-deficiency)
 
-[8.6 Communication of Results [110](#communication-of-results)](#communication-of-results)
+[8.6 Communication of Results \[110\](#communication-of-results)](#communication-of-results)
 
-[8.7 Self-Audits [111](#self-audits)](#self-audits)
+[8.7 Self-Audits \[111\](#self-audits)](#self-audits)
 
-[9 OTHER BUSINESS AND LEGAL MATTERS [112](#other-business-and-legal-matters)](#other-business-and-legal-matters)
+[9 OTHER BUSINESS AND LEGAL MATTERS \[112\](#other-business-and-legal-matters)](#other-business-and-legal-matters)
 
-[9.1 Fees [112](#fees)](#fees)
+[9.1 Fees \[112\](#fees)](#fees)
 
-[9.1.1 Certificate Issuance or Renewal Fees [112](#certificate-issuance-or-renewal-fees)](#certificate-issuance-or-renewal-fees)
+[9.1.1 Certificate Issuance or Renewal Fees \[112\](#certificate-issuance-or-renewal-fees)](#certificate-issuance-or-renewal-fees)
 
-[9.1.2 Certificate Access Fees [112](#certificate-access-fees)](#certificate-access-fees)
+[9.1.2 Certificate Access Fees \[112\](#certificate-access-fees)](#certificate-access-fees)
 
-[9.1.3 Revocation or Status Information Access Fees [112](#revocation-or-status-information-access-fees)](#revocation-or-status-information-access-fees)
+[9.1.3 Revocation or Status Information Access Fees \[112\](#revocation-or-status-information-access-fees)](#revocation-or-status-information-access-fees)
 
-[9.1.4 Fees for Other Services [112](#fees-for-other-services)](#fees-for-other-services)
+[9.1.4 Fees for Other Services \[112\](#fees-for-other-services)](#fees-for-other-services)
 
-[9.1.5 Refund Policy [112](#refund-policy)](#refund-policy)
+[9.1.5 Refund Policy \[112\](#refund-policy)](#refund-policy)
 
-[9.2 Financial Responsibility [112](#financial-responsibility)](#financial-responsibility)
+[9.2 Financial Responsibility \[112\](#financial-responsibility)](#financial-responsibility)
 
-[9.2.1 Insurance Coverage [112](#insurance-coverage)](#insurance-coverage)
+[9.2.1 Insurance Coverage \[112\](#insurance-coverage)](#insurance-coverage)
 
-[9.2.2 Other Assets [112](#other-assets)](#other-assets)
+[9.2.2 Other Assets \[112\](#other-assets)](#other-assets)
 
-[9.2.3 Insurance or Warranty Coverage for End-Entities [113](#insurance-or-warranty-coverage-for-end-entities)](#insurance-or-warranty-coverage-for-end-entities)
+[9.2.3 Insurance or Warranty Coverage for End-Entities \[113\](#insurance-or-warranty-coverage-for-end-entities)](#insurance-or-warranty-coverage-for-end-entities)
 
-[9.3 Confidentiality of Business Information [113](#confidentiality-of-business-information)](#confidentiality-of-business-information)
+[9.3 Confidentiality of Business Information \[113\](#confidentiality-of-business-information)](#confidentiality-of-business-information)
 
-[9.3.1 Scope of Confidential Information [113](#scope-of-confidential-information)](#scope-of-confidential-information)
+[9.3.1 Scope of Confidential Information \[113\](#scope-of-confidential-information)](#scope-of-confidential-information)
 
-[9.3.2 Information Not Within the Scope of Confidential Information [113](#information-not-within-the-scope-of-confidential-information)](#information-not-within-the-scope-of-confidential-information)
+[9.3.2 Information Not Within the Scope of Confidential Information \[113\](#information-not-within-the-scope-of-confidential-information)](#information-not-within-the-scope-of-confidential-information)
 
-[9.3.3 Responsibility to Protect Confidential Information [113](#responsibility-to-protect-confidential-information)](#responsibility-to-protect-confidential-information)
+[9.3.3 Responsibility to Protect Confidential Information \[113\](#responsibility-to-protect-confidential-information)](#responsibility-to-protect-confidential-information)
 
-[9.4 Privacy of Personal Information [113](#privacy-of-personal-information)](#privacy-of-personal-information)
+[9.4 Privacy of Personal Information \[113\](#privacy-of-personal-information)](#privacy-of-personal-information)
 
-[9.4.1 Privacy Plan [113](#privacy-plan)](#privacy-plan)
+[9.4.1 Privacy Plan \[113\](#privacy-plan)](#privacy-plan)
 
-[9.4.2 Information Treated As Private [114](#information-treated-as-private)](#information-treated-as-private)
+[9.4.2 Information Treated As Private \[114\](#information-treated-as-private)](#information-treated-as-private)
 
-[9.4.3 Information Not Deemed Private [114](#information-not-deemed-private)](#information-not-deemed-private)
+[9.4.3 Information Not Deemed Private \[114\](#information-not-deemed-private)](#information-not-deemed-private)
 
-[9.4.4 Responsibility to Protect Private Information [114](#responsibility-to-protect-private-information)](#responsibility-to-protect-private-information)
+[9.4.4 Responsibility to Protect Private Information \[114\](#responsibility-to-protect-private-information)](#responsibility-to-protect-private-information)
 
-[9.4.5 Notice and Consent to Use Private Information [114](#notice-and-consent-to-use-private-information)](#notice-and-consent-to-use-private-information)
+[9.4.5 Notice and Consent to Use Private Information \[114\](#notice-and-consent-to-use-private-information)](#notice-and-consent-to-use-private-information)
 
-[9.4.6 Disclosure Pursuant to Judicial or Administrative Process [114](#disclosure-pursuant-to-judicial-or-administrative-process)](#disclosure-pursuant-to-judicial-or-administrative-process)
+[9.4.6 Disclosure Pursuant to Judicial or Administrative Process \[114\](#disclosure-pursuant-to-judicial-or-administrative-process)](#disclosure-pursuant-to-judicial-or-administrative-process)
 
-[9.4.7 Other Information Disclosure Circumstances [114](#other-information-disclosure-circumstances)](#other-information-disclosure-circumstances)
+[9.4.7 Other Information Disclosure Circumstances \[114\](#other-information-disclosure-circumstances)](#other-information-disclosure-circumstances)
 
-[9.5 Intellectual Property Rights [115](#intellectual-property-rights)](#intellectual-property-rights)
+[9.5 Intellectual Property Rights \[115\](#intellectual-property-rights)](#intellectual-property-rights)
 
-[9.6 Representations and Warranties [115](#representations-and-warranties)](#representations-and-warranties)
+[9.6 Representations and Warranties \[115\](#representations-and-warranties)](#representations-and-warranties)
 
-[9.6.1 CA Representations and Warranties [115](#ca-representations-and-warranties)](#ca-representations-and-warranties)
+[9.6.1 CA Representations and Warranties \[115\](#ca-representations-and-warranties)](#ca-representations-and-warranties)
 
-[9.6.2 RA Representations and Warranties [117](#ra-representations-and-warranties)](#ra-representations-and-warranties)
+[9.6.2 RA Representations and Warranties \[117\](#ra-representations-and-warranties)](#ra-representations-and-warranties)
 
-[9.6.3 Subscriber Representations and Warranties [117](#subscriber-representations-and-warranties)](#subscriber-representations-and-warranties)
+[9.6.3 Subscriber Representations and Warranties \[117\](#subscriber-representations-and-warranties)](#subscriber-representations-and-warranties)
 
-[9.6.4 Relying Party Representations and Warranties [118](#relying-party-representations-and-warranties)](#relying-party-representations-and-warranties)
+[9.6.4 Relying Party Representations and Warranties \[118\](#relying-party-representations-and-warranties)](#relying-party-representations-and-warranties)
 
-[9.6.5 Representations and Warranties of Other Participants [118](#representations-and-warranties-of-other-participants)](#representations-and-warranties-of-other-participants)
+[9.6.5 Representations and Warranties of Other Participants \[118\](#representations-and-warranties-of-other-participants)](#representations-and-warranties-of-other-participants)
 
-[9.7 Disclaimer of Warranties [118](#disclaimer-of-warranties)](#disclaimer-of-warranties)
+[9.7 Disclaimer of Warranties \[118\](#disclaimer-of-warranties)](#disclaimer-of-warranties)
 
-[9.8 Limitations of Liability [118](#limitations-of-liability)](#limitations-of-liability)
+[9.8 Limitations of Liability \[118\](#limitations-of-liability)](#limitations-of-liability)
 
-[9.9 Indemnities [119](#indemnities)](#indemnities)
+[9.9 Indemnities \[119\](#indemnities)](#indemnities)
 
-[9.10 Term and Termination [120](#term-and-termination)](#term-and-termination)
+[9.10 Term and Termination \[120\](#term-and-termination)](#term-and-termination)
 
-[9.10.1 Term [120](#term)](#term)
+[9.10.1 Term \[120\](#term)](#term)
 
-[9.10.2 Termination [120](#termination)](#termination)
+[9.10.2 Termination \[120\](#termination)](#termination)
 
-[9.10.3 Effect of Termination and Survival [120](#effect-of-termination-and-survival)](#effect-of-termination-and-survival)
+[9.10.3 Effect of Termination and Survival \[120\](#effect-of-termination-and-survival)](#effect-of-termination-and-survival)
 
-[9.11 Individual Notices and Communications with Participants [120](#individual-notices-and-communications-with-participants)](#individual-notices-and-communications-with-participants)
+[9.11 Individual Notices and Communications with Participants \[120\](#individual-notices-and-communications-with-participants)](#individual-notices-and-communications-with-participants)
 
-[9.11.1 Notices by Individual Participants to IdenTrust [120](#notices-by-individual-participants-to-identrust)](#notices-by-individual-participants-to-identrust)
+[9.11.1 Notices by Individual Participants to IdenTrust \[120\](#notices-by-individual-participants-to-identrust)](#notices-by-individual-participants-to-identrust)
 
-[[9.11.2]{.smallcaps} Notices by IdenTrust to Individual Participants [120](#notices-by-identrust-to-individual-participants)](#notices-by-identrust-to-individual-participants)
+[[9.11.2]{.smallcaps} Notices by IdenTrust to Individual Participants \[120\](#notices-by-identrust-to-individual-participants)](#notices-by-identrust-to-individual-participants)
 
-[[9.11.3]{.smallcaps} Notices Delivery Method [121](#notices-delivery-method)](#notices-delivery-method)
+[[9.11.3]{.smallcaps} Notices Delivery Method \[121\](#notices-delivery-method)](#notices-delivery-method)
 
-[9.12 Amendments [121](#amendments)](#amendments)
+[9.12 Amendments \[121\](#amendments)](#amendments)
 
-[9.12.1 Procedure for Amendment [121](#procedure-for-amendment)](#procedure-for-amendment)
+[9.12.1 Procedure for Amendment \[121\](#procedure-for-amendment)](#procedure-for-amendment)
 
-[9.12.2 Notification Mechanism and Period [121](#notification-mechanism-and-period)](#notification-mechanism-and-period)
+[9.12.2 Notification Mechanism and Period \[121\](#notification-mechanism-and-period)](#notification-mechanism-and-period)
 
-[9.12.3 Circumstances under Which OID Must Be Changed [122](#circumstances-under-which-oid-must-be-changed)](#circumstances-under-which-oid-must-be-changed)
+[9.12.3 Circumstances under Which OID Must Be Changed \[122\](#circumstances-under-which-oid-must-be-changed)](#circumstances-under-which-oid-must-be-changed)
 
-[9.13 Dispute Resolution Provisions [122](#dispute-resolution-provisions)](#dispute-resolution-provisions)
+[9.13 Dispute Resolution Provisions \[122\](#dispute-resolution-provisions)](#dispute-resolution-provisions)
 
-[9.13.1 Specific Provisions/ Incorporation of Policy [122](#specific-provisions-incorporation-of-policy)](#specific-provisions-incorporation-of-policy)
+[9.13.1 Specific Provisions/ Incorporation of Policy \[122\](#specific-provisions-incorporation-of-policy)](#specific-provisions-incorporation-of-policy)
 
-[9.14 Governing Law [122](#governing-law)](#governing-law)
+[9.14 Governing Law \[122\](#governing-law)](#governing-law)
 
-[9.15 Compliance with Applicable Law [122](#compliance-with-applicable-law)](#compliance-with-applicable-law)
+[9.15 Compliance with Applicable Law \[122\](#compliance-with-applicable-law)](#compliance-with-applicable-law)
 
-[9.16 Miscellaneous Provisions [122](#miscellaneous-provisions)](#miscellaneous-provisions)
+[9.16 Miscellaneous Provisions \[122\](#miscellaneous-provisions)](#miscellaneous-provisions)
 
-[9.16.1 Entire Agreement [122](#entire-agreement)](#entire-agreement)
+[9.16.1 Entire Agreement \[122\](#entire-agreement)](#entire-agreement)
 
-[9.16.2 Assignment [122](#assignment)](#assignment)
+[9.16.2 Assignment \[122\](#assignment)](#assignment)
 
-[9.16.3 Severability [122](#severability)](#severability)
+[9.16.3 Severability \[122\](#severability)](#severability)
 
-[9.16.4 Enforcement (Attorney Fees and Waiver of Rights) [123](#enforcement-attorney-fees-and-waiver-of-rights)](#enforcement-attorney-fees-and-waiver-of-rights)
+[9.16.4 Enforcement (Attorney Fees and Waiver of Rights) \[123\](#enforcement-attorney-fees-and-waiver-of-rights)](#enforcement-attorney-fees-and-waiver-of-rights)
 
-[9.16.5 Force Majeure [123](#force-majeure)](#force-majeure)
+[9.16.5 Force Majeure \[123\](#force-majeure)](#force-majeure)
 
-[9.17 Other Provisions [123](#other-provisions)](#other-provisions)
+[9.17 Other Provisions \[123\](#other-provisions)](#other-provisions)
 
-[9.17.1 Legal Validity of Certificates [123](#legal-validity-of-certificates)](#legal-validity-of-certificates)
+[9.17.1 Legal Validity of Certificates \[123\](#legal-validity-of-certificates)](#legal-validity-of-certificates)
 
 # INTRODUCTION
 
@@ -588,7 +872,7 @@ This TrustID TLS Certificate Policy and Certification Practice Statement, referr
 
 NOTICES:
 
-A.  IdenTrust Services, LLC is the creator of the Policy Copy; provided, however, any documents or other works referenced in the Policy Copy (e.g. "IETF PKIX Certificate Management Protocol", "Repository" materials, or documents referenced in the Policy Copy), (collectively, "References") are understood to be so referenced for contractual purposes insofar as the original of which the Policy Copy is a copy serves as part of a System of contracts applicable to Certificates issued within the Public Key Infrastructure described within the Policy Copy. It is understood that References are not works included in the Policy Copy for purposes of the License.
+A.  IdenTrust Services, LLC is the creator of the Policy Copy; provided, however, any documents or other works referenced in the Policy Copy (e.g. "IETF PKIX Certificate Management Protocol", "Repository" materials, or documents referenced in the Policy Copy), (collectively, "References") are understood to be so referenced for contractual purposes insofar as the original of which the Policy Copy is a copy serves as part of a System of contracts applicable to Certificates issued within the Public Key Infrastructure described within the Policy Copy. It is understood that References are not works included in the Policy Copy for purposes of the License.
 
 B.  With respect to the Policy Copy as provided by IdenTrust Services, LLC under the License, the following notice is provided:
 
@@ -602,35 +886,35 @@ C.  PKI Participants (see [Section 1.3](#pki-participants)) must not, as PKI Par
 
 ### Alphanumeric Identifier
 
-The name of this CP-CPS which follow the RFC 3647 framework, is the \"IdenTrust_trustid_tls-cp-cps_v5.0.0_2025mmdd", approved for publication on July dd, 2025, by the IdenTrust Policy Management Authority (PMA).
+The name of this CP-CPS which follow the RFC 3647 framework, is the \"IdenTrust_trustid_tls-cp-cps_v5.0.0_2025mmdd\", approved for publication on July dd, 2025, by the IdenTrust Policy Management Authority (PMA).
 
 The following table contains subsequent revisions:
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+----------------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| **CP-CPS Document Versions**                                                                                                                                                                                           |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-+:=======================================================================================================================================================================================================================+:====+:===============+:============+:=====================================================================================================================================================================================================================================================================+:================================================+
-| **Version**                                                                                                                                                                                                            |     | **Date**       |             | **Summary of Changes/Comments**                                                                                                                                                                                                                                      |                                                 |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+----------------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid). |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+----------------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| 5.0.0                                                                                                                                                                                                                  |     | March dd, 2025 |             | This document replaces IdenTrust CP v4.9.2 and IdenTrust CPS v4.9.2 with the following updates:                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             | 1.  Removed all Non-TLS Certificate references                                                                                                                                                                                                                       |                                                 |
-|                                                                                                                                                                                                                        |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             | 2.  Removed details in Sections where the TLS BR has "No stipulation"                                                                                                                                                                                                |                                                 |
-|                                                                                                                                                                                                                        |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             | 3.  Added relevant CP language where applicable                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             | 4.  Section 1.6: Added/updated definitions                                                                                                                                                                                                                           |                                                 |
-|                                                                                                                                                                                                                        |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             | 5.  Section 3.2.2.9: Added Multi-Perspective details                                                                                                                                                                                                                 |                                                 |
-|                                                                                                                                                                                                                        |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             | 6.  Sections 5.3.3.1 thru 5.3.3.8: removed detailed roles and references in Appendix A                                                                                                                                                                               |                                                 |
-|                                                                                                                                                                                                                        |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             | 7.  Section 5.4.1: Removed table of auditable events                                                                                                                                                                                                                 |                                                 |
-|                                                                                                                                                                                                                        |     |                |             |                                                                                                                                                                                                                                                                      |                                                 |
-|                                                                                                                                                                                                                        |     |                |             | 8.  Section 7: Removed detailed Certificate Profiles which are now available as a separate document published at [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid) in the "Policies Current" and "Policies Archived" Section |                                                 |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+----------------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+----------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
+| **CP-CPS Document Versions**                                                                                                                                                                                           |   |                |   |                                                                                                                                                                                                                                                                      |   |
++========================================================================================================================================================================================================================+===+================+===+======================================================================================================================================================================================================================================================================+===+
+| **Version**                                                                                                                                                                                                            |   | **Date**       |   | **Summary of Changes/Comments**                                                                                                                                                                                                                                      |   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+----------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
+| Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid). |   |                |   |                                                                                                                                                                                                                                                                      |   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+----------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
+| 5.0.0                                                                                                                                                                                                                  |   | March dd, 2025 |   | This document replaces IdenTrust CP v4.9.2 and IdenTrust CPS v4.9.2 with the following updates:                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   |                                                                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   | 1.  Removed all Non-TLS Certificate references                                                                                                                                                                                                                       |   |
+|                                                                                                                                                                                                                        |   |                |   |                                                                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   | 2.  Removed details in Sections where the TLS BR has "No stipulation"                                                                                                                                                                                                |   |
+|                                                                                                                                                                                                                        |   |                |   |                                                                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   | 3.  Added relevant CP language where applicable                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   |                                                                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   | 4.  Section 1.6: Added/updated definitions                                                                                                                                                                                                                           |   |
+|                                                                                                                                                                                                                        |   |                |   |                                                                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   | 5.  Section 3.2.2.9: Added Multi-Perspective details                                                                                                                                                                                                                 |   |
+|                                                                                                                                                                                                                        |   |                |   |                                                                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   | 6.  Sections 5.3.3.1 thru 5.3.3.8: removed detailed roles and references in Appendix A                                                                                                                                                                               |   |
+|                                                                                                                                                                                                                        |   |                |   |                                                                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   | 7.  Section 5.4.1: Removed table of auditable events                                                                                                                                                                                                                 |   |
+|                                                                                                                                                                                                                        |   |                |   |                                                                                                                                                                                                                                                                      |   |
+|                                                                                                                                                                                                                        |   |                |   | 8.  Section 7: Removed detailed Certificate Profiles which are now available as a separate document published at [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid) in the "Policies Current" and "Policies Archived" Section |   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+----------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---+
 
 ### Object Identifier
 
@@ -794,7 +1078,7 @@ Questions regarding the implementation and administration of this CP-CPS should 
 >
 > Phone: (888) 882-1104
 
-Guidelines on reporting suspected Private Key Compromise, Certificate misuse, or any form of fraud, compromise, misuse, inappropriate conduct, or other Certificate-related matters for Subscribers, Relying Parties, Application Software Suppliers, and other third parties are provided in [Section 4.10.2.1](#certificate-problem-reporting) \"Certificate Problem Reporting".
+Guidelines on reporting suspected Private Key Compromise, Certificate misuse, or any form of fraud, compromise, misuse, inappropriate conduct, or other Certificate-related matters for Subscribers, Relying Parties, Application Software Suppliers, and other third parties are provided in [Section 4.10.2.1](#certificate-problem-reporting) \"Certificate Problem Reporting\".
 
 ### Person Determining CPS Suitability for the Policy
 
@@ -828,7 +1112,7 @@ If a Policy change is determined by the PMA to warrant the Issuance of a new Pol
 
 +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Term**                                                     | **Definition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-+:=============================================================+===========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
++==============================================================+===========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
 | **Accept or Acceptance**                                     | An End Entity's act that triggers the End Entity's rights and obligations with respect to its TrustID Certificate under the applicable Subscriber Agreement or Authorized Relying Party Agreement. Indications of Acceptance may include without limitation:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |                                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                              | -   Using the TrustID Certificate (after Issuance);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -1402,7 +1686,7 @@ Additionally, online Certificate status information may be available through Ide
 
 ## Publication of Certification Information
 
-The CA shall publicly disclose its CP and CPS or CP-CPS through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA shall publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see [Section 8.4](#_TOPICS_COVERED_BY)).
+The CA shall publicly disclose its CP and CPS or CP-CPS through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA shall publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see [Section 8.4](#Xbc3f6df7865a1f357bab6ed186918e1b1e6b4cd)).
 
 The CA's CP and CPS or CP-CPS must be structured in accordance with the RFC 3647 and must include all material required by the RFC 3647.
 
@@ -1626,7 +1910,7 @@ LRAs or Trusted Agents verify the existence and name of a Sponsoring Organizatio
 
 -   Commercial database of business information; or a
 
--   A third party database that is periodically updated, which IdenTrust has evaluated in accordance with [Section 3.2.4](#validation-of-individual-identity-acceptable-forms-of-identification-documents).
+-   A third party database that is periodically updated, which IdenTrust has evaluated in accordance with [Section 3.2.4](#X5160e08a5bc1c21e1a4b259958cd61e60971d3d).
 
 2.  Presentation to LRA of a copy of a document issued by a government agency attesting to the Sponsoring Organization's legal existence, together with reasonable proof of the authenticity of that document. Documents submitted for this purpose must be "fair on their face," i.e., bear no apparent indication of forgery, fraud, tampering, etc.;
 
@@ -1692,7 +1976,7 @@ This domain validation method is not used by IdenTrust.
 
 This domain validation method is not used by IdenTrust.
 
-#####  Constructed Email to Domain Contact
+##### Constructed Email to Domain Contact
 
 The LRA confirms the Applicant's control over the FQDN by
 
@@ -1712,15 +1996,15 @@ The Random Value shall remain valid for use in a confirming response for no more
 
 **Note:** Once the FQDN has been validated using this method, the LRA may also Issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating wildcard Domain Names.
 
-#####  Domain Authorization Document
+##### Domain Authorization Document
 
 This domain validation method is not used by IdenTrust.
 
-#####  Agreed‑Upon Change to Website
+##### Agreed‑Upon Change to Website
 
 This domain validation method is not used by IdenTrust.
 
-#####  DNS Change
+##### DNS Change
 
 The LRA confirms the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT, or CAA record for either (1) an Authorization Domain Name; or (2) an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
 
@@ -1730,7 +2014,7 @@ When using this method, the LRA implements Multi-Perspective Issuance Corroborat
 
 **Note:** Once the FQDN has been validated using this method, the LRA may also Issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-#####  IP Address
+##### IP Address
 
 The LRA confirms the Applicant's control over the FQDN by confirming that the Applicant controls an IP Address returned from a DNS lookup for A or AAAA records for the FQDN in accordance with [Section 3.2.2.5](#authentication-for-an-ip-address).
 
@@ -1738,43 +2022,43 @@ When using this method, the LRA implements Multi-Perspective Issuance Corroborat
 
 **Note:** Once the FQDN has been validated using this method, the LRA does not Issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the LRA performs separate validations for each of those other FQDNs using authorized methods. This method is not suitable for validating Wildcard Domain Names.
 
-#####  Test Certificate
+##### Test Certificate
 
 This domain validation method is not used by IdenTrust.
 
-#####  TLS Using a Random Value
+##### TLS Using a Random Value
 
 This domain validation method is not used by IdenTrust.
 
-#####  Any Other Method
+##### Any Other Method
 
 This domain validation method is not used by IdenTrust.
 
-#####  Validating Applicant as Domain Contact
+##### Validating Applicant as Domain Contact
 
 This domain validation method is not used by IdenTrust.
 
-#####  Email to DNS CAA Contact
+##### Email to DNS CAA Contact
 
 This domain validation method is not used by IdenTrust.
 
-#####  Email to DNS TXT Contact
+##### Email to DNS TXT Contact
 
 This domain validation method is not used by IdenTrust.
 
-#####  Phone Contact with Domain Contact
+##### Phone Contact with Domain Contact
 
 This domain validation method is not used by IdenTrust.
 
-#####  Phone Contact with DNS TXT Record Phone Contact
+##### Phone Contact with DNS TXT Record Phone Contact
 
 This domain validation method is not used by IdenTrust.
 
-#####  Phone Contact with DNS CAA Phone Contact
+##### Phone Contact with DNS CAA Phone Contact
 
 This domain validation method is not used by IdenTrust.
 
-#####  Agreed-Upon Change to Website v2
+##### Agreed-Upon Change to Website v2
 
 The LRA confirms the Applicant's control over the FQDN by verifying that the Request Token or Random Value is contained in the contents of a file.
 
@@ -1812,15 +2096,15 @@ Except for Onion Domain Names, the LRA performing validations using this method 
 
 **Note**: The LRA must not Issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the LRA performs separate validations for each of those other FQDNs using authorized methods. This method is not suitable for validating Wildcard Domain Names.
 
-#####  Agreed‑Upon Change to Website ‑ ACME
+##### Agreed‑Upon Change to Website ‑ ACME
 
 This domain validation method is not used by IdenTrust.
 
-#####  TLS Using ALPN
+##### TLS Using ALPN
 
 This domain validation method is not used by IdenTrust.
 
-#####  DNS Labeled with Account ID ACME
+##### DNS Labeled with Account ID ACME
 
 This domain validation method is not used by IdenTrust.
 
@@ -1832,7 +2116,7 @@ Completed validations of Applicant authority may be valid for the Issuance of mu
 
 IdenTrust shall maintain a record of which IP validation method, including the relevant B.R. version number that was used to validate every IP Address.
 
-#####  Agreed-Upon Change to Website
+##### Agreed-Upon Change to Website
 
 The LRA confirming the Applicant's control over the requested IP Address by confirming the presence of a Random Value contained in the content of a file or webpage in the form of a meta tag under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of validating control of IP Addresses, on the IP Address that is accessible by the CA via HTTP/HTTPS over an Authorized Port.
 
@@ -1850,7 +2134,7 @@ The Random Value:
 
 The LRA performing validations using this method must implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9 of the TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective must observe the same challenge information (i.e., Random Value or Request Token) as the Primary Network Perspective.
 
-#####  Email to IP Address Contact
+##### Email to IP Address Contact
 
 The LRA confirms the Applicant's control over the IP Address by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value must be sent to an Email Address identified as an IP Address Contact.
 
@@ -1864,23 +2148,23 @@ The LRA may resend the email in its entirety, including re-use of the Random Val
 
 The Random Value shall remain valid for use in a confirming response for no more than 30 days from its creation.
 
-#####  Reverse Address Lookup
+##### Reverse Address Lookup
 
 This IP Address validation method is not used by IdenTrust.
 
-#####  Any other Method
+##### Any other Method
 
 This IP Address validation method is not used by IdenTrust.
 
-#####  Phone Contact with IP Address Contact
+##### Phone Contact with IP Address Contact
 
 This IP Address validation method is not used by IdenTrust.
 
-#####  ACME "http-01" method for IP Addresses
+##### ACME "http-01" method for IP Addresses
 
 This IP Address validation method is not used by IdenTrust.
 
-#####  ACME "http-01" method for IP Addresses
+##### ACME "http-01" method for IP Addresses
 
 This IP Address validation method is not used by IdenTrust.
 
@@ -1918,7 +2202,7 @@ An Attestation Letter shall include a copy of documentation supporting the fact 
 
 As part of the Certificate Issuance process, the CA must retrieve and process CAA records in accordance with RFC 8659 for each dNSName in the subjectAltName extension that does not contain an Onion Domain Name.
 
-See [Section 4.2.1.1](#_CAA_Checking), CAA Checking.
+See [Section 4.2.1.1](#X1190383a8a69ec9ddbaad20d06c9a7ee18a0ce3), CAA Checking.
 
 #### Multi-Perspective Issuance Corroboration
 
@@ -2132,7 +2416,7 @@ The "trusted information" used for comparison for manual and automated electroni
 
 Once a source is deemed to be within the acceptable parameters of accuracy and reliability it will be used for verification purposes.
 
-The "out-of-band confirmation process" may consist of (i) delivery of a Shared Secret to a confirmed and trusted data point (e.g., street address, telephone number, or Email Address), (ii) delivery in-person of a Shared Secret upon presentment of at least 2 acceptable forms of identification in accordance with [Section 3.2.3.1](#validation-of-individual-identity-acceptable-forms-of-identification-documents), (iii) use of a Shared Secret between the Individual identified in the application and the CA or RA pursuant to an antecedent identification and ongoing relationship, (iv) presentation by the Applicant/PKI Sponsor during the application process of information that the CA or RA can be reasonably assured would be known only to the person identified in the application; or (v) another equivalent process.
+The "out-of-band confirmation process" may consist of (i) delivery of a Shared Secret to a confirmed and trusted data point (e.g., street address, telephone number, or Email Address), (ii) delivery in-person of a Shared Secret upon presentment of at least 2 acceptable forms of identification in accordance with [Section 3.2.3.1](#X5160e08a5bc1c21e1a4b259958cd61e60971d3d), (iii) use of a Shared Secret between the Individual identified in the application and the CA or RA pursuant to an antecedent identification and ongoing relationship, (iv) presentation by the Applicant/PKI Sponsor during the application process of information that the CA or RA can be reasonably assured would be known only to the person identified in the application; or (v) another equivalent process.
 
 Any documents received for the manual verification process will be inspected by the LRA for signs of alteration or falsification. The contents of the request will also need to be verified for quality and accuracy.
 
@@ -2146,7 +2430,7 @@ IdenTrust does not delegate the verification of Email Addresses authorization or
 
 ##### Electronic Verification of Email
 
-######  Validating Control Over Email Address Via Email
+###### Validating Control Over Email Address Via Email
 
 Upon submission of an application via a secure online form, an automated email is dispatched to the specified Email Address provided within the application. Contained within this automated email is a link leading the Applicant/PKI Sponsor to a server-authenticated TLS secured website. Detailed within are instructions guiding the Applicant/PKI Sponsor to furnish a single-use email verification Random Value, which remains valid for a duration of 24 hours. Alongside this, the Account Password -- created during the application process by the Applicant/PKI Sponsor -- is required.
 
@@ -2246,7 +2530,7 @@ IdenTrust may use the documents and data provided in [Section 3.2](#initial-iden
 
 2.  **Authentication of Individual Identity**: Completed validation of Individual identity in accordance with [Section 3.2.3](#multi-perspective-issuance-corroboration) shall be obtained no more than 825 days prior to issuing the Certificate.
 
-A prior validation shall not be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.[]{#_CAA_Checking .anchor}
+A prior validation shall not be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.\[\]{#\_CAA_Checking .anchor}
 
 #### CAA Checking
 
@@ -2594,7 +2878,7 @@ See [Section 4.6.7](#notification-of-certificate-issuance-by-the-ca-to-other-ent
 
 #### Reasons for Revoking Subscriber Certificates
 
-[]{#_Reasons_for_Revoking .anchor}The CA may support Revocation of Short-lived Subscriber Certificates.
+\[\]{#\_Reasons_for_Revoking .anchor}The CA may support Revocation of Short-lived Subscriber Certificates.
 
 With the exception of Short-lived Subscriber Certificates, IdenTrust will revoke a Subscriber Certificate individually or via MRE within 24 hours and use the corresponding CRLReason ([See Section 7.2.2](#crl-and-crl-entry-extensions)) if one or more of the following occurs:
 
@@ -2604,7 +2888,7 @@ With the exception of Short-lived Subscriber Certificates, IdenTrust will revoke
 
 3.  IdenTrust obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise (CRLReason #1, keyCompromise);
 
-4.  IdenTrust is made aware of a demonstrated or proven method that can easily compute the Subscriber's Private Key based on the Public Key in the Certificate, including but not limited to those identified in [Section 6.1.1.3](#_Subscriber_Key_Pair) (5) (CRLReason #1, keyCompromise);
+4.  IdenTrust is made aware of a demonstrated or proven method that can easily compute the Subscriber's Private Key based on the Public Key in the Certificate, including but not limited to those identified in [Section 6.1.1.3](#Xec739313df38744f8e674f931ccd6d8590bfea4) (5) (CRLReason #1, keyCompromise);
 
 5.  IdenTrust obtains evidence that the validation of domain authorization or control for any Fully Qualified Domain Name or IP Address in the Certificate should not be relied upon (CRLReason #4, superseded).
 
@@ -2616,7 +2900,7 @@ With the exception of Short-lived Subscriber Certificates, IdenTrust should revo
 
 8.  IdenTrust is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use (CRLReason #9, privilegeWithdrawn);
 
-9.  IdenTrust is made aware of any circumstance indicating that use of a FQDN or IP Address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name) (CRLReason #5, CessationOfOperation);
+9.  IdenTrust is made aware of any circumstance indicating that use of a FQDN or IP Address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name) (CRLReason #5, CessationOfOperation);
 
 10. IdenTrust is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully Qualified Domain Name (CRLReason #9, privilegeWithdrawn);
 
@@ -2692,7 +2976,7 @@ See [Section 1.5.2](#contact-person) for guidelines on reporting Certificate iss
 
 The Subscriber or the PKI Sponsor is required to indicate the reason for the Revocation request as listed on [Section 7.2.2](#crl-and-crl-entry-extensions) - CRL and CRL Entry Extensions.
 
-The Subscriber or PKI Sponsor is required to present an acceptable form(s) of photo identification (See [Section 3.2.3.1](#validation-of-individual-identity-acceptable-forms-of-identification-documents)), which the LRA, Enterprise RA, or Trusted Agent reviews to identify and authenticate the Subscriber or PKI Sponsor making the Revocation request. Trusted Agents notify LRAs immediately upon validating the Revocation request and request that the LRA revoke the Certificate.
+The Subscriber or PKI Sponsor is required to present an acceptable form(s) of photo identification (See [Section 3.2.3.1](#X5160e08a5bc1c21e1a4b259958cd61e60971d3d)), which the LRA, Enterprise RA, or Trusted Agent reviews to identify and authenticate the Subscriber or PKI Sponsor making the Revocation request. Trusted Agents notify LRAs immediately upon validating the Revocation request and request that the LRA revoke the Certificate.
 
 If the Cryptographic Module cannot be obtained from the Subscriber, then the Subscriber's Certificate(s) will be immediately revoked, expressing the reason code as "Key compromise." Promptly after Revocation, IdenTrust updates the Certificate status in the Repository and updates the CRL. Alternatively, a Sponsoring Organization may opt for not collecting any Cryptographic Module due to logistical difficulties (e.g., Subscriber is terminated under unfriendly conditions, Subscriber in a remote location, etc.) and instead always request Revocation of the Certificates as if the Cryptographic Module were not obtained from the Subscriber. In these cases, the Revocation request will always result in a "Key compromise" code.
 
@@ -2718,7 +3002,7 @@ IdenTrust acknowledge receipt of plausible notices about Key Compromise signed w
 
 Within 24 hours after receiving a Certificate Problem Report, IdenTrust will investigate the facts and circumstances related to a Certificate Problem Report and provide a preliminary report on its findings to both the Subscriber and the entity who filed the Certificate Problem Report.
 
-After reviewing the facts and circumstances, IdenTrust will work with the Subscriber and any entity reporting the Certificate Problem Report or other Revocation-related notice to establish whether or not the Certificate will be revoked, and if so, a date on which IdenTrust will revoke the Certificate. The period from receipt of the Certificate Problem Report or Revocation-related notice to published Revocation must not exceed the time frame set forth in [[Section 4.9.1.1](#reasons-for-revoking-subscriber-certificates)](#_Reasons_for_Revoking). The date selected by IdenTrust should consider the following criteria:
+After reviewing the facts and circumstances, IdenTrust will work with the Subscriber and any entity reporting the Certificate Problem Report or other Revocation-related notice to establish whether or not the Certificate will be revoked, and if so, a date on which IdenTrust will revoke the Certificate. The period from receipt of the Certificate Problem Report or Revocation-related notice to published Revocation must not exceed the time frame set forth in [\[Section 4.9.1.1\](#reasons-for-revoking-subscriber-certificates)](#X1a4ce7e959f415cfb7c07836ea3a92b81698e90). The date selected by IdenTrust should consider the following criteria:
 
 1.  The nature of the alleged problem (scope, context, severity, magnitude, risk of harm, adware, spyware, malware, software bug, etc.);
 
@@ -2838,7 +3122,7 @@ No stipulation.
 
 No stipulation.
 
-### 4.9.16 Limits on Suspension Period 
+### 4.9.16 Limits on Suspension Period
 
 No stipulation.
 
@@ -2966,7 +3250,7 @@ IdenTrust's CA System is housed in an unmarked secure Datacenter, the perimeter 
 
 IdenTrust provides physical access controls designed to provide protection against unauthorized access to its TrustID CA System resources.
 
-[]{#_Physical_Access_for .anchor}The building is located on fenced and video surveilled grounds. The Building entryways and passageways are also under continuous recorded video surveillance. The facility is actively monitored 24x7x365 with staff onsite during normal business hours. Dedicated facility staff are responsible for monitoring the facility outside of normal business hours and are available to respond to any issues that may arise.
+\[\]{#\_Physical_Access_for .anchor}The building is located on fenced and video surveilled grounds. The Building entryways and passageways are also under continuous recorded video surveillance. The facility is actively monitored 24x7x365 with staff onsite during normal business hours. Dedicated facility staff are responsible for monitoring the facility outside of normal business hours and are available to respond to any issues that may arise.
 
 ### Power and Air Conditioning
 
@@ -3114,7 +3398,7 @@ Roles requiring separation of duties include (but are not limited to):
 
 -   **Operations Manager:** The Operations Manager may not serve as CA/CSA/CMS Administrator, Systems Administrator, LRA, or Network Engineer.
 
--   []{#_Personnel_Controls .anchor}**Software Engineer:** Software Engineer may not assume any other roles
+-   \[\]{#\_Personnel_Controls .anchor}**Software Engineer:** Software Engineer may not assume any other roles
 
 -   **Development Operations (DevOps):** Development Operations may not assume the LRA, Security Officer, Help Desk Representatives, Operations Manager or Software Engineer role.
 
@@ -3224,7 +3508,7 @@ Failure of any employee or agent of IdenTrust or an RA to comply with the provis
 
 The Issuing CA must ensure that contractor access to the Issuing CA site is in accordance with [Section 5.1.2](#physical-access), Physical Access.
 
-Independent contractors who are assigned to perform Trusted Roles are subject to the duties and all requirements of this CP-CPS, including those described elsewhere in [Section 5.3](#_Personnel_Controls). Independent contractors are subject to sanctions stated in [Section 5.3.6](#sanctions-for-unauthorized-actions) for unauthorized actions or failure to comply with the provisions of this CP-CPS.
+Independent contractors who are assigned to perform Trusted Roles are subject to the duties and all requirements of this CP-CPS, including those described elsewhere in [Section 5.3](#X70b992d1b09f25fff99461c33e2d6cc21d4da3d). Independent contractors are subject to sanctions stated in [Section 5.3.6](#sanctions-for-unauthorized-actions) for unauthorized actions or failure to comply with the provisions of this CP-CPS.
 
 ### Documentation Supplied to Personnel
 
@@ -3280,7 +3564,7 @@ IdenTrust records at least the following events:
 
     c)  the result of the attempt (e.g., "domain validation pass/fail," "CAA permission/prohibition").
 
-8)  Multi-Perspective Issuance Corroboration quorum results for each attempted Domain Name or IP Address represented in a Certificate Request (i.e., "3/4" which should be interpreted as "Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
+8)  Multi-Perspective Issuance Corroboration quorum results for each attempted Domain Name or IP Address represented in a Certificate Request (i.e., "3/4" which should be interpreted as \"Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
 
 <!-- -->
 
@@ -3442,7 +3726,7 @@ IdenTrust makes a backup of each audit log monthly as described in [Section 5.5.
 
 RAs are obligated by contract, and by this CP-CPS to implement controls that allow them to backup audit logs consistent with practices outlined in this section. Enterprise RAs logs are collected electronically through the administrative interface provided by IdenTrust.
 
-### Audit Collection System (Internal vs. External)
+### Audit Collection System (Internal vs. External)
 
 Automated audit log collection systems are internal to the CA, CSA, RA, and Repository. These Systems invoke audit processes at System startup, which cease only at System shutdown. Processes are enforced technically through the operating system and a secondary monitoring application.
 
@@ -3632,7 +3916,7 @@ When IdenTrust re-keys its signature Private Key and thus generates a new Public
 
 ## Compromise and Disaster Recovery
 
-### Incident and Compromise Handling Procedures 
+### Incident and Compromise Handling Procedures
 
 CA Organizations shall have an Incident Response Plan and a Disaster Recovery Plan.
 
@@ -3788,7 +4072,7 @@ The Key Generation ceremony is performed by personnel in Trusted Roles who use d
 
 #### RA Key Pair Generation
 
-No stipulation.[]{#_Subscriber_Key_Pair .anchor}
+No stipulation.\[\]{#\_Subscriber_Key_Pair .anchor}
 
 #### Subscriber Key Pair Generation
 
@@ -3952,7 +4236,7 @@ Subscriber's encryption Private Keys may be escrowed to enable Key recovery. Enc
 
 ### Private Key Backup
 
-The backup of all other CA Keys is performed during a ceremony that is scripted, video recorded and witnessed under the same controls used for the original Key Generation. PED Keys are kept under 2-person control as explained in [Section 5.1.2.1](#_Physical_Access_for).
+The backup of all other CA Keys is performed during a ceremony that is scripted, video recorded and witnessed under the same controls used for the original Key Generation. PED Keys are kept under 2-person control as explained in [Section 5.1.2.1](#Xb8404b4873badf439e234b245cb4a7d84a8d8eb).
 
 IdenTrust stores the Root CA and all other CA Private Keys and one of the copies in the Secure Room. The second backup of the Root CA and all other CA's signature Private Keys are kept in a secure off-site facility. Access to these Private Keys is documented as explained in [Section 5.1.6](#media-storage).
 
@@ -3988,7 +4272,7 @@ Subscribers must protect their Private Key from unauthorized use with a strong p
 
 ### Method of Deactivating Private Key
 
-The CA and CSA Cryptographic Modules when active are not exposed to unauthorized access. The modules are maintained in the Secure Room which requires 2-person control. In addition, the modules are enclosed in locked steel cabinets. When not in use, a module is deactivated via logout procedures, removed, and stored in accordance with [Section 5.1.2.1](#_Physical_Access_for).
+The CA and CSA Cryptographic Modules when active are not exposed to unauthorized access. The modules are maintained in the Secure Room which requires 2-person control. In addition, the modules are enclosed in locked steel cabinets. When not in use, a module is deactivated via logout procedures, removed, and stored in accordance with [Section 5.1.2.1](#Xb8404b4873badf439e234b245cb4a7d84a8d8eb).
 
 Subscribers are notified of their obligation to not leave their Cryptographic Modules unattended or open to unauthorized access while active. Subscribers are required to deactivate the modules either by a manual logout or by configuring a passive timeout that does it automatically.
 
@@ -4138,7 +4422,7 @@ Clock adjustments are auditable events listed with other events in the log avail
 
 The CA shall meet the technical requirements set forth in [Section 6.1.5](#key-sizes) and [Section 6.1.6](#public-key-parameters-generation-and-quality-checking).
 
-IdenTrust meets the technical requirements set forth in [Section 6.1.5](#key-sizes) Key Sizes, and [[Section 6.1.6](#public-key-parameters-generation-and-quality-checking)](#public-key-parameters-generation-and-quality-checking) ‐ Public Key Parameters Generation and Quality Checking.
+IdenTrust meets the technical requirements set forth in [Section 6.1.5](#key-sizes) Key Sizes, and [\[Section 6.1.6\](#public-key-parameters-generation-and-quality-checking)](#public-key-parameters-generation-and-quality-checking) ‐ Public Key Parameters Generation and Quality Checking.
 
 Prior to 2023-09-15, the CA shall Issue Certificates in accordance with the profile specified in Section 7 of the [TLS BR v1.8.6](https://cabforum.org/uploads/CA-Browser-Forum-BR-1.8.6.pdf). Effective 2023-09-15, the CA shall Issue Certificates in accordance with the TLS profile specified Section 7 of current version of the TLS BR.
 
@@ -4156,7 +4440,7 @@ IdenTrust only issues X.509 Certificates, version 3 Certificates. (i.e., populat
 
 All TrustID Certificate contents and extensions are based on RFC 5280.
 
-### Algorithm Object Identifiers 
+### Algorithm Object Identifiers
 
 #### SubjectPublicKeyInfo
 
@@ -4378,11 +4662,10 @@ Certificate Revocation Lists must be of type X.509 v2.
 
 IdenTrust issues X.509 version two (2) CRLs (i.e., populated with integer "1"). CRLs conform to RFC 5280. applicable subsequent updates via RFC 6818; these CRLs may contain the basic fields and contents specified below:
 
-  ----------------------------------------------------------------------------
-  Signature Algorithm   sha256WithRSAEncryption, OID = 1.2.840.113549.1.1.11
-  --------------------- ------------------------------------------------------
+  --------------------------------------------------------------------------
+  Signature Algorithm sha256WithRSAEncryption, OID = 1.2.840.113549.1.1.11
 
-  ----------------------------------------------------------------------------
+  --------------------------------------------------------------------------
 
 The correct signature algorithm depends on the algorithm used to sign the associated CA in accordance with [Section 6.1.5](#key-sizes).
 
@@ -4426,7 +4709,7 @@ IdenTrust has a regularly scheduled compliance audit mechanism in place to ensur
 
 An Issuing CA will undergo a review and approval process by the PMA to demonstrate compliance with this Policy. This Policy makes no stipulation as to the exact frequency of compliance inspections, but inspections for re-certification will be required anytime a significant change in Issuing CA operations is made. In any event, the Issuing CA, RAs, and CMAs must certify annually that they have at all times during the period in question complied with the requirements of this Policy. The Issuing CA, RAs, and CMAs must also state any periods of non-compliance with this Policy and provide reasons for non-compliance.
 
-If the CA does not have a currently valid Audit Report indicating compliance with one of the audit schemes listed in [Section 8.4](#_TOPICS_COVERED_BY), then, before issuing Publicly‐Trusted Certificates, the CA shall successfully complete a point‐in‐ time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in [Section 8.4](#_TOPICS_COVERED_BY). The point‐in‐time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Publicly‐Trusted Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly‐Trusted Certificate.
+If the CA does not have a currently valid Audit Report indicating compliance with one of the audit schemes listed in [Section 8.4](#Xbc3f6df7865a1f357bab6ed186918e1b1e6b4cd), then, before issuing Publicly‐Trusted Certificates, the CA shall successfully complete a point‐in‐ time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in [Section 8.4](#Xbc3f6df7865a1f357bab6ed186918e1b1e6b4cd). The point‐in‐time readiness assessment shall be completed no earlier than twelve (12) months prior to issuing Publicly‐Trusted Certificates and shall be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly‐Trusted Certificate.
 
 IdenTrust has passed previous audits that have demonstrated compliance with this CP-CPS. IdenTrust may contract for periodic and aperiodic compliance audits or inspections of IdenTrust, Subordinate CA, or RA operations to validate that the subordinate entities are operating in accordance with the security practices and procedures described in the respective CPSs, Registration Practices Statements (RPSs), SSPs, and Privacy Policies and Procedures (PPPs).
 
@@ -4512,7 +4795,7 @@ For audits of IdenTrust operations, if the auditor finds discrepancies between h
 
 Also, if irregularities are found during OCC compliance audits, the OCC may require appropriate remedial action or terminate IdenTrust operations after appropriate notice to existing clients. The results of compliance audits will not be made public except as described in [Section 8.6](#communication-of-results). Results of the C&A review will be made available to the IdenTrust PMA to approve or disapprove after consideration.
 
-###  Actions Taken as a Result of Internal Audit Deficiency
+### Actions Taken as a Result of Internal Audit Deficiency
 
 If the quarterly internal SSL/TLS Certificate audit shows discrepancies between Certificates and the requirements of this CP-CPS, the following actions will be performed:
 
@@ -4686,7 +4969,7 @@ No stipulation.
 
 ## Intellectual Property Rights
 
-A Private Key will be treated as the sole property of the legitimate holder of the TrustID Certificate containing the corresponding Public Key. "TrustID" is registered in the U.S. Patent and Trademark Office as a mark of IdenTrust, Inc. and is used by IdenTrust Services, LLC with the permission of IdenTrust, Inc. This CP-CPS is the intellectual property of IdenTrust Services, LLC, protected by copyright and other law regarding intellectual property, and may be used only pursuant to a license or other express permission from IdenTrust Services, LLC and then only in accordance with the provisions of this TrustID CP- CPS. Any other use of the above without the express permission of the owner is strictly prohibited.
+A Private Key will be treated as the sole property of the legitimate holder of the TrustID Certificate containing the corresponding Public Key. "TrustID" is registered in the U.S. Patent and Trademark Office as a mark of IdenTrust, Inc. and is used by IdenTrust Services, LLC with the permission of IdenTrust, Inc. This CP-CPS is the intellectual property of IdenTrust Services, LLC, protected by copyright and other law regarding intellectual property, and may be used only pursuant to a license or other express permission from IdenTrust Services, LLC and then only in accordance with the provisions of this TrustID CP- CPS. Any other use of the above without the express permission of the owner is strictly prohibited.
 
 ## Representations and Warranties
 
@@ -4758,7 +5041,9 @@ An Issuing CA may provide a validation warranty to an Authorized Relying Party f
 
 -   The TrustID Certificate meets all material requirements of this Policy and any applicable CPS.
 
-    These warranties apply to any Authorized Relying Party who: (i) relies on a TrustID Certificate in an electronic transaction in which the TrustID Certificate played a material role in verifying the identity of one or more persons or devices; (ii) exercises Reasonable Reliance on that TrustID Certificate; and (ii) follows all procedures required by this Policy and by the applicable Authorized Relying Party Agreement for verifying the status of the TrustID Certificate. These warranties are made to the Authorized Relying Party as of the time the Repository is referenced to determine TrustID Certificate validity, and only if the TrustID Certificate is valid and not revoked at that time
+<!-- -->
+
+-   These warranties apply to any Authorized Relying Party who: (i) relies on a TrustID Certificate in an electronic transaction in which the TrustID Certificate played a material role in verifying the identity of one or more persons or devices; (ii) exercises Reasonable Reliance on that TrustID Certificate; and (ii) follows all procedures required by this Policy and by the applicable Authorized Relying Party Agreement for verifying the status of the TrustID Certificate. These warranties are made to the Authorized Relying Party as of the time the Repository is referenced to determine TrustID Certificate validity, and only if the TrustID Certificate is valid and not revoked at that time
 
     IdenTrust, in its sole discretion, may provide a validation warranty as described above to an Authorized Relying Party by expressly including such a warranty in the applicable Authorized Relying Party Agreement.
 
