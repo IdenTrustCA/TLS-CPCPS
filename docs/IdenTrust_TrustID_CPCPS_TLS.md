@@ -1,287 +1,3 @@
--   [{.toc-section-number} INTRODUCTION](#introduction){#toc-introduction}
-    -   []{.toc-section-number} Overview](#overview){#toc-overview}
-    -   [[1.2]{.toc-section-number} Document Name and Identification](#document-name-and-identification){#toc-document-name-and-identification}
-        -   [[1.2.1]{.toc-section-number} Alphanumeric Identifier](#alphanumeric-identifier){#toc-alphanumeric-identifier}
-        -   [[1.2.2]{.toc-section-number} Object Identifier](#object-identifier){#toc-object-identifier}
-    -   [[1.3]{.toc-section-number} PKI Participants](#pki-participants){#toc-pki-participants}
-        -   [[1.3.1]{.toc-section-number} Certification Authorities](#certification-authorities){#toc-certification-authorities}
-        -   [[1.3.2]{.toc-section-number} Registration Authorities](#registration-authorities){#toc-registration-authorities}
-        -   [[1.3.3]{.toc-section-number} Subscribers](#subscribers){#toc-subscribers}
-        -   [[1.3.4]{.toc-section-number} Relying Parties](#relying-parties){#toc-relying-parties}
-        -   [[1.3.5]{.toc-section-number} Other Participants](#other-participants){#toc-other-participants}
-    -   [[1.4]{.toc-section-number} Certificate Usage](#certificate-usage){#toc-certificate-usage}
-        -   [[1.4.1]{.toc-section-number} Appropriate Certificate Uses](#appropriate-certificate-uses){#toc-appropriate-certificate-uses}
-        -   [[1.4.2]{.toc-section-number} Prohibited Certificate Uses](#prohibited-certificate-uses){#toc-prohibited-certificate-uses}
-    -   [[1.5]{.toc-section-number} Policy Administration](#policy-administration){#toc-policy-administration}
-        -   [[1.5.1]{.toc-section-number} Organization Administering the Document](#organization-administering-the-document){#toc-organization-administering-the-document}
-        -   [[1.5.2]{.toc-section-number} Contact Person](#contact-person){#toc-contact-person}
-        -   [[1.5.3]{.toc-section-number} Person Determining CPS Suitability for the Policy](#person-determining-cps-suitability-for-the-policy){#toc-person-determining-cps-suitability-for-the-policy}
-        -   [[1.5.4]{.toc-section-number} CP-CPS Approval Procedures](#cp-cps-approval-procedures){#toc-cp-cps-approval-procedures}
-    -   [[1.6]{.toc-section-number} Definitions and Acronyms](#definitions-and-acronyms){#toc-definitions-and-acronyms}
-        -   [[1.6.1]{.toc-section-number} Definitions](#definitions){#toc-definitions}
-        -   [[1.6.2]{.toc-section-number} Acronyms](#acronyms){#toc-acronyms}
-        -   [[1.6.3]{.toc-section-number} References](#references){#toc-references}
-        -   [[1.6.4]{.toc-section-number} Conventions](#conventions){#toc-conventions}
--   [[2]{.toc-section-number} PUBLICATION AND REPOSITORY RESPONSIBILITIES](#publication-and-repository-responsibilities){#toc-publication-and-repository-responsibilities}
-    -   [[2.1]{.toc-section-number} Repositories](#repositories-1){#toc-repositories-1}
-    -   [[2.2]{.toc-section-number} Publication of Certification Information](#publication-of-certification-information){#toc-publication-of-certification-information}
-    -   [[2.3]{.toc-section-number} Time or Frequency of Publication](#time-or-frequency-of-publication){#toc-time-or-frequency-of-publication}
-    -   [[2.4]{.toc-section-number} Access Controls on Repositories](#access-controls-on-repositories){#toc-access-controls-on-repositories}
--   [[3]{.toc-section-number} IDENTIFICATION AND AUTHENTICATION](#identification-and-authentication){#toc-identification-and-authentication}
-    -   [[3.1]{.toc-section-number} Naming](#naming){#toc-naming}
-        -   [[3.1.1]{.toc-section-number} Types of Names](#types-of-names){#toc-types-of-names}
-        -   [[3.1.2]{.toc-section-number} Need for Names to Be Meaningful](#need-for-names-to-be-meaningful){#toc-need-for-names-to-be-meaningful}
-        -   [[3.1.3]{.toc-section-number} Anonymity or Pseudonymity of Subscribers](#anonymity-or-pseudonymity-of-subscribers){#toc-anonymity-or-pseudonymity-of-subscribers}
-        -   [[3.1.4]{.toc-section-number} Rules for Interpreting Various Name Forms](#rules-for-interpreting-various-name-forms){#toc-rules-for-interpreting-various-name-forms}
-        -   [[3.1.5]{.toc-section-number} Uniqueness of Names](#uniqueness-of-names){#toc-uniqueness-of-names}
-        -   [[3.1.6]{.toc-section-number} Recognition, Authentication, and Role of Trademarks](#recognition-authentication-and-role-of-trademarks){#toc-recognition-authentication-and-role-of-trademarks}
-    -   [[3.2]{.toc-section-number} Initial Identity Validation](#initial-identity-validation){#toc-initial-identity-validation}
-        -   [[3.2.1]{.toc-section-number} Method to Prove Possession of Private Key](#method-to-prove-possession-of-private-key){#toc-method-to-prove-possession-of-private-key}
-        -   [[3.2.2]{.toc-section-number} Authentication of Organization and Domain Identity](#authentication-of-organization-and-domain-identity){#toc-authentication-of-organization-and-domain-identity}
-        -   [[3.2.3]{.toc-section-number} Authentication of Individual Identity](#authentication-of-individual-identity){#toc-authentication-of-individual-identity}
-        -   [[3.2.4]{.toc-section-number} Non-Verified Subscriber information](#non-verified-subscriber-information){#toc-non-verified-subscriber-information}
-        -   [[3.2.5]{.toc-section-number} Validation of Authority](#validation-of-authority){#toc-validation-of-authority}
-        -   [[3.2.6]{.toc-section-number} Criteria for Interoperation](#criteria-for-interoperation){#toc-criteria-for-interoperation}
-    -   [[3.3]{.toc-section-number} Identification and Authentication for Re-Key Requests](#identification-and-authentication-for-re-key-requests){#toc-identification-and-authentication-for-re-key-requests}
-        -   [[3.3.1]{.toc-section-number} Identification and Authentication for Routine Re-Key](#identification-and-authentication-for-routine-re-key){#toc-identification-and-authentication-for-routine-re-key}
-        -   [[3.3.2]{.toc-section-number} Identification and Authentication for Re-Key after Revocation](#identification-and-authentication-for-re-key-after-revocation){#toc-identification-and-authentication-for-re-key-after-revocation}
-    -   [[3.4]{.toc-section-number} Identification and Authentication for Revocation Requests](#identification-and-authentication-for-revocation-requests){#toc-identification-and-authentication-for-revocation-requests}
--   [[4]{.toc-section-number} CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS](#certificate-life-cycle-operational-requirements){#toc-certificate-life-cycle-operational-requirements}
-    -   [[4.1]{.toc-section-number} Certificate Application](#certificate-application){#toc-certificate-application}
-        -   [[4.1.1]{.toc-section-number} Who Can Submit a Certificate Application](#who-can-submit-a-certificate-application){#toc-who-can-submit-a-certificate-application}
-        -   [[4.1.2]{.toc-section-number} Enrollment Process and Responsibilities](#enrollment-process-and-responsibilities){#toc-enrollment-process-and-responsibilities}
-    -   [[4.2]{.toc-section-number} Certificate Application Processing](#certificate-application-processing){#toc-certificate-application-processing}
-        -   [[4.2.1]{.toc-section-number} Performing Identification and Authentication Functions](#performing-identification-and-authentication-functions){#toc-performing-identification-and-authentication-functions}
-        -   [[4.2.2]{.toc-section-number} Approval or Rejection of Certificate Applications](#approval-or-rejection-of-certificate-applications){#toc-approval-or-rejection-of-certificate-applications}
-        -   [[4.2.3]{.toc-section-number} Time to Process Certificate Applications](#time-to-process-certificate-applications){#toc-time-to-process-certificate-applications}
-    -   [[4.3]{.toc-section-number} Certificate Issuance](#certificate-issuance){#toc-certificate-issuance}
-        -   [[4.3.1]{.toc-section-number} CA Actions During Certificate Issuance](#ca-actions-during-certificate-issuance){#toc-ca-actions-during-certificate-issuance}
-        -   [[4.3.2]{.toc-section-number} Notification to Subscriber by the CA of Issuance of Certificate](#notification-to-subscriber-by-the-ca-of-issuance-of-certificate){#toc-notification-to-subscriber-by-the-ca-of-issuance-of-certificate}
-    -   [[4.4]{.toc-section-number} Certificate Acceptance](#certificate-acceptance){#toc-certificate-acceptance}
-        -   [[4.4.1]{.toc-section-number} Conduct Constituting Certificate Acceptance](#conduct-constituting-certificate-acceptance){#toc-conduct-constituting-certificate-acceptance}
-        -   [[4.4.2]{.toc-section-number} Publication of the Certificate by the CA](#publication-of-the-certificate-by-the-ca){#toc-publication-of-the-certificate-by-the-ca}
-        -   [[4.4.3]{.toc-section-number} Notification of Certificate Issuance by the CA to Other Entities](#notification-of-certificate-issuance-by-the-ca-to-other-entities){#toc-notification-of-certificate-issuance-by-the-ca-to-other-entities}
-    -   [[4.5]{.toc-section-number} Key Pair and Certificate Usage](#key-pair-and-certificate-usage){#toc-key-pair-and-certificate-usage}
-        -   [[4.5.1]{.toc-section-number} Subscriber Private Key and Certificate Usage](#subscriber-private-key-and-certificate-usage){#toc-subscriber-private-key-and-certificate-usage}
-        -   [[4.5.2]{.toc-section-number} Relying Party Public Key and Certificate Usage](#relying-party-public-key-and-certificate-usage){#toc-relying-party-public-key-and-certificate-usage}
-    -   [[4.6]{.toc-section-number} Certificate Renewal](#certificate-renewal){#toc-certificate-renewal}
-        -   [[4.6.1]{.toc-section-number} Circumstance for Certificate Renewal](#circumstance-for-certificate-renewal){#toc-circumstance-for-certificate-renewal}
-        -   [[4.6.2]{.toc-section-number} Who May Request Renewal](#who-may-request-renewal){#toc-who-may-request-renewal}
-        -   [[4.6.3]{.toc-section-number} Processing Certificate Renewal Requests](#processing-certificate-renewal-requests){#toc-processing-certificate-renewal-requests}
-        -   [[4.6.4]{.toc-section-number} Notification of New Certificate Issuance to Subscriber](#notification-of-new-certificate-issuance-to-subscriber){#toc-notification-of-new-certificate-issuance-to-subscriber}
-        -   [[4.6.5]{.toc-section-number} Conduct Constituting Acceptance of a Renewal Certificate](#conduct-constituting-acceptance-of-a-renewal-certificate){#toc-conduct-constituting-acceptance-of-a-renewal-certificate}
-        -   [[4.6.6]{.toc-section-number} Publication of the Renewal Certificate by the CA](#publication-of-the-renewal-certificate-by-the-ca){#toc-publication-of-the-renewal-certificate-by-the-ca}
-        -   [[4.6.7]{.toc-section-number} Notification of Certificate Issuance by the CA to Other Entities](#notification-of-certificate-issuance-by-the-ca-to-other-entities-1){#toc-notification-of-certificate-issuance-by-the-ca-to-other-entities-1}
-    -   [[4.7]{.toc-section-number} Certificate Re-Key](#certificate-re-key){#toc-certificate-re-key}
-        -   [[4.7.1]{.toc-section-number} Circumstance for Certificate Re-Key](#circumstance-for-certificate-re-key){#toc-circumstance-for-certificate-re-key}
-        -   [[4.7.2]{.toc-section-number} Who May Request Certification of a New Public Key](#who-may-request-certification-of-a-new-public-key){#toc-who-may-request-certification-of-a-new-public-key}
-        -   [[4.7.3]{.toc-section-number} Processing Certificate Re-Keying Requests](#processing-certificate-re-keying-requests){#toc-processing-certificate-re-keying-requests}
-        -   [[4.7.4]{.toc-section-number} Notification of New Certificate Issuance to Subscriber](#notification-of-new-certificate-issuance-to-subscriber-1){#toc-notification-of-new-certificate-issuance-to-subscriber-1}
-        -   [[4.7.5]{.toc-section-number} Conduct Constituting Acceptance of a Re-Keyed Certificate](#conduct-constituting-acceptance-of-a-re-keyed-certificate){#toc-conduct-constituting-acceptance-of-a-re-keyed-certificate}
-        -   [[4.7.6]{.toc-section-number} Publication of the Re-Keyed Certificate by the CA](#publication-of-the-re-keyed-certificate-by-the-ca){#toc-publication-of-the-re-keyed-certificate-by-the-ca}
-        -   [[4.7.7]{.toc-section-number} Notification of Certificate Issuance by the CA to Other Entities](#notification-of-certificate-issuance-by-the-ca-to-other-entities-2){#toc-notification-of-certificate-issuance-by-the-ca-to-other-entities-2}
-    -   [[4.8]{.toc-section-number} Certificate Modification](#certificate-modification){#toc-certificate-modification}
-        -   [[4.8.1]{.toc-section-number} Circumstance for Certificate Modification](#circumstance-for-certificate-modification){#toc-circumstance-for-certificate-modification}
-        -   [[4.8.2]{.toc-section-number} Who May Request Certificate Modification](#who-may-request-certificate-modification){#toc-who-may-request-certificate-modification}
-        -   [[4.8.3]{.toc-section-number} Processing Certificate Modification Requests](#processing-certificate-modification-requests){#toc-processing-certificate-modification-requests}
-        -   [[4.8.4]{.toc-section-number} Notification of New Certificate Issuance to Subscriber](#notification-of-new-certificate-issuance-to-subscriber-2){#toc-notification-of-new-certificate-issuance-to-subscriber-2}
-        -   [[4.8.5]{.toc-section-number} Conduct Constituting Acceptance of a Modified Certificate](#conduct-constituting-acceptance-of-a-modified-certificate){#toc-conduct-constituting-acceptance-of-a-modified-certificate}
-        -   [[4.8.6]{.toc-section-number} Publication of the Modified Certificate by the CA](#publication-of-the-modified-certificate-by-the-ca){#toc-publication-of-the-modified-certificate-by-the-ca}
-        -   [[4.8.7]{.toc-section-number} Notification of Certificate Issuance by the CA to Other Entities](#notification-of-certificate-issuance-by-the-ca-to-other-entities-3){#toc-notification-of-certificate-issuance-by-the-ca-to-other-entities-3}
-    -   [[4.9]{.toc-section-number} Certificate Revocation and Suspension](#certificate-revocation-and-suspension){#toc-certificate-revocation-and-suspension}
-        -   [[4.9.1]{.toc-section-number} Circumstances for Revocation](#circumstances-for-revocation){#toc-circumstances-for-revocation}
-        -   [[4.9.2]{.toc-section-number} Who Can Request Revocation](#who-can-request-revocation){#toc-who-can-request-revocation}
-        -   [[4.9.3]{.toc-section-number} Procedure for Revocation Request](#procedure-for-revocation-request){#toc-procedure-for-revocation-request}
-        -   [[4.9.4]{.toc-section-number} Revocation Request Grace Period](#revocation-request-grace-period){#toc-revocation-request-grace-period}
-        -   [[4.9.5]{.toc-section-number} Time Within Which CA Must Process the Revocation Request](#time-within-which-ca-must-process-the-revocation-request){#toc-time-within-which-ca-must-process-the-revocation-request}
-        -   [[4.9.6]{.toc-section-number} Revocation Checking Requirements for Relying Parties](#revocation-checking-requirements-for-relying-parties){#toc-revocation-checking-requirements-for-relying-parties}
-        -   [[4.9.7]{.toc-section-number} CRL Issuance Frequency](#crl-issuance-frequency){#toc-crl-issuance-frequency}
-        -   [[4.9.8]{.toc-section-number} Maximum Latency for CRLs](#maximum-latency-for-crls){#toc-maximum-latency-for-crls}
-        -   [[4.9.9]{.toc-section-number} Online Revocation/Status Checking Availability](#online-revocationstatus-checking-availability){#toc-online-revocationstatus-checking-availability}
-        -   [[4.9.10]{.toc-section-number} Online Revocation Checking Requirements](#online-revocation-checking-requirements){#toc-online-revocation-checking-requirements}
-        -   [[4.9.11]{.toc-section-number} Other Forms of Revocation Advertisements Available](#other-forms-of-revocation-advertisements-available){#toc-other-forms-of-revocation-advertisements-available}
-        -   [[4.9.12]{.toc-section-number} Special Requirements for Re-Key Compromise](#special-requirements-for-re-key-compromise){#toc-special-requirements-for-re-key-compromise}
-        -   [[4.9.13]{.toc-section-number} Circumstances for Suspension](#circumstances-for-suspension){#toc-circumstances-for-suspension}
-        -   [[4.9.14]{.toc-section-number} Procedure for Suspension Request](#procedure-for-suspension-request){#toc-procedure-for-suspension-request}
-        -   [[4.9.15]{.toc-section-number} Limits on Suspension Period](#limits-on-suspension-period){#toc-limits-on-suspension-period}
-        -   [[4.9.16]{.toc-section-number} 4.9.16 Limits on Suspension Period ](#limits-on-suspension-period-1){#toc-limits-on-suspension-period-1}
-    -   [[4.10]{.toc-section-number} Certificate Status Services](#certificate-status-services){#toc-certificate-status-services}
-        -   [[4.10.1]{.toc-section-number} Operational Characteristics](#operational-characteristics){#toc-operational-characteristics}
-        -   [[4.10.2]{.toc-section-number} Service Availability](#service-availability){#toc-service-availability}
-        -   [[4.10.3]{.toc-section-number} Optional Features](#optional-features){#toc-optional-features}
-    -   [[4.11]{.toc-section-number} End of Subscription](#end-of-subscription){#toc-end-of-subscription}
-    -   [[4.12]{.toc-section-number} Key Escrow and Recovery](#key-escrow-and-recovery){#toc-key-escrow-and-recovery}
-        -   [[4.12.1]{.toc-section-number} Key Escrow and Recovery Policy and Practices](#key-escrow-and-recovery-policy-and-practices){#toc-key-escrow-and-recovery-policy-and-practices}
-        -   [[4.12.2]{.toc-section-number} Session Key Encapsulation and Recovery Policy and Practices](#session-key-encapsulation-and-recovery-policy-and-practices){#toc-session-key-encapsulation-and-recovery-policy-and-practices}
--   [[5]{.toc-section-number} FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS](#facility-management-and-operational-controls){#toc-facility-management-and-operational-controls}
-    -   [[5.1]{.toc-section-number} Physical SECURITY Controls](#physical-security-controls){#toc-physical-security-controls}
-        -   [[5.1.1]{.toc-section-number} Site Location and Construction](#site-location-and-construction){#toc-site-location-and-construction}
-        -   [[5.1.2]{.toc-section-number} Physical Access](#physical-access){#toc-physical-access}
-        -   [[5.1.3]{.toc-section-number} Power and Air Conditioning](#power-and-air-conditioning){#toc-power-and-air-conditioning}
-        -   [[5.1.4]{.toc-section-number} Water Exposures](#water-exposures){#toc-water-exposures}
-        -   [[5.1.5]{.toc-section-number} Fire Prevention and Protection](#fire-prevention-and-protection){#toc-fire-prevention-and-protection}
-        -   [[5.1.6]{.toc-section-number} Media Storage](#media-storage){#toc-media-storage}
-        -   [[5.1.7]{.toc-section-number} Waste Disposal](#waste-disposal){#toc-waste-disposal}
-        -   [[5.1.8]{.toc-section-number} Off-Site Backup](#off-site-backup){#toc-off-site-backup}
-    -   [[5.2]{.toc-section-number} Procedural Controls](#procedural-controls){#toc-procedural-controls}
-        -   [[5.2.1]{.toc-section-number} Trusted Roles](#trusted-roles){#toc-trusted-roles}
-        -   [[5.2.2]{.toc-section-number} Number of Persons Required per Task](#number-of-persons-required-per-task){#toc-number-of-persons-required-per-task}
-        -   [[5.2.3]{.toc-section-number} Identification and Authentication for Each Role](#identification-and-authentication-for-each-role){#toc-identification-and-authentication-for-each-role}
-        -   [[5.2.4]{.toc-section-number} Roles Requiring Separation of Duties](#roles-requiring-separation-of-duties){#toc-roles-requiring-separation-of-duties}
-    -   [[5.3]{.toc-section-number} Personnel Controls](#personnel-controls){#toc-personnel-controls}
-        -   [[5.3.1]{.toc-section-number} Qualifications, Experience, and Clearance Requirements](#qualifications-experience-and-clearance-requirements){#toc-qualifications-experience-and-clearance-requirements}
-        -   [[5.3.2]{.toc-section-number} Background Check Procedures](#background-check-procedures){#toc-background-check-procedures}
-        -   [[5.3.3]{.toc-section-number} Training Requirements and Procedures](#training-requirements-and-procedures){#toc-training-requirements-and-procedures}
-        -   [[5.3.4]{.toc-section-number} Retraining Frequency and Requirements](#retraining-frequency-and-requirements){#toc-retraining-frequency-and-requirements}
-        -   [[5.3.5]{.toc-section-number} Job Rotation Frequency and Sequence](#job-rotation-frequency-and-sequence){#toc-job-rotation-frequency-and-sequence}
-        -   [[5.3.6]{.toc-section-number} Sanctions for Unauthorized Actions](#sanctions-for-unauthorized-actions){#toc-sanctions-for-unauthorized-actions}
-        -   [[5.3.7]{.toc-section-number} Independent Contractor Requirements](#independent-contractor-requirements){#toc-independent-contractor-requirements}
-        -   [[5.3.8]{.toc-section-number} Documentation Supplied to Personnel](#documentation-supplied-to-personnel){#toc-documentation-supplied-to-personnel}
-    -   [[5.4]{.toc-section-number} Audit Logging Procedures](#audit-logging-procedures){#toc-audit-logging-procedures}
-        -   [[5.4.1]{.toc-section-number} Types of Events Recorded](#types-of-events-recorded){#toc-types-of-events-recorded}
-        -   [[5.4.2]{.toc-section-number} Frequency of Processing Log](#frequency-of-processing-log){#toc-frequency-of-processing-log}
-        -   [[5.4.3]{.toc-section-number} Retention Period for Audit Log](#retention-period-for-audit-log){#toc-retention-period-for-audit-log}
-        -   [[5.4.4]{.toc-section-number} Protection of Audit Log](#protection-of-audit-log){#toc-protection-of-audit-log}
-        -   [[5.4.5]{.toc-section-number} Audit Log Backup Procedures](#audit-log-backup-procedures){#toc-audit-log-backup-procedures}
-        -   [[5.4.6]{.toc-section-number} Audit Collection System (Internal vs. External)](#audit-collection-system-internal-vs.-external){#toc-audit-collection-system-internal-vs.-external}
-        -   [[5.4.7]{.toc-section-number} Notification to Event-Causing Subject](#notification-to-event-causing-subject){#toc-notification-to-event-causing-subject}
-        -   [[5.4.8]{.toc-section-number} Vulnerability Assessments](#vulnerability-assessments){#toc-vulnerability-assessments}
-    -   [[5.5]{.toc-section-number} Records Archival](#records-archival){#toc-records-archival}
-        -   [[5.5.1]{.toc-section-number} Types of Records Archived](#types-of-records-archived){#toc-types-of-records-archived}
-        -   [[5.5.2]{.toc-section-number} Retention Period for Archive](#retention-period-for-archive){#toc-retention-period-for-archive}
-        -   [[5.5.3]{.toc-section-number} Protection of Archive](#protection-of-archive){#toc-protection-of-archive}
-        -   [[5.5.4]{.toc-section-number} Archive Backup Procedures](#archive-backup-procedures){#toc-archive-backup-procedures}
-        -   [[5.5.5]{.toc-section-number} Requirements for Times-Stamping of Records](#requirements-for-times-stamping-of-records){#toc-requirements-for-times-stamping-of-records}
-        -   [[5.5.6]{.toc-section-number} Archive Collection System (Internal or External)](#archive-collection-system-internal-or-external){#toc-archive-collection-system-internal-or-external}
-        -   [[5.5.7]{.toc-section-number} Procedures to Obtain and Verify Archive Information](#procedures-to-obtain-and-verify-archive-information){#toc-procedures-to-obtain-and-verify-archive-information}
-    -   [[5.6]{.toc-section-number} Key Changeover](#key-changeover){#toc-key-changeover}
-    -   [[5.7]{.toc-section-number} Compromise and Disaster Recovery](#compromise-and-disaster-recovery){#toc-compromise-and-disaster-recovery}
-        -   [[5.7.1]{.toc-section-number} Incident and Compromise Handling Procedures ](#incident-and-compromise-handling-procedures){#toc-incident-and-compromise-handling-procedures}
-        -   [[5.7.2]{.toc-section-number} Computing Resources, Software, and/or Data Are Corrupted](#computing-resources-software-andor-data-are-corrupted){#toc-computing-resources-software-andor-data-are-corrupted}
-        -   [[5.7.3]{.toc-section-number} Entity Private Key Compromise Procedures](#entity-private-key-compromise-procedures){#toc-entity-private-key-compromise-procedures}
-        -   [[5.7.4]{.toc-section-number} Business Continuity Capabilities After a Disaster](#business-continuity-capabilities-after-a-disaster){#toc-business-continuity-capabilities-after-a-disaster}
-    -   [[5.8]{.toc-section-number} CA or RA Termination](#ca-or-ra-termination){#toc-ca-or-ra-termination}
--   [[6]{.toc-section-number} TECHNICAL SECURITY CONTROLS](#technical-security-controls){#toc-technical-security-controls}
-    -   [[6.1]{.toc-section-number} Key Pair Generation and Installation](#key-pair-generation-and-installation){#toc-key-pair-generation-and-installation}
-        -   [[6.1.1]{.toc-section-number} Key Pair Generation](#key-pair-generation){#toc-key-pair-generation}
-        -   [[6.1.2]{.toc-section-number} Private Key Delivery to Subscriber](#private-key-delivery-to-subscriber){#toc-private-key-delivery-to-subscriber}
-        -   [[6.1.3]{.toc-section-number} Public Key Delivery to Certificate Issuer](#public-key-delivery-to-certificate-issuer){#toc-public-key-delivery-to-certificate-issuer}
-        -   [[6.1.4]{.toc-section-number} CA Public Key Delivery to Relying Parties](#ca-public-key-delivery-to-relying-parties){#toc-ca-public-key-delivery-to-relying-parties}
-        -   [[6.1.5]{.toc-section-number} Key Sizes](#key-sizes){#toc-key-sizes}
-        -   [[6.1.6]{.toc-section-number} Public Key Parameters Generation and Quality Checking](#public-key-parameters-generation-and-quality-checking){#toc-public-key-parameters-generation-and-quality-checking}
-        -   [[6.1.7]{.toc-section-number} Key Usage Purposes (as per X509 v3 Key Usage Field)](#key-usage-purposes-as-per-x509-v3-key-usage-field){#toc-key-usage-purposes-as-per-x509-v3-key-usage-field}
-    -   [[6.2]{.toc-section-number} Private Key Protection and Cryptographic Module Engineering Controls](#private-key-protection-and-cryptographic-module-engineering-controls){#toc-private-key-protection-and-cryptographic-module-engineering-controls}
-        -   [[6.2.1]{.toc-section-number} Cryptographic Module Standards and Controls](#cryptographic-module-standards-and-controls){#toc-cryptographic-module-standards-and-controls}
-        -   [[6.2.2]{.toc-section-number} Private Key (N out of M) Multi-Person Control](#private-key-n-out-of-m-multi-person-control){#toc-private-key-n-out-of-m-multi-person-control}
-        -   [[6.2.3]{.toc-section-number} Private Key Escrow](#private-key-escrow){#toc-private-key-escrow}
-        -   [[6.2.4]{.toc-section-number} Private Key Backup](#private-key-backup){#toc-private-key-backup}
-        -   [[6.2.5]{.toc-section-number} Private Key Archival](#private-key-archival){#toc-private-key-archival}
-        -   [[6.2.6]{.toc-section-number} Private Key Transfer Into or From a Cryptographic Module](#private-key-transfer-into-or-from-a-cryptographic-module){#toc-private-key-transfer-into-or-from-a-cryptographic-module}
-        -   [[6.2.7]{.toc-section-number} Private Key Storage on Cryptographic Module](#private-key-storage-on-cryptographic-module){#toc-private-key-storage-on-cryptographic-module}
-        -   [[6.2.8]{.toc-section-number} Method of Activating Private Key](#method-of-activating-private-key){#toc-method-of-activating-private-key}
-        -   [[6.2.9]{.toc-section-number} Method of Deactivating Private Key](#method-of-deactivating-private-key){#toc-method-of-deactivating-private-key}
-        -   [[6.2.10]{.toc-section-number} Method of Destroying Private Key](#method-of-destroying-private-key){#toc-method-of-destroying-private-key}
-        -   [[6.2.11]{.toc-section-number} Cryptographic Module Rating](#cryptographic-module-rating){#toc-cryptographic-module-rating}
-    -   [[6.3]{.toc-section-number} Other Aspects of Key PAIR Management](#other-aspects-of-key-pair-management){#toc-other-aspects-of-key-pair-management}
-        -   [[6.3.1]{.toc-section-number} Public Key Archival](#public-key-archival){#toc-public-key-archival}
-        -   [[6.3.2]{.toc-section-number} Certificate Operational Periods and Key Pair Usage Periods](#certificate-operational-periods-and-key-pair-usage-periods){#toc-certificate-operational-periods-and-key-pair-usage-periods}
-    -   [[6.4]{.toc-section-number} Activation Data](#activation-data){#toc-activation-data}
-        -   [[6.4.1]{.toc-section-number} Activation Data Generation and Installation](#activation-data-generation-and-installation){#toc-activation-data-generation-and-installation}
-        -   [[6.4.2]{.toc-section-number} Activation Data Protection](#activation-data-protection){#toc-activation-data-protection}
-        -   [[6.4.3]{.toc-section-number} Other Aspects of Activation Data](#other-aspects-of-activation-data){#toc-other-aspects-of-activation-data}
-    -   [[6.5]{.toc-section-number} Computer Security Controls](#computer-security-controls){#toc-computer-security-controls}
-        -   [[6.5.1]{.toc-section-number} Specific Computer Security Technical Requirements](#specific-computer-security-technical-requirements){#toc-specific-computer-security-technical-requirements}
-        -   [[6.5.2]{.toc-section-number} Computer Security Rating](#computer-security-rating){#toc-computer-security-rating}
-    -   [[6.6]{.toc-section-number} Life Cycle Technical Controls](#life-cycle-technical-controls){#toc-life-cycle-technical-controls}
-        -   [[6.6.1]{.toc-section-number} System Development Controls](#system-development-controls){#toc-system-development-controls}
-        -   [[6.6.2]{.toc-section-number} Security Management Controls](#security-management-controls){#toc-security-management-controls}
-        -   [[6.6.3]{.toc-section-number} Life Cycle Security Controls](#life-cycle-security-controls){#toc-life-cycle-security-controls}
-    -   [[6.7]{.toc-section-number} Network Security Controls](#network-security-controls){#toc-network-security-controls}
-    -   [[6.8]{.toc-section-number} Time-stamping](#time-stamping){#toc-time-stamping}
--   [[7]{.toc-section-number} CERTIFICATE, CRL, AND OCSP PROFILES](#certificate-crl-and-ocsp-profiles){#toc-certificate-crl-and-ocsp-profiles}
-    -   [[7.1]{.toc-section-number} Certificate Profile](#certificate-profile){#toc-certificate-profile}
-        -   [[7.1.1]{.toc-section-number} Version Number(s)](#version-numbers){#toc-version-numbers}
-        -   [[7.1.2]{.toc-section-number} Certificate Content and Extensions](#certificate-content-and-extensions){#toc-certificate-content-and-extensions}
-        -   [[7.1.3]{.toc-section-number} Algorithm Object Identifiers ](#algorithm-object-identifiers){#toc-algorithm-object-identifiers}
-        -   [[7.1.4]{.toc-section-number} Name Forms](#name-forms){#toc-name-forms}
-        -   [[7.1.5]{.toc-section-number} Name Constraints](#name-constraints){#toc-name-constraints}
-        -   [[7.1.6]{.toc-section-number} Certificate Policy Object Identifier](#certificate-policy-object-identifier){#toc-certificate-policy-object-identifier}
-        -   [[7.1.7]{.toc-section-number} Usage of Policy Constraints Extension](#usage-of-policy-constraints-extension){#toc-usage-of-policy-constraints-extension}
-        -   [[7.1.8]{.toc-section-number} Policy Qualifiers Syntax and Semantics](#policy-qualifiers-syntax-and-semantics){#toc-policy-qualifiers-syntax-and-semantics}
-        -   [[7.1.9]{.toc-section-number} Processing Semantics for the Critical Certificate Policies Extension](#processing-semantics-for-the-critical-certificate-policies-extension){#toc-processing-semantics-for-the-critical-certificate-policies-extension}
-    -   [[7.2]{.toc-section-number} CRL Profile](#crl-profile){#toc-crl-profile}
-        -   [[7.2.1]{.toc-section-number} Version Number(s)](#version-numbers-1){#toc-version-numbers-1}
-        -   [[7.2.2]{.toc-section-number} CRL and CRL Entry Extensions](#crl-and-crl-entry-extensions){#toc-crl-and-crl-entry-extensions}
-    -   [[7.3]{.toc-section-number} OCSP Profile](#ocsp-profile){#toc-ocsp-profile}
-        -   [[7.3.1]{.toc-section-number} Version Number(s)](#version-numbers-2){#toc-version-numbers-2}
-        -   [[7.3.2]{.toc-section-number} OCSP Extensions](#ocsp-extensions){#toc-ocsp-extensions}
--   [[8]{.toc-section-number} COMPLIANCE AUDIT AND OTHER ASSESSMENTS](#compliance-audit-and-other-assessments){#toc-compliance-audit-and-other-assessments}
-    -   [[8.1]{.toc-section-number} Frequency or Circumstances of Assessment](#frequency-or-circumstances-of-assessment){#toc-frequency-or-circumstances-of-assessment}
-    -   [[8.2]{.toc-section-number} Identity/Qualifications of Assessor](#identityqualifications-of-assessor){#toc-identityqualifications-of-assessor}
-    -   [[8.3]{.toc-section-number} Assessor's relationship to assessed entity](#assessors-relationship-to-assessed-entity){#toc-assessors-relationship-to-assessed-entity}
-    -   [[8.4]{.toc-section-number} Topics Covered by Assessment](#topics-covered-by-assessment){#toc-topics-covered-by-assessment}
-    -   [[8.5]{.toc-section-number} Actions Taken as a Result of Deficiency](#actions-taken-as-a-result-of-deficiency){#toc-actions-taken-as-a-result-of-deficiency}
-        -   [[8.5.1]{.toc-section-number} Actions Taken as a Result of Internal Audit Deficiency](#actions-taken-as-a-result-of-internal-audit-deficiency){#toc-actions-taken-as-a-result-of-internal-audit-deficiency}
-    -   [[8.6]{.toc-section-number} Communication of Results](#communication-of-results){#toc-communication-of-results}
-    -   [[8.7]{.toc-section-number} Self-Audits](#self-audits){#toc-self-audits}
--   [[9]{.toc-section-number} OTHER BUSINESS AND LEGAL MATTERS](#other-business-and-legal-matters){#toc-other-business-and-legal-matters}
-    -   [[9.1]{.toc-section-number} Fees](#fees){#toc-fees}
-        -   [[9.1.1]{.toc-section-number} Certificate Issuance or Renewal Fees](#certificate-issuance-or-renewal-fees){#toc-certificate-issuance-or-renewal-fees}
-        -   [[9.1.2]{.toc-section-number} Certificate Access Fees](#certificate-access-fees){#toc-certificate-access-fees}
-        -   [[9.1.3]{.toc-section-number} Revocation or Status Information Access Fees](#revocation-or-status-information-access-fees){#toc-revocation-or-status-information-access-fees}
-        -   [[9.1.4]{.toc-section-number} Fees for Other Services](#fees-for-other-services){#toc-fees-for-other-services}
-        -   [[9.1.5]{.toc-section-number} Refund Policy](#refund-policy){#toc-refund-policy}
-    -   [[9.2]{.toc-section-number} Financial Responsibility](#financial-responsibility){#toc-financial-responsibility}
-        -   [[9.2.1]{.toc-section-number} Insurance Coverage](#insurance-coverage){#toc-insurance-coverage}
-        -   [[9.2.2]{.toc-section-number} Other Assets](#other-assets){#toc-other-assets}
-        -   [[9.2.3]{.toc-section-number} Insurance or Warranty Coverage for End-Entities](#insurance-or-warranty-coverage-for-end-entities){#toc-insurance-or-warranty-coverage-for-end-entities}
-    -   [[9.3]{.toc-section-number} Confidentiality of Business Information](#confidentiality-of-business-information){#toc-confidentiality-of-business-information}
-        -   [[9.3.1]{.toc-section-number} Scope of Confidential Information](#scope-of-confidential-information){#toc-scope-of-confidential-information}
-        -   [[9.3.2]{.toc-section-number} Information Not Within the Scope of Confidential Information](#information-not-within-the-scope-of-confidential-information){#toc-information-not-within-the-scope-of-confidential-information}
-        -   [[9.3.3]{.toc-section-number} Responsibility to Protect Confidential Information](#responsibility-to-protect-confidential-information){#toc-responsibility-to-protect-confidential-information}
-    -   [[9.4]{.toc-section-number} Privacy of Personal Information](#privacy-of-personal-information){#toc-privacy-of-personal-information}
-        -   [[9.4.1]{.toc-section-number} Privacy Plan](#privacy-plan){#toc-privacy-plan}
-        -   [[9.4.2]{.toc-section-number} Information Treated As Private](#information-treated-as-private){#toc-information-treated-as-private}
-        -   [[9.4.3]{.toc-section-number} Information Not Deemed Private](#information-not-deemed-private){#toc-information-not-deemed-private}
-        -   [[9.4.4]{.toc-section-number} Responsibility to Protect Private Information](#responsibility-to-protect-private-information){#toc-responsibility-to-protect-private-information}
-        -   [[9.4.5]{.toc-section-number} Notice and Consent to Use Private Information](#notice-and-consent-to-use-private-information){#toc-notice-and-consent-to-use-private-information}
-        -   [[9.4.6]{.toc-section-number} Disclosure Pursuant to Judicial or Administrative Process](#disclosure-pursuant-to-judicial-or-administrative-process){#toc-disclosure-pursuant-to-judicial-or-administrative-process}
-        -   [[9.4.7]{.toc-section-number} Other Information Disclosure Circumstances](#other-information-disclosure-circumstances){#toc-other-information-disclosure-circumstances}
-    -   [[9.5]{.toc-section-number} Intellectual Property Rights](#intellectual-property-rights){#toc-intellectual-property-rights}
-    -   [[9.6]{.toc-section-number} Representations and Warranties](#representations-and-warranties){#toc-representations-and-warranties}
-        -   [[9.6.1]{.toc-section-number} CA Representations and Warranties](#ca-representations-and-warranties){#toc-ca-representations-and-warranties}
-        -   [[9.6.2]{.toc-section-number} RA Representations and Warranties](#ra-representations-and-warranties){#toc-ra-representations-and-warranties}
-        -   [[9.6.3]{.toc-section-number} Subscriber Representations and Warranties](#subscriber-representations-and-warranties){#toc-subscriber-representations-and-warranties}
-        -   [[9.6.4]{.toc-section-number} Relying Party Representations and Warranties](#relying-party-representations-and-warranties){#toc-relying-party-representations-and-warranties}
-        -   [[9.6.5]{.toc-section-number} Representations and Warranties of Other Participants](#representations-and-warranties-of-other-participants){#toc-representations-and-warranties-of-other-participants}
-    -   [[9.7]{.toc-section-number} Disclaimer of Warranties](#disclaimer-of-warranties){#toc-disclaimer-of-warranties}
-    -   [[9.8]{.toc-section-number} Limitations of Liability](#limitations-of-liability){#toc-limitations-of-liability}
-    -   [[9.9]{.toc-section-number} Indemnities](#indemnities){#toc-indemnities}
-    -   [[9.10]{.toc-section-number} Term and Termination](#term-and-termination){#toc-term-and-termination}
-        -   [[9.10.1]{.toc-section-number} Term](#term){#toc-term}
-        -   [[9.10.2]{.toc-section-number} Termination](#termination){#toc-termination}
-        -   [[9.10.3]{.toc-section-number} Effect of Termination and Survival](#effect-of-termination-and-survival){#toc-effect-of-termination-and-survival}
-    -   [[9.11]{.toc-section-number} Individual Notices and Communications with Participants](#individual-notices-and-communications-with-participants){#toc-individual-notices-and-communications-with-participants}
-        -   [[9.11.1]{.toc-section-number} Notices by Individual Participants to IdenTrust](#notices-by-individual-participants-to-identrust){#toc-notices-by-individual-participants-to-identrust}
-        -   [[9.11.2]{.toc-section-number} Notices by IdenTrust to Individual Participants](#notices-by-identrust-to-individual-participants){#toc-notices-by-identrust-to-individual-participants}
-        -   [[9.11.3]{.toc-section-number} Notices Delivery Method](#notices-delivery-method){#toc-notices-delivery-method}
-    -   [[9.12]{.toc-section-number} Amendments](#amendments){#toc-amendments}
-        -   [[9.12.1]{.toc-section-number} Procedure for Amendment](#procedure-for-amendment){#toc-procedure-for-amendment}
-        -   [[9.12.2]{.toc-section-number} Notification Mechanism and Period](#notification-mechanism-and-period){#toc-notification-mechanism-and-period}
-        -   [[9.12.3]{.toc-section-number} Circumstances under Which OID Must Be Changed](#circumstances-under-which-oid-must-be-changed){#toc-circumstances-under-which-oid-must-be-changed}
-    -   [[9.13]{.toc-section-number} Dispute Resolution Provisions](#dispute-resolution-provisions){#toc-dispute-resolution-provisions}
-        -   [[9.13.1]{.toc-section-number} Specific Provisions/ Incorporation of Policy](#specific-provisions-incorporation-of-policy){#toc-specific-provisions-incorporation-of-policy}
-    -   [[9.14]{.toc-section-number} Governing Law](#governing-law){#toc-governing-law}
-    -   [[9.15]{.toc-section-number} Compliance with Applicable Law](#compliance-with-applicable-law){#toc-compliance-with-applicable-law}
-    -   [[9.16]{.toc-section-number} Miscellaneous Provisions](#miscellaneous-provisions){#toc-miscellaneous-provisions}
-        -   [[9.16.1]{.toc-section-number} Entire Agreement](#entire-agreement){#toc-entire-agreement}
-        -   [[9.16.2]{.toc-section-number} Assignment](#assignment){#toc-assignment}
-        -   [[9.16.3]{.toc-section-number} Severability](#severability){#toc-severability}
-        -   [[9.16.4]{.toc-section-number} Enforcement (Attorney Fees and Waiver of Rights)](#enforcement-attorney-fees-and-waiver-of-rights){#toc-enforcement-attorney-fees-and-waiver-of-rights}
-        -   [[9.16.5]{.toc-section-number} Force Majeure](#force-majeure){#toc-force-majeure}
-    -   [[9.17]{.toc-section-number} Other Provisions](#other-provisions){#toc-other-provisions}
-        -   [[9.17.1]{.toc-section-number} Legal Validity of Certificates](#legal-validity-of-certificates){#toc-legal-validity-of-certificates}
-
 l
 
   -----------------------------------------------------------------------
@@ -298,9 +14,9 @@ l
 
 **Statement**
 
-# INTRODUCTION
+## INTRODUCTION
 
-## Overview
+### Overview
 
 This TrustID TLS Certificate Policy and Certification Practice Statement, referred to throughout this document as "CP-CPS," defines the policies and practices employed by IdenTrust Services, LLC (IdenTrust) as a Certification Authority (CA) and acting as LRA, and by Registration Authorities (RAs), to fulfill the requirements of IdenTrust TLS Publicly-Trusted Certificates. The copy of this CP-CPS attached hereto (the "Policy Copy") is provided to the Mozilla Foundation subject to the terms of that certain license known as "Creative Commons Attribution-NoDerivatives 4.0 International Public License" (which can be viewed at: <https://creativecommons.org/licenses/by-nd/4.0/>) and the notices below on this page (collectively, the "License"). The Policy Copy forms the "Licensed Materials" under the License provided that this page is not removed from the Policy Copy.
 
@@ -316,9 +32,9 @@ C.  PKI Participants (see [Section 1.3](#pki-participants)) must not, as PKI Par
 
 > D. This page must be included with every copy of the Policy.
 
-## Document Name and Identification
+### Document Name and Identification
 
-### Alphanumeric Identifier
+#### Alphanumeric Identifier
 
 The name of this CP-CPS which follow the RFC 3647 framework, is the \"IdenTrust_trustid_tls-cp-cps_v5.0.0_2025mmdd", approved for publication on July dd, 2025, by the IdenTrust Policy Management Authority (PMA).
 
@@ -350,7 +66,7 @@ The following table contains subsequent revisions:
 |                                                                                                                                                                                                                        |     |                |             | 8.  Section 7: Removed detailed Certificate Profiles which are now available as a separate document published at [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid) in the "Policies Current" and "Policies Archived" Section |                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----+----------------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
 
-### Object Identifier
+#### Object Identifier
 
 IdenTrust is the owner of a numeric identifier--Object Identifier (OID)---assigned by the American National Standards Institute (ANSI) under {joint-iso-ccitt (2) country (16) USA (840) US-company (1) IdenTrust (113839) CP (0) TrustID-v2(6)}, which IdenTrust uses as a base arc to identify CPs, CPSs, and other documents, schemas, algorithms, etc. The OID arc for IdenTrust's implementation of the TrustID CP-CPS and associated Policy documents is 2.16.840.1.113839.
 
@@ -358,11 +74,11 @@ IdenTrust is the owner of a numeric identifier--Object Identifier (OID)---assign
 
 Root and ICAs governed by this CP-CPS are disclosed in the "IdenTrust TrustID Certificate Hierarchy" table of the "[IdenTrust Downloads and Drivers](https://www.identrust.com/support/downloads)" webpage.
 
-## PKI Participants
+### PKI Participants
 
 This CP-CPS describes an open-but-bounded Public Key Infrastructure. It describes the rights and obligations of all Participants -- i.e., all persons and entities authorized under the CP-CPS to fulfill any of the following roles: PMA, CA, RA, CMA, Repository, Subscriber, and Authorized Relying Party.
 
-### Certification Authorities
+#### Certification Authorities
 
 A Certification Authority (CA) is a trusted third party that attests to the binding between an identity and cryptographic Key Pair. CA functions primarily consist of the following:
 
@@ -388,7 +104,7 @@ A Certification Authority (CA) is a trusted third party that attests to the bind
 
 IdenTrust as an Issuing CA is bound to act according to the terms of the CP-CPS.
 
-### Registration Authorities
+#### Registration Authorities
 
 Each Issuing CA will remain ultimately responsible for all TrustID Certificates it issues. However, under this CP-CPS, the Issuing CA may subcontract registration and Identity Proofing functions to an Organization that agrees to fulfill the functions of an RA in accordance with the terms of this CP-CPS, and who will Accept TrustID Certificate applications and locally collect and verify Applicant identity information to be entered into a TrustID Certificate. An RA operating under this CP-CPS is only responsible for those duties assigned to it by the Issuing CA pursuant to an agreement with the Issuing CA or as specified in this CP-CPS. The Issuing CA may require a RA Organization to submit a Registration Practice Statement.
 
@@ -412,37 +128,37 @@ IdenTrust may delegate to an Enterprise RA to verify Certificate Requests from S
 
 IdenTrust imposes these limitations as a contractual requirement on the Enterprise RA and monitor compliance by the Enterprise RA.
 
-### Subscribers
+#### Subscribers
 
 A Subscriber is an entity to whom or to which a Digital Certificate is issued and who is legally bound by a Subscriber Agreement. Subscribers use IdenTrust's issued TLS Certificates to encrypt and authenticate communication with web browsers.
 
 TrustID Certificates may be issued in conjunction with an Organization that has a relationship with the Subscriber; this is termed affiliation. The organizational affiliation will be indicated in the Certificate. IdenTrust contacts the Affiliated Organization's associate with a Certificate application to verify the affiliation at the time of Certificate application and requesting Revocation of the Certificate if the affiliation is no longer valid.
 
-### Relying Parties
+#### Relying Parties
 
 This CP-CPS is intended for the benefit of an Authorized Relying Party who is an Individual or Sponsoring Organization that has entered into the Authorized Relying Party Agreement and uses the Subscriber's Certificate to verify the integrity of a Digitally Signed message, to identify the creator of a message, to authenticate such Subscriber, or to establish confidential communications with the Subscriber. This is different than a Relying Party that does not enter into the Authorized Relying Party Agreement but still relies upon the Certificate for the verification and authentication purposes listed above.
 
 Relying parties may check the relevant CRL or OCSP response when available, before relying on the information presented in the Certificate.
 
-### Other Participants
+#### Other Participants
 
-#### Policy Management Authority (PMA)
+##### Policy Management Authority (PMA)
 
 The IdenTrust Policy Management Authority (PMA) oversees the adoption, administration, and application of the CP-CPS with all the PKI Participants. The IdenTrust PMA also has charge of the future development and amendment of this CP-CPS.
 
-#### Certificate Manufacturing Authority (CMA)
+##### Certificate Manufacturing Authority (CMA)
 
 The Issuing CA will remain ultimately responsible for the manufacture of TrustID Certificates. However, the Issuing CA may subcontract manufacturing functions to third party CMAs who agree to be bound by this CP-CPS.
 
 IdenTrust is responsible for the manufacture of TrustID Certificates.
 
-#### Repositories
+##### Repositories
 
 The Issuing CA will perform the role and functions of the Repository. The Issuing CA may subcontract the performance of the Repository functions to a third party Organization that agrees to fulfill the functions of a Repository, and who agrees to be bound by this CP-CPS, but the Issuing CA remains responsible for the performance of those services in accordance with this CP-CPS.
 
 IdenTrust will perform the role and functions of the Repository.
 
-#### PKI Sponsors
+##### PKI Sponsors
 
 A PKI Sponsor is an Individual who applies for a Certificate used by an Electronic Device but is not the Subscriber. This Individual is employed by or is an authorized agent of the Sponsoring Organization and acts on behalf of the Sponsoring Organization in relation to the Certificate, including but not limited to applying for such Certificate, completing the application and registration processes, retrieving such Certificate when it is issued, and other Certificate lifecycle events. When so, the PKI Sponsor is responsible for providing the information necessary (i.e., server or application name, Public Keys, equipment authorization or attributes, contact information, and other information) to complete the application and registration processes. The PKI Sponsor will also:
 
@@ -452,17 +168,17 @@ A PKI Sponsor is an Individual who applies for a Certificate used by an Electron
 
 -   Acknowledge and agree to the Certificate Terms of Use on behalf of the Sponsoring Organization.
 
-#### Trusted Agents
+##### Trusted Agents
 
 A Trusted Agent is an entity authorized to act as a representative of a Sponsoring Organization in verifying Applicant or PKI Sponsor information during the registration process. Trusted Agents do not have automated interfaces with the CA systems but will work manually with RAs and IdenTrust to have Applicants/PKI Sponsors approved.
 
-#### Delegated Third Parties
+##### Delegated Third Parties
 
 IdenTrust does not delegate CA activities to Delegated Third Parties which are not Enterprise RAs.
 
-## Certificate Usage
+### Certificate Usage
 
-### Appropriate Certificate Uses
+#### Appropriate Certificate Uses
 
 Applications for which TrustID Certificates are suitable include, but are not limited to, applications that Provide authentication-based access and secure communication with online sources of information:
 
@@ -474,13 +190,13 @@ Extended Organization Validation (EV): Verifies that the Subscriber has control 
 
 Allowed uses are specified in the Key Usage and Extended Key Usage extensions of a Certificate and are documented in the Certificate Profiles. This section presents the uses for different Certificate types as identified by the Certificate Policy OID.
 
-### Prohibited Certificate Uses
+#### Prohibited Certificate Uses
 
 No stipulation.
 
-## Policy Administration
+### Policy Administration
 
-### Organization Administering the Document
+#### Organization Administering the Document
 
 This CP-CPS is administered by:
 
@@ -496,7 +212,7 @@ This CP-CPS is administered by:
 >
 > Phone: (888) 882-1104
 
-### Contact Person
+#### Contact Person
 
 Questions regarding the implementation and administration of this CP-CPS should be directed to:
 
@@ -514,11 +230,11 @@ Questions regarding the implementation and administration of this CP-CPS should 
 
 Guidelines on reporting suspected Private Key Compromise, Certificate misuse, or any form of fraud, compromise, misuse, inappropriate conduct, or other Certificate-related matters for Subscribers, Relying Parties, Application Software Suppliers, and other third parties are provided in [Section 4.10.2.1](#certificate-problem-reporting) \"Certificate Problem Reporting".
 
-### Person Determining CPS Suitability for the Policy
+#### Person Determining CPS Suitability for the Policy
 
 No stipulation.
 
-### CP-CPS Approval Procedures
+#### CP-CPS Approval Procedures
 
 The approval of an Issuing CA's CP-CPS must be in accordance with the procedures specified by the PMA. Where the Issuing CA\'s CP-CPS contains information relevant to the security of the Issuing CA, all or part of the CP-CPS need not be made publicly available.
 
@@ -540,9 +256,9 @@ The PMA will notify all Issuing CAs authorized to Issue Certificates under the C
 
 If a Policy change is determined by the PMA to warrant the Issuance of a new Policy, the PMA may assign a new OID for the modified Policy.
 
-## Definitions and Acronyms
+### Definitions and Acronyms
 
-### Definitions
+#### Definitions
 
 +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Term**                                                     | **Definition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -2556,7 +2272,7 @@ No stipulation.
 
 No stipulation.
 
-### Limits on Suspension Period 
+### 4.9.16 Limits on Suspension Period 
 
 No stipulation.
 
