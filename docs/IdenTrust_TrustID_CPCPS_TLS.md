@@ -1,5 +1,5 @@
--   [[1]{.toc-section-number} INTRODUCTION](#introduction){#toc-introduction}
-    -   [[1.1]{.toc-section-number} Overview](#overview){#toc-overview}
+-   [{.toc-section-number} INTRODUCTION](#introduction){#toc-introduction}
+    -   []{.toc-section-number} Overview](#overview){#toc-overview}
     -   [[1.2]{.toc-section-number} Document Name and Identification](#document-name-and-identification){#toc-document-name-and-identification}
         -   [[1.2.1]{.toc-section-number} Alphanumeric Identifier](#alphanumeric-identifier){#toc-alphanumeric-identifier}
         -   [[1.2.2]{.toc-section-number} Object Identifier](#object-identifier){#toc-object-identifier}
@@ -2556,7 +2556,7 @@ No stipulation.
 
 No stipulation.
 
-### 4.9.16 Limits on Suspension Period 
+### Limits on Suspension Period 
 
 No stipulation.
 
