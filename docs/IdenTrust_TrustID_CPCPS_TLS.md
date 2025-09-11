@@ -1343,7 +1343,7 @@ See [Section 4.6.7](#notification-of-certificate-issuance-by-the-ca-to-other-ent
 
 #### **4.9.1.1 Reasons for Revoking Subscriber Certificates**
 
-[]{#_Reasons_for_Revoking .anchor}IdenTrust may support Revocation of Short-lived Subscriber Certificates.
+IdenTrust may support Revocation of Short-lived Subscriber Certificates.
 
 With the exception of Short-lived Subscriber Certificates, IdenTrust will revoke a Subscriber Certificate individually within 24 hours and use the corresponding *CRLReason* ( See [Section 7.2.2](#crl-and-crl-entry-extensions)) if one or more of the following occurs:
 
@@ -1542,7 +1542,7 @@ No stipulation.
 
 No stipulation.
 
-### **4.9.17 Limits on Suspension Period **
+### **4.9.17 Limits on Suspension Period**
 
 No stipulation.
 
@@ -1721,23 +1721,6 @@ IdenTrust Trusted Role personnel are appointed via "Trusted Role Appointment Let
 Specifically, the generic roles in this CP-CPS translate into specific roles for the CA and RA, which include, but are not limited to, CA/RA administrators, system administration personnel, system operators, engineering personnel, and operations managers. For specifics, see the IdenTrust Trusted Roles Matrix Mapping table below.
 
 The functions and duties performed by these persons are also separated and distributed so that one person alone cannot circumvent security measures or subvert the security and trustworthiness of the PKI. See [Section 5.2.4](#roles-requiring-separation-of-duties).
-
-| **IdenTrust Trusted Roles Matrix Mapping** |  |  |  |  |  |
-|---|---|---|---|---|---|
-| TrustID Role | IdenTrust-Internally Defined Roles |  |  |  |  |
-|  |      CA Administrator |      LRA / Enterprise RA     |      System Administrator     |      Security Officer     |      RA     Administrator     |
-|     CA Administrator                            | X |  |  |  |  |
-|     CA Officer                                  |  | X |  |  |  |
-|     CA Auditor                                  |  |  |  | X |  |
-|     CA Operator                                 |  |  | X |  |  |
-|     CSA Administrator                           | X |  |  |  |  |
-|     CSA Auditor                                 |  |  |  | X |  |
-|     CSA Operator                                |  |  | X |  |  |
-|     RA Administrator                            |  |  |  |  | X |
-|     RA Officer                                  |  | X |  |  |  |
-|     RA Auditor                                  |  |  |  | X |  |
-|     RA Operator                                 |  |  | X |  |  |
-|     RA Administrator                            |  |  |  |  | X |
 
 The following subsections provide a detailed description of the responsibilities for each Trusted Role.
 
