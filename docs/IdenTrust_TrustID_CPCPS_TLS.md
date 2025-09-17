@@ -10,7 +10,6 @@ date: September 12, 2025
 copyright: Copyright © 2025 IdenTrust Services, LLC. All rights reserved.
 ---
 
-
 # **1 INTRODUCTION**
 
 ## **1.1 Overview**
@@ -24,7 +23,7 @@ This TrustID TLS Certificate Policy and Certification Practice Statement, referr
 -   The [Chrome Root Program Policy](https://googlechrome.github.io/chromerootprogram/)
 -   The [Microsoft Trusted Root Program](https://learn.microsoft.com/en-us/security/trusted-root/program-requirements)
 -   The [Mozilla Root Store Policy](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/)
-<!-- end of list -->
+
 The copy of this CP-CPS attached hereto (the "Policy Copy") is provided to the Mozilla Foundation subject to the terms of that certain license known as "Creative Commons Attribution-NoDerivatives 4.0 International Public License" (which can be viewed at: <https://creativecommons.org/licenses/by-nd/4.0/>) and the notices below on this page (collectively, the "License"). The Policy Copy forms the "Licensed Materials" under the License provided that this page is not removed from the Policy Copy.
 
 NOTICES:
@@ -38,7 +37,6 @@ Copyright © 2025 IdenTrust Services, LLC. All rights reserved.
 C.  PKI Participants (see [Section 1.3](#pki-participants)) must not, as PKI Participants, rely or otherwise use the Policy Copy. The Policy Copy may not be accurate or current. At any point in time, for the then-current authoritative version of the "TrustID TLS CP-CPS", PKI Participants can visit the IdenTrust Repository located at: [https://www.identrust.com/support/documents/TrustID](https://www.identrust.com/support/documents/trustid). Access to and the contents of such Repository are not within the scope of the License.
 
 D. This page must be included with every copy of the Policy.
-<!-- end of list -->
 
 ## **1.2 Document Name and Identification**
 
@@ -81,7 +79,6 @@ IdenTrust as the Issuing CA is a trusted third party that attests to the binding
 -   The initiation of Certificate Revocations, either at the Subscriber's request or upon the entity's initiative;
 -   The Revocation of Certificates, including by such means as issuing and publishing Certificate Revocation Lists (CRLs) or providing Revocation information via Online Certificate Status Protocol (OCSP) when required, or other online methods; and
 -   The Identity Proofing of Individuals or entities submitting requests to renew Certificates or seeking a new Certificate following a re-keying process, and processes set forth above for Certificates issued in response to approved renewal or re-keying requests.
-<!-- end of list -->
 
 IdenTrust as the Issuing CA is bound to act according to the terms of this CP-CPS.
 
@@ -93,7 +90,6 @@ IdenTrust as the Issuing CA is ultimately responsible for all TrustID Certificat
 2.  Retain documentation in accordance with [Section 5.5.2](#retention-period-for-archive);
 3.  Abide by the other provisions of the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/) that are applicable to the delegated function; and;
 4.  Comply with this CP-CPS or the Delegated Third Party's Registration Practice Statement that IdenTrust has verified, and complies with the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/). IdenTrust may require an RA Organization to submit a Registration Practice Statement on an annual basis.
-<!-- end of list -->
 
 An RA is an entity that is responsible for collecting and confirming a Subscriber's identity and other information for inclusion in the Certificate. RA functions are those CA functions that are generally related to the performance of Identity Proofing. These duties can be performed for the entity by Local Registration Agent (LRAs) that are authorized by RAs to perform the duties including the following:
 
@@ -106,17 +102,15 @@ An RA is an entity that is responsible for collecting and confirming a Subscribe
 -   Verifying the attributes requested by the Subject for their Certificate;
 -   Assigning distinguished (unique) names to Subjects; and
 -   Distributing tokens and associated software to Subscribers.
-<!-- end of list -->
+
 #### **1.3.2.1 Enterprise Registration Authorities**
 
 IdenTrust may delegate to an Enterprise RA to verify Certificate Requests from Subjects within the Enterprise RA's own Organization. IdenTrust does not Accept Certificate Requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
 1.  IdenTrust may delegate to an Enterprise RA to verify Certificate Requests from Subjects within the Enterprise RA's own Organization. IdenTrust shall not Accept Certificate Requests authorized by an Enterprise RA unless the following requirements are satisfied: IdenTrust shall confirm that the requested FQDNs are within the Enterprise RA's verified Domain Namespace. If the Certificate Request includes a Subject name of a type other than a FQDN, IdenTrust shall confirm that the name is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject. For example, the CA shall not issue a Certificate containing the Subject name "XYZ Co." on the authority of Enterprise RA "ABC Co.", unless the two companies are affiliated (see [Section 3.2.2](#authentication-of-organization-and-domain-identity)) or "ABC Co." is the agent of "XYZ Co". This requirement applies regardless of whether the accompanying requested Subject FQDN falls within the Domain Namespace of ABC Co.'s Registered Domain Name.
-
 2.  IdenTrust confirms that the subject:organizationName name is either that of the delegated Enterprise RA, or an Affiliate of the delegated Enterprise RA, or that the delegated Enterprise RA is an agent of the named Subject.
-
 3.  For EV Server Certificates the final cross-correlation and due diligence requirements of [Section 3.2.2.13 of the EV TLS BR](https://cabforum.org/working-groups/server/extended-validation/guidelines/#32213-final-cross-correlation-and-due-diligence) may be performed by a single person representing the Enterprise RA.
-<!-- end of list -->
+
 IdenTrust imposes these limitations as a contractual requirement on the Enterprise RA and monitor compliance by the Enterprise RA.
 
 ### **1.3.3 Subscribers**
@@ -170,7 +164,6 @@ Applications for which TrustID Certificates are suitable include, but are not li
 -   Domain Validation (DV): Verifies that the Subscriber has control over the domain but does not authenticate the Organization behind the website.
 -   Organization Validation (OV): Verifies that the Certificate Subscriber has control over the domain and authenticate the Organization behind the website.
 -   Extended Organization Validation (EV): Verifies that the Subscriber has control over the domain and does a comprehensive authentication of the Organization behind the website to meet strict industry standards set by the CA/Browser Forum Baseline Requirements.
-<!-- end of list -->
 
 Allowed uses are specified in the Key Usage and Extended Key Usage extensions of a Certificate and are documented in the Certificate Profiles [Section 7](#certificate-crl-and-ocsp-profiles). This section presents the uses for different Certificate types as identified by the Certificate Policy OID.
 
@@ -469,7 +462,6 @@ If a Policy change is significant, the PMA may assign a new Object Identifier (O
 -   WebTrust Principles and Criteria for Certification Authorities - Extended Validation SSL
 -   WebTrust Principles and Criteria for Certification Authorities - Network Security
 -   WebTrust Principles and Criteria for Certification Authorities - SSL Baseline with Network Security
-<!-- end of list --> 
 
 ### **1.6.4 Conventions**
 
@@ -2953,62 +2945,52 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 
 #### **7.1.2.1 Root CA Certificates**
 
-| **Root CA Certificate Profile**  |  |  |  |
+| **Root CA Certificate Profile**  |  |
+|---|---|
+| Field   | Description |
+| version    | v3(2). |
+| serialNumber | Unique non‐sequential number greater than zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a CSPRNG. |
+| signature  | See   Section 7.1.3.2. |
+| Issuer | Encoded value must be byte‐for‐byte   identical to the encoded Subject |
+| validity | See Section 6.3.2. |
+| Subject | CN = Root Certificate   name unique across all root Certificates issued by IdenTrust. O = IdenTrust C =   US | 
+| subjectPublicKeyInfo    | See   Section 7.1.3.1 |
+| signatureAlgorithm    | Encoded   value must be byte-for-byte identical to the tbsCertificate.signature. | 
+
+| **Extension**| **Present**| **Critical**| **Description / Value**|
 |---|---|---|---|
-| Field   | Description     |  |  |
-| version    | v3(2).    |  |  |
-| serialNumber    | Unique    non‐sequential number greater than   zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a   CSPRNG.    |  |  |
-| signature    | See   Section 7.1.3.2.    |  |  |
-| Issuer | Encoded value must be byte‐for‐byte   identical to the encoded Subject    |  |  |
-| validity | See Section 6.3.2.    |  |  |
-| Subject | CN = Root Certificate   name unique across all root Certificates issued by IdenTrust. O = IdenTrust C =   US |  |  |
-| subjectPublicKeyInfo    | See   Section 7.1.3.1    |  |  |
-| signatureAlgorithm    | Encoded   value must be byte-for-byte identical to the tbsCertificate.signature.       |  |  |
-| Extension    | Present    | Critical    | Description / Value    |
 | authorityKeyIdentifier    | Y | N    | Contains only the keyIdentifier   field identical to the subjectKeyIdentifer field.    |
 | basicConstraints    | Y    | Y    | cA = true    |
 | keyUsage    | Y    | Y    | digitalSignature, keyCertSign and cRLSign    |
 | subjectKeyIdentifier    | Y    | N    | Set as defined within in Section 4.2.1.2 of RFC 5280.    |
-| extKeyUsage    | Not   present    |  |  |
-| certificatePolicies    | Not present    |  |  |
+| extKeyUsage    | Not   present    |
+| certificatePolicies    | Not present    |
 
 #### **7.1.2.2 Subordinate CA Certificates**
 
 | **Subordinate CA Certificate Profile**  |  |  |  |
 |---|---|---|---|  
-| **Field**    | **Value**|
-| *version*      | v3(2).|
-| *serialNumber*| Unique non‐sequential number greater than zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a CSPRNG. |
-| *signature*| See [Section 7.1.3.2](#signature-algorithm-identifier).|
-| *Issuer*| Must be byte-for-byte identical to the s*ubject* field of the Issuing CA|
-| *validity*| See [Section 6.3.2](#certificate-operational-periods-and-key-pair-usage-periods). |
-| *Subject*| CN = Subordinate CA's unique identifier name|
-|| O = Subordinate CA's Organization legal name or DBA|
-|| OU = {Optional} Subordinate CA's custom CA name|
-|| C = Two-letter ISO 3166-1 country code of Subordinate CA's place of business|
-| *subjectPublicKeyInfo*| See [Section 7.1.3.1](#subjectpublickeyinfo).|
-| *signatureAlgorithm*| Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*.|
+| **Field** | **Value** |
+| *version* | v3(2). |
+| *serialNumber* | Unique non‐sequential number greater than zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a CSPRNG. |
+| *signature* | See [Section 7.1.3.2](#signature-algorithm-identifier). |
+| *Issuer* | Must be byte-for-byte identical to the s*ubject* field of the Issuing CA |
+| *validity* | See [Section 6.3.2](#certificate-operational-periods-and-key-pair-usage-periods). |
+| *Subject* | CN = Subordinate CA's unique identifier name <br> O = Subordinate CA's Organization legal name or DBA <br> OU = {Optional} Subordinate CA's custom CA name <br> C = Two-letter ISO 3166-1 country code of Subordinate CA's place of business |
+| *subjectPublicKeyInfo* | See [Section 7.1.3.1](#subjectpublickeyinfo). |
+| *signatureAlgorithm* | Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*. |
 
 | **Extension**| **Present**| **Critical**| **Description / Value**|
 |---|---|---|---|
-| *authorityKeyIdentifier*| Y| N| Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA.      |
-| *basicConstraints*| Y| Y| cA = True|
-|||| May contain the *pathlenConstraint* field.|
-| *certificatePolicies*| Y| N| Certificate Policy:|
-|||| Policy Identifier= anyPolicy {2.5.29.32.0}|
-|||| Policy Qualifier Info:|
-|||| Policy Qualifier Id=id-qt-cps|
-|||| Qualifier: HTTPS URL for the Issuing CA's Certificate Policy                                                 |
-|||| Policy Qualifier Info:[^3]|
-|||| Policy Qualifier Id=User Notice|
-|||| Qualifier: Notice Text=Subordinate CA text|
-| *crlDistributionPoints*| Y| N| Contains the HTTP URL of the CA's CRL service.|
-| *keyUsage*| Y| Y| *DigitalSignature;* *keyCertSign*; *cRLSign*|
-| *subjectKeyIdentifier*| Y| N| set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2) |
-| *extKeyUsage*| Y| N| *id-kp-serverAuth*, *id-kp-clientAuth*[^4]|
-| *authorityInformationAccess*| Y| N| Optional - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder.|
-| *id-ad-caIssuers* (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate.|
-| *nameConstraints*| May| If present, follow [Section 7.1.2.10.8 of the TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#712108-ca-certificate-name-constraints). |
+| *authorityKeyIdentifier* | Y| N | Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA. |
+| *basicConstraints* | Y| Y | cA = True <br> May contain the *pathlenConstraint* field. |
+| *certificatePolicies* | Y| N| Certificate Policy: <br> Policy Identifier= anyPolicy {2.5.29.32.0} <br> Policy Qualifier Info: <br> Policy Qualifier Id=id-qt-cps <br> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy <br> Policy Qualifier Info:[^3] <br> Policy Qualifier Id=User Notice <br> Qualifier: Notice Text=Subordinate CA text |
+| *crlDistributionPoints* | Y| N| Contains the HTTP URL of the CA's CRL service. |
+| *keyUsage* | Y | Y | *DigitalSignature;* *keyCertSign*; *cRLSign* |
+| *subjectKeyIdentifier* | Y | N | set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2) |
+| *extKeyUsage* | Y | N | *id-kp-serverAuth*, *id-kp-clientAuth*[^4] |
+| *authorityInformationAccess*| Y | N | Optional - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> *id-ad-caIssuers* (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate. |
+| *nameConstraints* | May | If present, follow [Section 7.1.2.10.8 of the TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#712108-ca-certificate-name-constraints). |
 
 #### **7.1.2.3 End Entity Certificates**
 
@@ -3021,38 +3003,23 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 | *Issuer*| Must be byte‐for‐byte identical to the *subject* field of the Issuing CA.|
 | *validity*| See [Section 6.3.2](#certificate-operational-periods-and-key-pair-usage-periods).|
 | *Subject* Domain Validated (DV)| CN = Optional; when present , one owned/controlled Domain name derived from the *subjectAltName* extension.|
-| *Subject* Organization Validated (OV) | CN = Optional; when present , one owned/controlled Domain name derived from the *subjectAltName* extension.|
-|| O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN|
-|| C = Two-letter ISO 3166-1 country code of Organization's place of business|
-|| L = City/locality name present if S is absent|
-|| S = State or province name present if L is absent|
-| *Subject* Extended Validation (EV)| CN = Optional; when present , one owned/controlled Domain name derived from the *subjectAltName* extension.|
-|| O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN|
-|| L = City/locality name|
-|| S = State or province name|
-|| C = Two-letter ISO 3166-1 country code of Organization's place of business|
-|| serialNumber = Unique registration number[^5]|
-|| *businessCategory* = One of these values[^6]|
-|| *jurisdictionStateOrProvince* = Information relevant to the jurisdiction of *incorporation or registration*.[^7]|
-|| *jurisdictionCountryName* = Information relevant to the jurisdiction of incorporation or registration.^8^|
-| *subjectPublicKeyInfo*| See [Section 7.1.3.1](#subjectpublickeyinfo).|
-| *signatureAlgorithm*| Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*.|||
+| *Subject* Organization Validated (OV) | CN = Optional; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> L = City/locality name present if S is absent <br> S = State or province name present if L is absent | 
+| *Subject* Extended Validation (EV)| CN = Optional; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> L = City/locality name <br> S = State or province name <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> serialNumber = Unique registration number[^5] <br> *businessCategory* = One of these values[^6] <br> *jurisdictionStateOrProvince* = Information relevant to the jurisdiction of *incorporation or registration*.[^7] <br> *jurisdictionCountryName* = Information relevant to the jurisdiction of incorporation or registration.^8^ |
+| *subjectPublicKeyInfo* | See [Section 7.1.3.1](#subjectpublickeyinfo). |
+| *signatureAlgorithm* | Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*. |
 
 | **Extension**| **Present**| **Critical** | **Description / Value**|
 |---|---|---|---|
-| *authorityInformationAccess*| Y| N| Optional - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder.|
-|||| id-ad-caIssuers (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate.|
+| *authorityInformationAccess*| Y| N| Optional - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> id-ad-caIssuers (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate. |
 | *authorityKeyIdentifier*| Y| N| Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA.|
-| *certificatePolicies*| Y| N| <ol> Certificate Policy: </ol> <ol> Policy Identifier= One of these pairs: </ol> <ol> **TLS DV**: 2.23.140.1.2.1 ; 2.16.840.1.113839.0.6.5 </ol> <ol> **TLS OV**: 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3 </ol> <ol> **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9 </ol> <ol> Policy Qualifier Info: </ol> <ol> Policy Qualifier Id=id-qt-cps </ol> <ol> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy </ol> <ol> Policy Qualifier Info:[^8] </ol> <ol> Policy Qualifier Id=User Notice </ol> <ol> Qualifier: Notice Text=Subordinate CA text|
+| *certificatePolicies*| Y| N|  Certificate Policy: <ol> Policy Identifier= One of these pairs: </ol> <ol> **TLS DV**: 2.23.140.1.2.1 ; 2.16.840.1.113839.0.6.5 </ol> <ol> **TLS OV**: 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3 </ol> <ol> **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9 </ol> <ol> Policy Qualifier Info: </ol> <ol> Policy Qualifier Id=id-qt-cps </ol> <ol> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy </ol> <ol> Policy Qualifier Info:[^8] </ol> <ol> Policy Qualifier Id=User Notice </ol> <ol> Qualifier: Notice Text=Subordinate CA text|
 | *extKeyUsage*| Y| N| *id-kp-serverAuth, id-kp-clientAuth*[^9]|
 | *subjectAltName*| Y| N| dNSName fully qualified domain name(s) or wildcard name validated by the CA; or </ol> <ol> iPAddress IPV4/IPV6 validated by the CA. </ol> <ol> When the *subject* field an empty sequence, this extension is marked critical.|
 | *nameConstraints*| N|||
 | *keyUsage*| Y| Y| *digitalSignature; keyEncipherment*[^10].|
-| *basicConstraints*| May| Y| cA =False|
-|||| *pathLenConstrain*t must not be present.|
+| *basicConstraints*| May| Y| cA =False <br> *pathLenConstrain*t must not be present.|
 | *crlDistributionPoints*| Y| N| Contains the HTTP URL of the CA's CRL service.|
-| *Signed Certificate Timestamp List*   | May| N| The Signed Certificate Timestamp List extension contents must be an OCTET STRING containing the encoded *SignedCertificateTimestampList*, as specified in [Section 3.3. of RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962#section-3.3). |
-|||| Each *SignedCertificateTimestamp* included within the *SignedCertificateTimestampList* must be for a *PreCert* *LogEntryType* that corresponds to the current Certificate.|
+| *Signed Certificate Timestamp List*   | May| N| The Signed Certificate Timestamp List extension contents must be an OCTET STRING containing the encoded *SignedCertificateTimestampList*, as specified in [Section 3.3. of RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962#section-3.3). <br> Each *SignedCertificateTimestamp* included within the *SignedCertificateTimestampList* must be for a *PreCert* *LogEntryType* that corresponds to the current Certificate.|
 | *subjectKeyIdentifier*| Y| N| set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2)|
 
 ### **7.1.3 Algorithm Object Identifiers**
@@ -3116,26 +3083,24 @@ IdenTrust issues version two (2) CRLs conforming to [RFC 5280](https://datatrack
 
 ### **7.2.2 CRL and CRL Entry Extensions**
 
-| **Field or Extension**| **Value** |||
-|---|---|---|---|
-| *Issuer* | DN of issuer of CRL ||
+| **Field or Extension**| **Value** |
+|---|---|
+| *Issuer* | DN of issuer of CRL |
 | *thisUpdate*| The date and time when the Certificate revocation list validity begins|
-| *nextUpdate*| For Subordinate CAs: Up to ThisUpdate + 1 year|
-|| For Subscribers: Up to ThisUpdate + 10 days|
+| *nextUpdate*| For Subordinate CAs: Up to ThisUpdate + 1 year <br> For Subscribers: Up to ThisUpdate + 10 days |
 | *revokedCertificates*| List of revoked Certificates, including the "Revoked Certificates Component" below .|
 | *CRLNumber*| The serial number of this CRL in an incrementally increasing sequence of CRLs|
-| *authorityKeyIdentifier*| Is present and not marked critical|
-|| The *keyIdentifier* field is present and the value is identical to the *subjectKeyIdentifier* field of the Issuing CA|
+| *authorityKeyIdentifier*| Is present and not marked critical <br> The *keyIdentifier* field is present and the value is identical to the *subjectKeyIdentifier* field of the Issuing CA|
 | *CRLNumber*| Present and not marked critical, containing an integer greater than or equal to zero (0) and less than 2¹⁵⁹, and convey a strictly increasing sequence.|
 | *issuingDistributionPoint*| Used only on partitioned CRLs, marked critical|
 
 **Revoked Certificates Component**
+
 | **Field or Extension** | **Value** |
 |---|---|
 | *serialNumber*| Byte-for-byte identical to the serialNumber contained in the revoked Certificate.|
 | *revocationDate*| The date and time revocation occurred. IdenTrust may update the revocation date in a CRL entry when it is determined that the Private Key of the Certificate was compromised prior to the revocation date that is indicated in the CRL entry for that Certificate.|
-| *crlEntryExtensions* | Must include an [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) '*reasonCode*' field not marked critical, as follows: 
-|| <ol> **0. *unspecified***: Represented by the omission of a *reasonCode*. Must be omitted if the CRL entry is for a Certificate not technically capable of causing issuance unless the CRL entry is for a Subscriber Certificate Subject to these [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/) revoked prior to July 15, 2023. </ol> <ol> **1. *keyCompromise***: Indicates that it is known or suspected that the Subscriber's Private Key has been compromised. </ol> <ol> **3. *affiliationChanged***: Indicates that the Subject's name or other Subject identity Information in the Certificate has changed, but there is no cause to suspect that the Certificate's Private Key has been compromised. </ol> <ol> **4. *superseded***: Indicates that the Certificate is being replaced because: the Subscriber has requested a new Certificate, IdenTrust has reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the Certificate should not be relied upon, or the CA has revoked the Certificate for compliance reasons such as the Certificate does not comply with the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/) or this CP-CPS. </ol> <ol> **5. *cessationOfOperation***: Indicates that the website with the Certificate is shut down prior to the expiration of the Certificate, or if the Subscriber no longer owns or controls the Domain Name in the Certificate prior to the expiration of the Certificate. </ol> <ol> **6. *certificateHold***: Must not be included if the CRL entry is for (1) a Certificate Subject to the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/). </ol> <ol> **9. *privilegeWithdrawn*:** Indicates that there has been a subscriber‐side infraction that has not resulted in keyCompromise, such as the Certificate Subscriber provided misleading information in their Certificate Request or has not upheld their material obligations under the Subscriber Agreement or Terms of Use.|
+| *crlEntryExtensions* | Must include an [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) '*reasonCode*' field not marked critical, as follows: <br> <ol> **0. *unspecified***: Represented by the omission of a *reasonCode*. Must be omitted if the CRL entry is for a Certificate not technically capable of causing issuance unless the CRL entry is for a Subscriber Certificate Subject to these [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/) revoked prior to July 15, 2023. </ol> <ol> **1. *keyCompromise***: Indicates that it is known or suspected that the Subscriber's Private Key has been compromised. </ol> <ol> **3. *affiliationChanged***: Indicates that the Subject's name or other Subject identity Information in the Certificate has changed, but there is no cause to suspect that the Certificate's Private Key has been compromised. </ol> <ol> **4. *superseded***: Indicates that the Certificate is being replaced because: the Subscriber has requested a new Certificate, IdenTrust has reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the Certificate should not be relied upon, or the CA has revoked the Certificate for compliance reasons such as the Certificate does not comply with the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/) or this CP-CPS. </ol> <ol> **5. *cessationOfOperation***: Indicates that the website with the Certificate is shut down prior to the expiration of the Certificate, or if the Subscriber no longer owns or controls the Domain Name in the Certificate prior to the expiration of the Certificate. </ol> <ol> **6. *certificateHold***: Must not be included if the CRL entry is for (1) a Certificate Subject to the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/). </ol> <ol> **9. *privilegeWithdrawn*:** Indicates that there has been a subscriber‐side infraction that has not resulted in keyCompromise, such as the Certificate Subscriber provided misleading information in their Certificate Request or has not upheld their material obligations under the Subscriber Agreement or Terms of Use.|
 ---
 
 
@@ -3372,7 +3337,7 @@ Participants may be required to participate in, and bear financial responsibilit
 
 No stipulation.
 
-## 9.5 Intellectual Property Rights**
+## **9.5 Intellectual Property Rights**
 
 A Private Key will be treated as the sole property of the legitimate holder of the TrustID Certificate containing the corresponding Public Key. "TrustID" is registered in the U.S. Patent and Trademark Office as a mark of IdenTrust, Inc. and is used by IdenTrust Services, LLC with the permission of IdenTrust, Inc. This CP-CPS is the intellectual property of IdenTrust Services, LLC, protected by copyright and other law regarding intellectual property, and may be used only pursuant to a license or other express permission from IdenTrust Services, LLC and then only in accordance with the provisions of this CP-CPS. Any other use of the above without the express permission of the owner is strictly prohibited.
 
