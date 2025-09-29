@@ -506,7 +506,7 @@ All information required by the CP-CPS is published promptly upon availability i
 
 IdenTrust as Issuing CA makes its Repository publicly available in a read-only manner.
 
-See [Section 2.2](#publication-of-certification-information).
+See Section 2.2(#Publication-of-Certification-Information)
 
 # **3 IDENTIFICATION AND AUTHENTICATION**
 
