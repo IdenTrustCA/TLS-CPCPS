@@ -667,6 +667,8 @@ The Random Value shall remain valid for use in a confirming response for no more
 
 **Note:** Once the FQDN has been validated using this method, IdenTrust may also Issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating wildcard Domain Names.
 
+This validation method is equivalent to the [TLS BR validation method in section 3.2.2.4.4] https://cabforum.org/working-groups/server/baseline-requirements/requirements/#32244-constructed-email-to-domain-contact]
+
 ##### **3.2.2.4.2 DNS Change**
 
 IdenTrust confirms the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT, or CAA record for either (1) an Authorization Domain Name; or (2) an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
