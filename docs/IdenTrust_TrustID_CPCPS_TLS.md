@@ -5,7 +5,7 @@ subtitle: Version 5.0.0
 author: 
   - IdenTrust Services LLC.
 
-date: September 12, 2025
+date: September 26, 2025
 
 copyright: Copyright © 2025 IdenTrust Services, LLC. All rights reserved.
 ---
@@ -42,7 +42,7 @@ D. This page must be included with every copy of the Policy.
 
 ### **1.2.1 Alphanumeric Identifier**
 
-The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the \"TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on September 12, 2025, by the IdenTrust PMA.
+The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the \"TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on September 26, 2025, by the IdenTrust PMA.
 
 The following table contains subsequent revisions:
 
@@ -50,7 +50,7 @@ The following table contains subsequent revisions:
 | **Version**   | **Date**    | **Summary of Changes / Comments** |      
 |---|---|---|
 |Older|September 26, 2025|Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid).|
-| 5.0.0    | September 12, 2025 | This document replaces IdenTrust CP v4.9.2 and IdenTrust CPS v4.9.2 with the following updates: <ol> <li> Removed all Non-TLS Certificate references </li> <li> Removed details in Sections where the TLS BR has "No stipulation" </li> <li> Added relevant CP language where applicable </li> <li> Section 1.6: Added/updated definitions </li> <li> Section 3.2.2.9: Added Multi-Perspective details </li> <li> Sections 5.3.3.1 thru 5.3.3.8: removed detailed roles and references in Appendix A</li><li>Section 5.4.1: Removed table of auditable events </li> <li> Section 7: Removed non-TLS Certificate Profile details </li> 
+| 5.0.0    | September 26, 2025 | This document replaces IdenTrust CP v4.9.2 and IdenTrust CPS v4.9.2 with the following updates: <ol> <li> Removed all Non-TLS Certificate references </li> <li> Added relevant CP language where applicable </li> <li> Section 1.2.2: Moved OID details to Section 7.1.6 </li><li> Section 1.6: Added/updated definitions/Acronyms/References </li> <li> Section 3.2.2.4: Removed Domain validation methods not used </li> <li> Section 3.2.2.9: Added Multi-Perspective details </li> <li> Section 4.2.1.1: Added details for CAA checking </li> <li>Section 4.10.2.1: "Problem Report" moved to Section 1.5.2.1. </li> <li> Section 5.2.1: Updated language for Trusted Roles </li> <li> Section 5.2.4: Removed detailed separation of duties </li><li>Section 5.4.1: Removed detailed audit log entries table </li> <li> Section 6.3.2: Updated Key Usage periods table </li> <li> Section 7: Removed non-TLS Certificate Profile details </li> <li> Appendix A: Removed </li> 
 
 ### **1.2.2 Object Identifier**
 
