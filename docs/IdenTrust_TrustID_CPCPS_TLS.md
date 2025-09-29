@@ -49,9 +49,8 @@ The following table contains subsequent revisions:
 ### **CP-CPS Document Versions**
 | **Version**   | **Date**    | **Summary of Changes / Comments** |      
 |---|---|---|
-| 5.0.0    | September 12, 2025 | This document replaces IdenTrust CP v4.9.2 and IdenTrust CPS v4.9.2 with the following updates: <ol> <li> Removed all Non-TLS Certificate references </li> <li> Removed details in Sections where the TLS BR has "No stipulation" </li> <li> Added relevant CP language where applicable </li> <li> Section 1.6: Added/updated definitions </li> <li> Section 3.2.2.9: Added Multi-Perspective details </li> <li> Sections 5.3.3.1 thru 5.3.3.8: removed detailed roles and references in Appendix A</li><li>Section 5.4.1: Removed table of auditable events </li> <li> Section 7: Removed detailed Certificate Profiles which are now available as a separate document published at [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid) in the "Policies Current" and "Policies Archived" Section </li> 
-
-Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid).
+|Older|September 26, 2025|Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid).|
+| 5.0.0    | September 12, 2025 | This document replaces IdenTrust CP v4.9.2 and IdenTrust CPS v4.9.2 with the following updates: <ol> <li> Removed all Non-TLS Certificate references </li> <li> Removed details in Sections where the TLS BR has "No stipulation" </li> <li> Added relevant CP language where applicable </li> <li> Section 1.6: Added/updated definitions </li> <li> Section 3.2.2.9: Added Multi-Perspective details </li> <li> Sections 5.3.3.1 thru 5.3.3.8: removed detailed roles and references in Appendix A</li><li>Section 5.4.1: Removed table of auditable events </li> <li> Section 7: Removed non-TLS Certificate Profile details </li> 
 
 ### **1.2.2 Object Identifier**
 
@@ -2968,8 +2967,8 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 
 #### **7.1.2.2 Subordinate CA Certificates**
 
-| **Subordinate CA Certificate Profile**  |  |  |  |
-|---|---|---|---|  
+| **Subordinate CA Certificate Profile**  |  | 
+|---|---|  
 | **Field** | **Value** |
 | *version* | v3(2). |
 | *serialNumber* | Unique non‐sequential number greater than zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a CSPRNG. |
@@ -2979,18 +2978,16 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 | *Subject* | CN = Subordinate CA's unique identifier name <br> O = Subordinate CA's Organization legal name or DBA <br> OU = {Optional} Subordinate CA's custom CA name <br> C = Two-letter ISO 3166-1 country code of Subordinate CA's place of business |
 | *subjectPublicKeyInfo* | See [Section 7.1.3.1](#subjectpublickeyinfo). |
 | *signatureAlgorithm* | Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*. |
-
-| **Extension**| **Present**| **Critical**| **Description / Value**|
-|---|---|---|---|
-| *authorityKeyIdentifier* | Y| N | Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA. |
-| *basicConstraints* | Y| Y | cA = True <br> May contain the *pathlenConstraint* field. |
-| *certificatePolicies* | Y| N| Certificate Policy: <br> Policy Identifier= anyPolicy {2.5.29.32.0} <br> Policy Qualifier Info: <br> Policy Qualifier Id=id-qt-cps <br> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy <br> Policy Qualifier Info:[^3] <br> Policy Qualifier Id=User Notice <br> Qualifier: Notice Text=Subordinate CA text |
-| *crlDistributionPoints* | Y| N| Contains the HTTP URL of the CA's CRL service. |
-| *keyUsage* | Y | Y | *DigitalSignature;* *keyCertSign*; *cRLSign* |
-| *subjectKeyIdentifier* | Y | N | set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2) |
-| *extKeyUsage* | Y | N | *id-kp-serverAuth*, *id-kp-clientAuth*[^4] |
-| *authorityInformationAccess*| Y | N | Optional - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> *id-ad-caIssuers* (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate. |
-| *nameConstraints* | May | If present, follow [Section 7.1.2.10.8 of the TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#712108-ca-certificate-name-constraints). |
+|**Extension**|**Description**|
+|*authorityKeyIdentifier* |Presence: Yes; Critical: No <br> Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA. |
+|*basicConstraints*|Presence: Yes; Critical: Yes <br> cA = True <br> May contain the *pathlenConstraint* field. |
+|*certificatePolicies*|Presence: Yes; Critical: No <br> Certificate Policy: <br> Policy Identifier= anyPolicy {2.5.29.32.0} <br> Policy Qualifier Info: <br> Policy Qualifier Id=id-qt-cps <br> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy <br> Policy Qualifier Info:[^3] <br> Policy Qualifier Id=User Notice <br> Qualifier: Notice Text=Subordinate CA text 
+|*crlDistributionPoints*|Presence: Yes; Critical: No <br> Contains the HTTP URL of the CA's CRL service.|
+|*keyUsage*|Presence: Yes; Critical: Yes <br> *DigitalSignature;* *keyCertSign*; *cRLSign*|
+|*subjectKeyIdentifier*|Presence: Yes; Critical: No <br> set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2)|
+|*extKeyUsage* |Presence: Yes; Critical: No <br> *id-kp-serverAuth*, *id-kp-clientAuth*[^4]|
+|*authorityInformationAccess*|Presence: Yes; Critical: No <br> Optional - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> *id-ad-caIssuers* (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate.|
+|*nameConstraints* |Presence: Yes; Critical: No <br> If present, follow Section 7.1.2.10.8 of the TLS BR.|
 
 #### **7.1.2.3 End Entity Certificates**
 
