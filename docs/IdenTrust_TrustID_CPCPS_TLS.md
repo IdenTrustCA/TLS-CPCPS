@@ -1914,17 +1914,13 @@ IdenTrust shall provide all personnel performing information verification duties
 
 IdenTrust shall maintain records of such training and ensure that personnel entrusted with Validation Specialist duties maintain a skill level that enables them to perform such duties satisfactorily.
 
-IdenTrust shall document that each Validation Specialist possesses the skills required by a task before allowing the Validation Specialist to perform that task.
-
-IdenTrust shall require all Validation Specialists to pass an examination provided by the CA on the information verification requirements outlined in the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/).
+IdenTrust shall require personnel wit Trusted Role duties to pass an examination provided by the CA on the information verification requirements outlined in the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/).
 
 All Individuals responsible for carrying out information verification responsibilities receive skill-enhancing training. This training encompasses fundamental Public Key Infrastructure knowledge, authentication and vetting policies and protocols (including the CA\'s CP and/or CPS), typical risks associated with the information verification process (such as phishing and other social engineering methods), and adherence to the [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/).
 
 Records of this training are upheld to ensure that personnel assigned to Validation Specialist duties maintain the proficiency needed to execute their responsibilities effectively.
 
-Before authorizing Validation Specialists to undertake [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/) tasks, IdenTrust confirms the possession of essential skills by each specialist.
-
-IdenTrust requires that all Validation Specialists successfully complete an assessment conducted by the internal compliance team. This assessment evaluates their understanding of the information verification requisites outlined in the CA/B Forum Baseline Requirements.
+Before authorizing a Trusted Role to undertake [TLS BR](https://cabforum.org/working-groups/server/baseline-requirements/requirements/) tasks, IdenTrust confirms the possession of essential skills.
 
 RAs are obligated by contract and by this CP-CPS to train its personnel and maintain a record of the training provided; specific additional areas are covered for each Trusted Role as outlined below.
 
@@ -2020,102 +2016,6 @@ IdenTrust staff members manually record all significant events that are not logg
 RAs are obligated by contract and this CP-CPS, to record all significant events related to their operations.
 
 For events recorded, the minimum information logged includes the following items: type of event, time of occurrence, the identity of the Individual or System that logged the event, who caused the event, and a success or failure indication. For some types of events, these minimums may be expanded to include items such as the source or destination of a message, or the disposition of a created object (e.g., a filename).
-
-| **TrustID Auditable Events** |  |  |  |
-|:---|:---:|:---:|:---:|
-| **Auditable Event** | **CA** | **CSA** | **RA** |
-| **SECURITY AUDIT** | **CA** | **CSA** | **RA** |
-| Any changes to the audit parameters, e.g., audit frequency, type of event audited - | X | X | X |
-| Any attempt to delete or modify the audit logs – | X | X | X |
-| Relevant router and firewall activities – As described in Section 5.4.4.1. below– |  |  |  |
-| Obtaining a third party time-stamp – | N/A | N/A | N/A |
-| **IDENTITY   AND AUTHENTICATION** | **CA** | **CSA** | **RA** |
-| Successful and unsuccessful attempts to assume a role – | X | X | X |
-| The value of maximum authentication attempts is changed – | X | X | X |
-| Maximum number of authentication attempts occurring during user login – | X | X | X |
-| An administrator unlocks an account that has been locked as a result of unsuccessful authentication attempts -   | X | X | X |
-| An administrator changes the type of authenticator, e.g., from a password to a biometric –    | X | X | X |
-| Changes in configuration files, security profiles, and administrator privileges –    | X | X | X |
-| **LOCAL   DATA ENTRY**  | **CA** | **CSA** | **RA** |
-| All security-relevant data that is entered in the system –     | X | X | X |
-| **REMOTE   DATA ENTRY** | **CA** | **CSA** | **RA** |
-| All security-relevant messages that are received by the system     | X | X | X |
-| **DATA EXPORT AND OUTPUT** | **CA** | **CSA** | **RA** |
-| All successful and unsuccessful requests for confidential and security-relevant information –     | X | X | X |
-| **KEY GENERATION** | **CA** | **CSA** | **RA** |
-| Whenever a CA generates a Key – | X | X | - |
-| **PRIVATE KEY LOAD AND STORAGE** | **CA** | **CSA** | **RA** |
-| The loading of Component Private Keys  –  | X | X | N/A |
-| All access to Certificate Subject Private Keys retained within the CA for Key recovery purposes – | X | N/A | N/A |
-| TRUSTED PUBLIC KEY ENTRY, DELETION, AND STORAGE  | **CA** | **CSA** | **RA** |
-| All changes to the trusted Public Keys, including additions and deletions –    | X | X | X |
-| **SECRET KEY STORAGE** | **CA** | **CSA** | **RA** |
-| The manual entry of secret Keys used for authentication –     | X | X | N/A |
-| **PRIVATE AND SECRET KEY EXPORT** | **CA** | **CSA** | **RA** |
-| The export of private and secret Keys –       | X | X | N/A    |
-| **CERTIFICATE REGISTRATION** | **CA** | **CSA** | **RA** |
-| All Certificate requests –  | X | N/A | X |
-| **CERTIFICATE REVOCATION** | **CA** | **CSA** | **RA** |
-| All Certificate Revocation requests –     | X | N/A | X |
-| **CERTIFICATE STATUS CHANGE APPROVAL** | **CA** | **CSA** | **RA** |
-| The approval or rejection of a Certificate status change request –     | X | X | X |
-| **COMPONENT CONFIGURATION** | **CA** | **CSA** | **RA** |
-| Any security-relevant changes to the configuration of a component –     | X | X | X |
-| **ACCOUNT ADMINISTRATION** | **CA** | **CSA** | **RA** |
-| Roles and users are added or deleted –       | X | X | - |
-| The access control privileges of a user account or a role are modified –     | X | X | - |
-| **CERTIFICATE PROFILE MANAGEMENT** | **CA** | **CSA** | **RA** |
-| All changes to the Certificate Profile –     | X | N/A | N/A |
-| **REVOCATION PROFILE MANAGEMENT** | **CA** | **CSA** | **RA** |
-| All changes to the Revocation profile   –     | X | N/A | N/A |
-| **CERTIFICATE REVOCATION LIST PROFILE MANAGEMENT** | **CA** | **CSA** | **RA** |
-| All changes to the Certificate Revocation list profile –     | X | N/A | N/A |
-| **MISCELLANEOUS** | **CA** | **CSA** | **RA** |
-| Appointment of an Individual to a Trusted Role –     | X | X | X |
-| Designation of personnel for multi-party control –     | X | - | N/A |
-| Installation of the Operating System –       | X | X | X |
-| Installation of the PKI application –     | X | X | X |
-| Installation of hardware Cryptographic Modules –  | X | X | X |
-| Removal of hardware Cryptographic Modules – | X | X | X |
-| Destruction of Cryptographic Modules –   | X | X | X |
-| System Startup –  | X | X | X |
-| Logon attempts to PKI Applications –  | X | X | X |
-| Receipt of hardware / software –  | X | X | X |
-| Attempts to set passwords – | X | X | X |
-| Attempts to modify passwords – | X | X | X |
-| Back up of the internal CA database – | X | - | - |
-| Restoration from a backup of the internal CA database – | X | - | - |
-| File manipulation – | X | - | - |
-| Posting of any material to a Repository – | X | - | - |
-| Access to the internal CA database – | X | - | - |
-| All Certificate compromise notification requests –  | X | N/A | X |
-| Loading Cryptographic Modules with Certificates – | X | X | N/A |
-| Shipment of Cryptographic Modules – | X | X | N/A |
-| Zeroizing Cryptographic Modules – | X | X | N/A |
-| Re-key of the CA – | X | X | N/A |
-| **CONFIGURATION CHANGES TO THE PKI SERVERS INVOLVING:** | **CA** | **CSA** | **RA** |
-| Hardware – | X | X | X |
-| Software – | X | X | X |
-| Operating System –  | X | X | X |
-| Patches –  | X | X | X |
-| Security Profiles –  | X | X | X |
-| **PHYSICAL ACCESS / SITE SECURITY** | **CA** | **CSA** | **RA** |
-| Personnel Access to room housing component – | X | - | - |
-| Physical access to System Components – | X | X | - |
-| Known or suspected violations of physical security  | X | X | X |
-| **ANOMALIES** | **CA** | **CSA** | **RA** |
-| Software error conditions – | X | X | X |
-| Software check integrity failures – | X | X | X |
-| Receipt of improper messages – | X | X | X |
-| Misrouted messages – | X | X | X |
-| Network attacks (suspected or   confirmed) – | X | X | X |
-| Equipment failure – | X | X | - |
-| Electrical power outages – | X | X | - |
-| Uninterruptible Power Supply (UPS) failure –  | X | X |  |
-| Obvious and significant network service or access failures – | X | X | - |
-| Violations of Certificate Policy –  | X | X | X |
-| Violations of Certification Practice Statement –  | X | X | X |
-| Resetting Operating System clock –  | X | X | X |
 
 #### **5.4.1.1 Router and Firewall Activities Log**
 
@@ -2504,8 +2404,6 @@ Cryptographic Modules and associated software platforms used by CAs, the CSA, an
 
 When IdenTrust implements Elliptic Curve Public Key parameters, they will be selected from the set specified in [Section 7.1.3](#algorithm-object-identifiers) Algorithm Object Identifiers.
 
-The public exponent is in the range between 2 ^16^+1 and 2^256^-1. The modulus is an odd number, not the power of a prime, and has no factors smaller than 752.
-
 ### **6.1.7 Key Usage Purposes (as per X509 v3 *keyUsage* Field)**
 
 IdenTrust does not use Private Keys corresponding to the Root CA Certificates to sign Certificates except in the following cases:
@@ -2743,24 +2641,22 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 
 | **Root CA Certificate Profile**  |  |
 |---|---|
-| Field   | Description |
-| version    | v3(2). |
-| serialNumber | Unique non‐sequential number greater than zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a CSPRNG. |
-| signature  | See   Section 7.1.3.2. |
-| Issuer | Encoded value must be byte‐for‐byte   identical to the encoded Subject |
-| validity | See Section 6.3.2. |
-| Subject | CN = Root Certificate   name unique across all root Certificates issued by IdenTrust. O = IdenTrust C =   US | 
-| subjectPublicKeyInfo    | See   Section 7.1.3.1 |
-| signatureAlgorithm    | Encoded   value must be byte-for-byte identical to the tbsCertificate.signature. | 
-
-| **Extension**| **Present**| **Critical**| **Description / Value**|
-|---|---|---|---|
-| authorityKeyIdentifier    | Y | N    | Contains only the keyIdentifier   field identical to the subjectKeyIdentifer field.    |
-| basicConstraints    | Y    | Y    | cA = true    |
-| keyUsage    | Y    | Y    | digitalSignature, keyCertSign and cRLSign    |
-| subjectKeyIdentifier    | Y    | N    | Set as defined within in Section 4.2.1.2 of RFC 5280.    |
-| extKeyUsage    | Not   present    |
-| certificatePolicies    | Not present    |
+| **Field**   | **Description** |
+| *version*    | v3(2). |
+| *serialNumber* | Unique non‐sequential number greater than zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a CSPRNG. |
+| *signature*  | See   [Section 7.1.3.2](#signature-algorithm-identifier).|
+| *Issuer* | Encoded value must be byte‐for‐byte   identical to the encoded Subject |
+| *validity* | See [Section 6.3.2](#certificate-operational-periods-and-key-pair-usage-periods). |
+| *Subject* | CN = Root Certificate   name unique across all root Certificates issued by IdenTrust. O = IdenTrust C =   US | 
+| *subjectPublicKeyInfo*    | See   [Section 7.1.3.1](#subjectpublickeyinfo). |
+| *signatureAlgorithm*    | Encoded   value must be byte-for-byte identical to the *tbsCertificate.signature.* | 
+| **Extension**           |  **Description**|
+| *authorityKeyIdentifier*  | Presence: Yes; Critical: No <br> Contains only the keyIdentifier field identical to the *subjectKeyIdentifer* field.    |
+| *basicConstraints*          | Presence: Yes; Critical: Yes <br> cA = true    |
+| *keyUsage*                  | Presence: Yes; Critical: Yes <br>*digitalSignature*, *keyCertSign* and *cRLSign*    |
+| *subjectKeyIdentifier*      | Presence: Yes; Critical: No <br> Set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2)    |
+| *extKeyUsage*    | Not   present    |
+| *certificatePolicies*    | Not present    |
 
 #### **7.1.2.2 Subordinate CA Certificates**
 
@@ -2770,9 +2666,9 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 | *version* | v3(2). |
 | *serialNumber* | Unique non‐sequential number greater than zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a CSPRNG. |
 | *signature* | See [Section 7.1.3.2](#signature-algorithm-identifier). |
-| *Issuer* | Must be byte-for-byte identical to the s*ubject* field of the Issuing CA |
+| *Issuer* | Must be byte-for-byte identical to the *subject* field of the Issuing CA |
 | *validity* | See [Section 6.3.2](#certificate-operational-periods-and-key-pair-usage-periods). |
-| *Subject* | CN = Subordinate CA's unique identifier name <br> O = Subordinate CA's Organization legal name or DBA <br> OU = {Optional} Subordinate CA's custom CA name <br> C = Two-letter ISO 3166-1 country code of Subordinate CA's place of business |
+| *Subject* | CN = Subordinate CA's unique identifier name <br> O = Subordinate CA's Organization legal name or DBA <br> OU = {May} Subordinate CA's custom CA name <br> C = Two-letter ISO 3166-1 country code of Subordinate CA's place of business |
 | *subjectPublicKeyInfo* | See [Section 7.1.3.1](#subjectpublickeyinfo). |
 | *signatureAlgorithm* | Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*. |
 |**Extension**|**Description**|
