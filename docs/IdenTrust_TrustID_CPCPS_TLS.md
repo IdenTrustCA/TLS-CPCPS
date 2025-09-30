@@ -14,7 +14,7 @@ copyright: Copyright © 2025 IdenTrust Services, LLC. All rights reserved.
 
 ## **1.1 Overview**
 
-This TrustID TLS Certificate Policy and Certification Practice Statement, referred to throughout this document as "CP-CPS", defines the policies and practices employed by IdenTrust Services, LLC (IdenTrust) as a Certification Authority (CA) and acting as LRA, and by Registration Authorities (RAs), to fulfill the requirements of IdenTrust TLS Publicly-Trusted Certificates. This CP-CPS governs the issuance of IdenTrust TLS Certificates in accordance with the Certificate Profiles described in [Section 7](#certificate-crl-and-ocsp-profiles) and in alignment with guidelines established by:
+This TrustID TLS Certificate Policy and Certification Practice Statement, referred to throughout this document as "CP-CPS", defines the policies and practices employed by IdenTrust Services, LLC (IdenTrust) as a Certification Authority (CA) and acting as LRA, and by Registration Authorities (RAs), to fulfill the requirements of IdenTrust TLS Publicly-Trusted Certificates. This CP-CPS governs the issuance of IdenTrust TLS Certificates in accordance with the Certificate Profiles described in [Section 7](#7certificate-crl-and-ocsp-profiles) and in alignment with guidelines established by:
 
 -   The [CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates](https://cabforum.org/working-groups/server/baseline-requirements/requirements/)
 -   The [CA/Browser Forum Guidelines for the Issuance and Management of Extended Validation Certificates](https://cabforum.org/working-groups/server/extended-validation/documents/CA-Browser-Forum-EV-Guidelines-2.0.1.pdf)
