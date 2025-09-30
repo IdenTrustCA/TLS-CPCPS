@@ -2693,14 +2693,14 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 | *validity*| See [Section 6.3.2](#certificate-operational-periods-and-key-pair-usage-periods).|
 | *Subject* Domain Validated (DV)| CN = {May}; when present , one owned/controlled Domain name derived from the *subjectAltName* extension.|
 | *Subject* Organization Validated (OV) | CN = {May}; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> L = City/locality name present if S is absent <br> S = State or province name present if L is absent | 
-| *Subject* Extended Validation (EV)| CN = {May}; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> L = City/locality name <br> S = State or province name <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> serialNumber = Unique registration number[^5] <br> *businessCategory* = One of these values[^6] <br> *jurisdictionStateOrProvince* = Information relevant to the jurisdiction of *incorporation or registration*.[^7] <br> *jurisdictionCountryName* = Information relevant to the jurisdiction of incorporation or registration.^8^ |
+| *Subject* Extended Validation (EV)| CN = {May}; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> L = City/locality name <br> S = State or province name <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> serialNumber = Unique registration number[^5] <br> *businessCategory* = One of these values[^6] <br> *jurisdictionStateOrProvince* = Information relevant to the jurisdiction of *incorporation or registration*.[^7] <br> *jurisdictionCountryName* = Information relevant to the jurisdiction of incorporation or registration.[^8] |
 | *subjectPublicKeyInfo* | See [Section 7.1.3.1](#subjectpublickeyinfo). |
 | *signatureAlgorithm* | Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*. |
 | **Extension**| **Description**|
 | *authorityInformationAccess*| Presence: Yes; Critical: No <br> {May} - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> id-ad-caIssuers (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate.|
 | *authorityKeyIdentifier*| Presence: Yes; Critical: No <br> Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA.|
 | *certificatePolicies*| Presence: Yes; Critical: No <br> Certificate Policy: <ol> Policy Identifier= One of these pairs: </ol> <ol> **TLS DV**: 2.23.140.1.2.1 ; 2.16.840.1.113839.0.6.5 </ol> <ol> **TLS OV**: 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3 </ol> <ol> **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9 </ol> <ol> Policy Qualifier Info: </ol> <ol> Policy Qualifier Id=id-qt-cps </ol> <ol> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy </ol> <ol> Policy Qualifier Info:[^8] </ol> <ol> Policy Qualifier Id=User Notice </ol> <ol> Qualifier: Notice Text=Subordinate CA text|
-| *extKeyUsage*| Presence: Yes; Critical: No| *id-kp-serverAuth, id-kp-clientAuth*[^9]|
+| *extKeyUsage*| Presence: Yes; Critical: No <br> *id-kp-serverAuth*, *id-kp-clientAuth*[^9]|
 | *subjectAltName*| Presence: Yes; Critical: No <br> dNSName fully qualified domain name(s) or wildcard name validated by the CA; or <br> iPAddress IPV4/IPV6 validated by the CA. <br> When the *subject* field an empty sequence, this extension is marked critical.|
 | *nameConstraints*| Presence: No; |
 | *keyUsage*| Presence: Yes; Critical: Yes <br> *digitalSignature; keyEncipherment*[^10].|
@@ -2760,13 +2760,12 @@ Technically Constrained Subordinate CAs include the Extended Key Usage (EKU) ext
 
 IdenTrust, as the Issuing CA, includes at least one Policy OID in every Certificate it issues. Certificates issued under this CP-CPS shall contain one of the following sets of Policy OIDs:
 
-**TrustID Certificate Names, Types, and Policy OIDs**
-|||||
-|---|---|---|---|
-| **Name** | **Type** | **CA/Browser Forum OID** | **IdenTrust Policy OID** | 
-| Server Domain Validation | Server Authentication (DV) |  2.23.140.1.2.1 | 2.16.840.1.113839.0.6.5 |
-| Server Organization Validation | Server Authentication (OV) | 2.23.140.1.2.2 | 2.16.840.1.113839.0.6.3|
-| Server Extended Validation | Server Authentication (EV) |  2.23.140.1.1 | 2.16.840.1.113839.0.6.9 |
+**TrustID Certificate Names, Types, and Policy OIDs**|||
+|---|---|---|
+| **Name** | **Type** | **CA/Browser Forum OID** / **IdenTrust Policy OID** | 
+| Server Domain Validation | Server Authentication (DV) |  2.23.140.1.2.1 / 2.16.840.1.113839.0.6.5 |
+| Server Organization Validation | Server Authentication (OV) | 2.23.140.1.2.2 / 2.16.840.1.113839.0.6.3|
+| Server Extended Validation | Server Authentication (EV) |  2.23.140.1.1 / 2.16.840.1.113839.0.6.9 |
 
 ### **7.1.7 Usage of Policy Constraints Extension**
 No stipulation.
@@ -2877,7 +2876,7 @@ IdenTrust has a contractual relationship with the auditing firm for the performa
 
 IdenTrust will maintain these standards when conducting audits of Sponsoring Organizations with Enterprise RAs.
 
-## **8.3 Assessor's relationship to assessed entity
+## **8.3 Assessor's Relationship to Assessed Entity**
 
 The Compliance Inspector(s) and IdenTrust establish a contractual relationship for the performance of the inspection to provide an unbiased, independent evaluation.
 
