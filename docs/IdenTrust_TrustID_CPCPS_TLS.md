@@ -847,7 +847,7 @@ In addition to the verification of information, by comparison to trusted informa
 
 -   High risk domain requests will be checked against a third party authority as described in [Section 4.2.1.3](#high-risk-request-procedure); and
 -   High-risk denials, as documented in [Section 4.2.2](#approval-or-rejection-of-certificate-applications), are prior requests that have been denied and are deemed as high risk due to suspected phishing or other fraudulent usage or concerns are maintained in an internal list. Subsequent Certificate Requests will be verified against this list.
--   Additional checks are performed for EV Server Certificates based on [Section 3.2.2.11 of the EV TLS BR.](https://cabforum.org/working-groups/server/extended-validation/guidelines/#32211-verification-of-certain-information-sources)Should a third party vendor be utilized to confirm the information provided manually or electronically, IdenTrust or the RA will evaluate the third party source by these required criteria:
+-   Additional checks are performed for EV Server Certificates based on [Section 3.2.2.11 of the EV TLS BR.](https://cabforum.org/working-groups/server/extended-validation/guidelines/#32211-verification-of-certain-information-sources) Should a third party vendor be utilized to confirm the information provided manually or electronically, IdenTrust or the RA will evaluate the third party source by these required criteria:
     1.  Data it contains that will be relied upon has been independently verified
     2.  The database distinguishes between self-reported data and data reported by independent information sources; and
     3.  Changes in the data that will be relied upon will be reflected in the database in no more than 12 months.
@@ -1821,7 +1821,6 @@ A list of IdenTrust's Operations Managers (i.e., IdenTrust's Head of IdenTrust, 
 -   Participates as an active member of the Risk Management Committee.
 
 As not all Operations Managers hold a Trusted Role, some of the requirements related to background checks do not apply to them.
-rence mapping of CP-defined Trusted Roles to internal IdenTrust Trusted Roles Matrix.
 
 ### **5.2.2 Number of Persons Required per Task**
 
@@ -2677,10 +2676,10 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 |*certificatePolicies*|Presence: Yes; Critical: No <br> Certificate Policy: <br> Policy Identifier= anyPolicy {2.5.29.32.0} <br> Policy Qualifier Info: <br> Policy Qualifier Id=id-qt-cps <br> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy <br> Policy Qualifier Info:[^3] <br> Policy Qualifier Id=User Notice <br> Qualifier: Notice Text=Subordinate CA text 
 |*crlDistributionPoints*|Presence: Yes; Critical: No <br> Contains the HTTP URL of the CA's CRL service.|
 |*keyUsage*|Presence: Yes; Critical: Yes <br> *DigitalSignature;* *keyCertSign*; *cRLSign*|
-|*subjectKeyIdentifier*|Presence: Yes; Critical: No <br> set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2)|
+|*subjectKeyIdentifier*|Presence: Yes; Critical: No <br> Set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2)|
 |*extKeyUsage* |Presence: Yes; Critical: No <br> *id-kp-serverAuth*, *id-kp-clientAuth*[^4]|
-|*authorityInformationAccess*|Presence: Yes; Critical: No <br> Optional - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> *id-ad-caIssuers* (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate.|
-|*nameConstraints* |Presence: Yes; Critical: No <br> If present, follow Section 7.1.2.10.8 of the TLS BR.|
+|*authorityInformationAccess*|Presence: Yes; Critical: No <br> May - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> *id-ad-caIssuers* (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate.|
+|*nameConstraints* |Presence: May; If present, follow [Section 7.1.2.10.8 of the TLS BR.](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#712108-ca-certificate-name-constraints)|
 
 #### **7.1.2.3 End Entity Certificates**
 
@@ -2692,25 +2691,44 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 | *signature*| See [Section 7.1.3.2](#signature-algorithm-identifier)|
 | *Issuer*| Must be byte‐for‐byte identical to the *subject* field of the Issuing CA.|
 | *validity*| See [Section 6.3.2](#certificate-operational-periods-and-key-pair-usage-periods).|
-| *Subject* Domain Validated (DV)| CN = Optional; when present , one owned/controlled Domain name derived from the *subjectAltName* extension.|
-| *Subject* Organization Validated (OV) | CN = Optional; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> L = City/locality name present if S is absent <br> S = State or province name present if L is absent | 
-| *Subject* Extended Validation (EV)| CN = Optional; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> L = City/locality name <br> S = State or province name <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> serialNumber = Unique registration number[^5] <br> *businessCategory* = One of these values[^6] <br> *jurisdictionStateOrProvince* = Information relevant to the jurisdiction of *incorporation or registration*.[^7] <br> *jurisdictionCountryName* = Information relevant to the jurisdiction of incorporation or registration.^8^ |
+| *Subject* Domain Validated (DV)| CN = {May}; when present , one owned/controlled Domain name derived from the *subjectAltName* extension.|
+| *Subject* Organization Validated (OV) | CN = {May}; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> L = City/locality name present if S is absent <br> S = State or province name present if L is absent | 
+| *Subject* Extended Validation (EV)| CN = {May}; when present , one owned/controlled Domain name derived from the *subjectAltName* extension. <br> O = Full legal name or DBA with full legal name in parenthesis of the entity controlling the CN <br> L = City/locality name <br> S = State or province name <br> C = Two-letter ISO 3166-1 country code of Organization's place of business <br> serialNumber = Unique registration number[^5] <br> *businessCategory* = One of these values[^6] <br> *jurisdictionStateOrProvince* = Information relevant to the jurisdiction of *incorporation or registration*.[^7] <br> *jurisdictionCountryName* = Information relevant to the jurisdiction of incorporation or registration.^8^ |
 | *subjectPublicKeyInfo* | See [Section 7.1.3.1](#subjectpublickeyinfo). |
 | *signatureAlgorithm* | Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*. |
+| **Extension**| **Description**|
+| *authorityInformationAccess*| Presence: Yes; Critical: No <br> {May} - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> id-ad-caIssuers (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate.|
+| *authorityKeyIdentifier*| Presence: Yes; Critical: No <br> Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA.|
+| *certificatePolicies*| Presence: Yes; Critical: No <br> Certificate Policy: <ol> Policy Identifier= One of these pairs: </ol> <ol> **TLS DV**: 2.23.140.1.2.1 ; 2.16.840.1.113839.0.6.5 </ol> <ol> **TLS OV**: 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3 </ol> <ol> **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9 </ol> <ol> Policy Qualifier Info: </ol> <ol> Policy Qualifier Id=id-qt-cps </ol> <ol> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy </ol> <ol> Policy Qualifier Info:[^8] </ol> <ol> Policy Qualifier Id=User Notice </ol> <ol> Qualifier: Notice Text=Subordinate CA text|
+| *extKeyUsage*| Presence: Yes; Critical: No| *id-kp-serverAuth, id-kp-clientAuth*[^9]|
+| *subjectAltName*| Presence: Yes; Critical: No <br> dNSName fully qualified domain name(s) or wildcard name validated by the CA; or <br> iPAddress IPV4/IPV6 validated by the CA. <br> When the *subject* field an empty sequence, this extension is marked critical.|
+| *nameConstraints*| Presence: No; |
+| *keyUsage*| Presence: Yes; Critical: Yes <br> *digitalSignature; keyEncipherment*[^10].|
+| *basicConstraints*| Presence: May; Critical: Yes| <br> cA =False; *pathLenConstraint* must not be present.|
+| *crlDistributionPoints*| Presence: Yes; Critical: No <br>Contains the HTTP URL of the CA's CRL service.|
+| *Signed Certificate Timestamp List*   | Presence: May; Critical: No <br>| The Signed Certificate Timestamp List extension contents must be an OCTET STRING containing the encoded *SignedCertificateTimestampList*, as specified in [Section 3.3. of RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962#section-3.3). <br> Each *SignedCertificateTimestamp* included within the *SignedCertificateTimestampList* must be for a *PreCert* *LogEntryType* that corresponds to the current Certificate.|
+| *subjectKeyIdentifier*| Presence: Yes; Critical: No <br> Set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2)|
 
-| **Extension**| **Present**| **Critical** | **Description / Value**|
-|---|---|---|---|
-| *authorityInformationAccess*| Y| N| Optional - id-ad-ocsp (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder. <br> id-ad-caIssuers (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate. |
-| *authorityKeyIdentifier*| Y| N| Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA.|
-| *certificatePolicies*| Y| N|  Certificate Policy: <ol> Policy Identifier= One of these pairs: </ol> <ol> **TLS DV**: 2.23.140.1.2.1 ; 2.16.840.1.113839.0.6.5 </ol> <ol> **TLS OV**: 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3 </ol> <ol> **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9 </ol> <ol> Policy Qualifier Info: </ol> <ol> Policy Qualifier Id=id-qt-cps </ol> <ol> Qualifier: HTTPS URL for the Issuing CA's Certificate Policy </ol> <ol> Policy Qualifier Info:[^8] </ol> <ol> Policy Qualifier Id=User Notice </ol> <ol> Qualifier: Notice Text=Subordinate CA text|
-| *extKeyUsage*| Y| N| *id-kp-serverAuth, id-kp-clientAuth*[^9]|
-| *subjectAltName*| Y| N| dNSName fully qualified domain name(s) or wildcard name validated by the CA; or </ol> <ol> iPAddress IPV4/IPV6 validated by the CA. </ol> <ol> When the *subject* field an empty sequence, this extension is marked critical.|
-| *nameConstraints*| N|||
-| *keyUsage*| Y| Y| *digitalSignature; keyEncipherment*[^10].|
-| *basicConstraints*| May| Y| cA =False <br> *pathLenConstrain*t must not be present.|
-| *crlDistributionPoints*| Y| N| Contains the HTTP URL of the CA's CRL service.|
-| *Signed Certificate Timestamp List*   | May| N| The Signed Certificate Timestamp List extension contents must be an OCTET STRING containing the encoded *SignedCertificateTimestampList*, as specified in [Section 3.3. of RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962#section-3.3). <br> Each *SignedCertificateTimestamp* included within the *SignedCertificateTimestampList* must be for a *PreCert* *LogEntryType* that corresponds to the current Certificate.|
-| *subjectKeyIdentifier*| Y| N| set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2)|
+#### **7.1.2.4 OCSP Responder Certificates**
+
+| **OCSP Responder Certificate Profile** ||
+|---|---|
+| **Field**| **Description**|
+| version | v3(2).|
+| serialNumber| Unique non‐sequential number greater than zero (0) and less than 2¹⁵⁹ containing at least 64 bits of output from a CSPRNG. |
+| *signature*| See [Section 7.1.3.2](#signature-algorithm-identifier)|
+| *Issuer*| Must be byte‐for‐byte identical to the *subject* field of the Issuing CA.|
+| *validity*| *notBefore*: Minimum = One day prior to the time of signing;  <Maximum= The time of signing <br> *notAfter*: Minimum= The time of signing; Maximum= unspecified |
+| *Subject* | CN = Present; the content is an identifier for the certificate such that the certificate’s name is unique across all certificates issued by IdenTrust. <br> O = CA Full legal name or DBA with full legal name in parenthesis of the entity  controlling the CN.<br> C = Two-letter ISO 3166-1 country code of Organization’s place of business | 
+| *subjectPublicKeyInfo* | See [Section 7.1.3.1](#subjectpublickeyinfo). |
+| *signatureAlgorithm* | Encoded value must be byte-for-byte identical to the *tbsCertificate.signature*. |
+| **Extension**| **Description**|
+| *authorityKeyIdentifier*| Presence: Yes; Critical: No <br> Contains only the *keyIdentifier* field identical to the *subjectKeyIdentifer* field of the Issuing CA.|
+| *id-pkix-ocsp-nocheck*| Presence: Yes; Critical: No <br>Must  have an extnValue OCTET STRING which is exactly the hex-encoded bytes 0500|
+| *extKeyUsage*| Presence: Yes; Critical: No| *id-kp-OCSPSigning*|
+| *keyUsage*| Presence: Yes; Critical: Yes <br> *digitalSignature*
+| *basicConstraints*| Presence: May; Critical: Yes <br> cA =False; *pathLenConstraint* must not be present.|
+| *subjectKeyIdentifier*| Presence: Yes; Critical: No <br> Set as defined within in [Section 4.2.1.2 of RFC 5280.](https://tools.ietf.org/html/rfc5280#section-4.2.1.2)|
 
 ### **7.1.3 Algorithm Object Identifiers**
 
