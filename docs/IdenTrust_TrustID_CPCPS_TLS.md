@@ -2438,11 +2438,11 @@ The Individuals taking part in tasks that require 2-person control and separatio
 
 IdenTrust does not escrow the CA Private Keys used to sign Certificates and CRLs
 
-#### **6.2.3.2 Escrow of Subscriber's Signature Private Keys
+#### **6.2.3.2 Escrow of Subscriber's Signature Private Keys**
 
 IdenTrust does not escrow Subscriber's signature Private Keys. RAs are prohibited under this CP-CPS from escrowing the signature Private Keys of Subscribers.
 
-#### **6.2.3.3 Escrow of Subscriber's Encryption Private Keys
+#### **6.2.3.3 Escrow of Subscriber's Encryption Private Keys**
 
 Subscriber's encryption Private Keys may be escrowed to enable Key recovery. Encryption Private Key escrow is decided on an implementation specific basis.
 
