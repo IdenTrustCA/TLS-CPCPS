@@ -1187,7 +1187,11 @@ Parties who rely upon the Certificates issued under this CP-CPS should preserve 
 
 ### **4.6.1 Circumstance for Certificate Renewal**
 
-A Certificate may be renewed if the Key Pair has not reached the end of its validity, the Private Key has not been compromised, and the End Entity name and attributes are correct. Thus, IdenTrust may choose to implement a 3-year re-key period re-key period with an initial issuance and 2 annual renewals before re-key is required. The old Certificate need not be revoked, but must not be further re-keyed, renewed, or updated.
+A Certificate may be renewed if the Key Pair has not reached the end of its validity, the Private Key has not been compromised, and the End Entity name and attributes are correct. 
+
+IdenTrust or the RA will send the Subscriber notice of pending Certificate expiration, in the form of a re-key/renewal notification, at least in 30-day intervals beginning 90 days before the expiration date of the Subscriber’s Certificate. Renewal is allowed within 30 days of Certificate expiration.
+
+Upon renewal, the remaining period of the Certificate being renewed is added to the new Certificate providing that the new Validity Period does not exceed the maximum allowed for the Certificate type.
 
 ### **4.6.2 Who May Request Renewal**
 
