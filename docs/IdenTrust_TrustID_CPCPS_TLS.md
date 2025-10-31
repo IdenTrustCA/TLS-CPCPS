@@ -1510,10 +1510,6 @@ No stipulation.
 
 No stipulation.
 
-### **4.9.17 Limits on Suspension Period**
-
-No stipulation.
-
 ## **4.10 Certificate Status Services**
 
 ### **4.10.1 Operational Characteristics**
