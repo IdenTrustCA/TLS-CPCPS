@@ -1,11 +1,11 @@
 ---
 title: TLS Certificate Policy / Certification Practice Statement
 
-subtitle: Version 5.0.3
+subtitle: Version 5.0.4
 author:
   - IdenTrust Services LLC.
 
-date: March 9, 2026
+date: June 16, 2026
 
 copyright: Copyright © 2026 IdenTrust Services, LLC. All rights reserved.
 ---
@@ -42,7 +42,7 @@ D. This page must be included with every copy of the Policy.
 
 ### **1.2.1 Alphanumeric Identifier**
 
-The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the "TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on March 9, 2026 by the IdenTrust PMA.
+The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the "TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on June 16, 2026 by the IdenTrust PMA.
 
 The following table contains subsequent revisions: (Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid)).
 
@@ -54,6 +54,7 @@ The following table contains subsequent revisions: (Prior versions of IdenTrust 
 | 5.0.1 | November 12, 2025 | (1) Sections 1.5.2, 1.6.1, 1.6.2, 3.2.2, 2.4.1.1, 4.3.2, 4.4.2, 4.9.2, 4.9.3, 4.9.12, 6.1.3: Add ACME language, (2) Section 6.6.1: System development controls, (3) Section 5.7.2: Add mass revocation language, Sections: 1.6, 6.7.1, 6.7.2, 6.7.3: NetSec v2.0.5 (NS-008), (4) Sections 4.9.13, 4.9.14, 4.9.15, and 4.9.16: Certificate suspension |
 | 5.0.2 | January 13, 2026 | (1) Section 6.3.2 : Add cross-signed subordinate CA, (2) Section 7.1.2.2: Add cross-signed Subordinate CA Certificate profile, (3) Section 7.1.2.3: Update foot note [9] to reflect '*clientAuth*' as optional, (4) Update internal links throughout the document |
 | 5.0.3 | March 9, 2026 | (1) Section 1.6.1: Removed table format and added definitions, (2) Section 1.6.2: Removed table format, (3) Section 3.2.2.4: Updated language, (4) Section 3.2.2.4.2: Updated language, (5) Section 3.2.2.5.4: Added DNS TXT Record with Persistent Value, (6) Section 4.2.2: updated language, (7) Section 7: Removed table formats, (8) Section 7.1.6: Update for OIDs effective date, (9) Section 7.1.2.3: Updated language, (10) Section 9.12.2 and 9.16.3: Updated legal language, (11) Removed references to explict sections in external non-IdenTrust documents, adding relevant text.|
+| 5.0.4 | June 16, 2026 | Section 7.1.2.3 and 7.1.6: Removed IdenTrust OID removal date|
 
 ### **1.2.2 Object Identifier**
 
@@ -1095,11 +1096,10 @@ The “Quorum Requirements” table below describes quorum requirements related 
 IdenTrust may reuse corroborating evidence for CAA record quorum compliance for a maximum of 398 days. After issuing a Certificate to a domain, remote Network Perspectives may omit retrieving and processing CAA records for the same domain or its subdomains in subsequent Certificate requests from the same Applicant for up to a maximum of 398 days.
 
 **Quorum Requirements Table**
-
-| # of Distinct Remote Network Perspectives Used | # of Allowed non-Corroborations |
-|---|---|
-| 2-5 | 1|
-| 6+ | 2|
+ # of Distinct Remote Network Perspectives Used| # of Allowed non-Corroborations |
+ |---|---|
+ | 2-5| 1|
+|6+ | 2|
 
 Remote Network Perspectives performing Multi-Perspective Issuance Corroboration must rely upon networks (e.g., Internet Service Providers or Cloud Provider Networks) implementing measures to mitigate BGP routing incidents in the global Internet routing system for providing
 internet connectivity to the Network Perspective.
@@ -3094,8 +3094,7 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 **_signatureAlgorithm:_** Encoded value must be byte-for-byte identical to the _tbsCertificate.signature_. \
 **_authorityInformationAccess:_** Presence: Yes; Critical: No; {May} - _id-ad-ocsp_ (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder _id-ad-caIssuers_ (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate. \
 **_authorityKeyIdentifier:_** Presence: Yes; Critical: No; Contains only the _keyIdentifier_ field identical to the _subjectKeyIdentifer_ field of the Issuing CA. \
-**_certificatePolicies:_** Presence: Yes; Critical: No; Certificate Policy:  Policy Identifier = One of these pairs: **TLS DV:** 2.23.140.1.2.1; 2.16.840.1.113839.0.6.5\*; **TLS OV:** 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3\*; **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9\*; Policy Qualifier Info:; Policy Qualifier Id=id-qt-cps; Qualifier: HTTPS URL for the Issuing CA's Certificate Policy; Policy Qualifier Info:[^8]; Policy Qualifier Id=User Notice; Qualifier: Notice Text=Subordinate CA text. \
-**\*** These IdenTrust OIDs are no longer included on TLS certificates issued after June 15, 2026. \
+**_certificatePolicies:_** Presence: Yes; Critical: No; Certificate Policy:  Policy Identifier = One of these pairs: **TLS DV:** 2.23.140.1.2.1; 2.16.840.1.113839.0.6.5\; **TLS OV:** 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3\; **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9\; Policy Qualifier Info:; Policy Qualifier Id=id-qt-cps; Qualifier: HTTPS URL for the Issuing CA's Certificate Policy; Policy Qualifier Info:[^8]; Policy Qualifier Id=User Notice; Qualifier: Notice Text=Subordinate CA text. \
 **_extKeyUsage:_** Presence: Yes; Critical: No; _id-kp-serverAuth_, _id-kp-clientAuth_[^9] \
 **_subjectAltName:_**  Presence: Yes; Critical: No; dNSName fully qualified domain name(s) or wildcard name validated by the CA; or; iPAddress IPV4/IPV6 validated by the CA; when the _subject_ field is an empty sequence, this extension is marked critical. Effective March 15, 2026, this extension must not contain a Domain Name that ends in an IP Address Reverse Zone Suffix. \
 **_nameConstraints:_** Presence: No. \
@@ -3205,11 +3204,9 @@ IdenTrust, as the Issuing CA, includes at least one Policy OID in every Certific
 **TrustID Certificate Names, Types, and Policy OIDs**|||
 |---|---|---|
 | **Name** | **Type** | **CA/Browser Forum OID** / **IdenTrust Policy OID** |
-| Server Domain Validation | Server Authentication (DV) |  2.23.140.1.2.1 / 2.16.840.1.113839.0.6.5\* |
-| Server Organization Validation | Server Authentication (OV) | 2.23.140.1.2.2 / 2.16.840.1.113839.0.6.3\* |
-| Server Extended Validation | Server Authentication (EV) |  2.23.140.1.1 / 2.16.840.1.113839.0.6.9\* |
-
-**\*** These IdenTrust OIDs are no longer included on TLS certificates issued after June 15, 2026.
+| Server Domain Validation | Server Authentication (DV) |  2.23.140.1.2.1 / 2.16.840.1.113839.0.6.5\ |
+| Server Organization Validation | Server Authentication (OV) | 2.23.140.1.2.2 / 2.16.840.1.113839.0.6.3\ |
+| Server Extended Validation | Server Authentication (EV) |  2.23.140.1.1 / 2.16.840.1.113839.0.6.9\ |
 
 ### **7.1.7 Usage of Policy Constraints Extension**
 No stipulation.
@@ -3809,4 +3806,3 @@ No stipulation.
 [^11]: Policy Qualifier **_Info-User_** Notice is not present on Certificates issued on or after September 15, 2023
 
 [^12]: For Enterprise RAs, the firm must be experienced in information system auditing and may be a qualified third party or a qualified independent internal auditing group.
-
