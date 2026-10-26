@@ -1,11 +1,11 @@
 ---
 title: TLS Certificate Policy / Certification Practice Statement
 
-subtitle: Version 5.1
+subtitle: Version 5.1.1
 author:
   - IdenTrust Services LLC.
 
-date: September 10, 2026
+date: October 27, 2026
 
 copyright: Copyright © 2026 IdenTrust Services, LLC. All rights reserved.
 ---
@@ -43,7 +43,7 @@ D. This page must be included with every copy of the Policy.
 
 ### **1.2.1 Alphanumeric Identifier**
 
-The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the "TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on September 10, 2026 by the IdenTrust PMA.
+The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the "TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on October 27, 2026 by the IdenTrust PMA.
 
 The following table contains subsequent revisions: (Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid)).
 
@@ -57,6 +57,7 @@ The following table contains subsequent revisions: (Prior versions of IdenTrust 
 | 5.0.3 | March 9, 2026 | (1) Section 1.6.1: Removed table format and added definitions, (2) Section 1.6.2: Removed table format, (3) Section 3.2.2.4: Updated language, (4) Section 3.2.2.4.2: Updated language, (5) Section 3.2.2.5.4: Added DNS TXT Record with Persistent Value, (6) Section 4.2.2: updated language, (7) Section 7: Removed table formats, (8) Section 7.1.6: Update for OIDs effective date, (9) Section 7.1.2.3: Updated language, (10) Section 9.12.2 and 9.16.3: Updated legal language, (11) Removed references to explicit sections in external non-IdenTrust documents, adding relevant text.|
 | 5.0.4 | June 16, 2026 | Section 7.1.2.3 and 7.1.6: Removed IdenTrust OID removal date|
 | 5.1 | September 10, 2026 | (1) Overall clean-up of list formatting, (2) Section 1.1 and 1.6.3: Link updates, (3) Section 1.6.1 and Section 7.1.2.3: SC-87v2 updates, (4) Section 3.2.2: Updated methods used and section alignment, (5) Section 5.1: Updated language, (6) Section 5.4.8: Language reworded and moved, (7) Section 6.6.1: Updated language, (8) Section 6.7: Updated language |
+| 5.1.1 | October 27, 2026 | Section 7.1.2.2.1 correct footnote|
 
 ### **1.2.2 Object Identifier**
 
@@ -4024,7 +4025,7 @@ No stipulation.
 
 [^3]: The **_Policy Qualifier Info-User Notice_** is not present on Certificates issued on or after September 15, 2023
 
-[^4]: The **_id-kp-clientAuth_** *EKU* is optional in Subscriber Certificates issued before March 15, 2027, and is not present on  Subscriber Certificates issued after that date.
+[^4]: The **_id-kp-clientAuth_** *EKU* is optional in Subordinate Certificates issued before June 15, 2026, and is not present on Subordinate Certificates issued after that date.
 
 [^5]: A Registration Number assigned by the Incorporating Agency / Registration Agency in the Jurisdiction of Incorporation / Registration.  If the Incorporation Agency / Registration Agency does not provide a Registration Number, then the Date of Formation in any one of the common date formats will be included. If Date of Formation is not available for Government or Non-Commercial entities it will be indicated in the Subject. 
 
