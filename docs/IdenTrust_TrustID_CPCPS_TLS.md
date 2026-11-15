@@ -1,11 +1,12 @@
 ---
 title: TLS Certificate Policy / Certification Practice Statement
 
-subtitle: Version 5.1.2
+subtitle: Version 5.1.3
 author:
   - IdenTrust Services LLC.
 
-date: October 29, 2026
+date: November 15, 2026
+time: 11:15:00 MST
 
 copyright: Copyright © 2026 IdenTrust Services, LLC. All rights reserved.
 ---
@@ -43,7 +44,7 @@ D. This page must be included with every copy of the Policy.
 
 ### **1.2.1 Alphanumeric Identifier**
 
-The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the "TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on October 29, 2026 by the IdenTrust PMA.
+The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the "TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on November 15, 2026 by the IdenTrust PMA.
 
 The following table contains subsequent revisions: (Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid)).
 
@@ -59,6 +60,7 @@ The following table contains subsequent revisions: (Prior versions of IdenTrust 
 | 5.1 | September 10, 2026 | (1) Overall clean-up of list formatting, (2) Section 1.1 and 1.6.3: Link updates, (3) Section 1.6.1 and Section 7.1.2.3: SC-87v2 updates, (4) Section 3.2.2: Updated methods used and section alignment, (5) Section 5.1: Updated language, (6) Section 5.4.8: Language reworded and moved, (7) Section 6.6.1: Updated language, (8) Section 6.7: Updated language |
 | 5.1.1 | October 27, 2026 | Section 7.1.2.2.1 correct footnote|
 | 5.1.2 | October 29, 2026 | Section 7.1.2.3 address jurisdictionLocalityName field|
+| 5.1.3 | November 15, 2026 | Section 7.1.2.3 address policyQualifier field|
 
 ### **1.2.2 Object Identifier**
 
@@ -3267,7 +3269,7 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 **_signatureAlgorithm:_** Encoded value must be byte-for-byte identical to the _tbsCertificate.signature_. \
 **_authorityKeyIdentifier:_** Presence: Yes; Critical: No; Contains only the _keyIdentifier_ field identical to the _subjectKeyIdentifer_ field of the Issuing CA. \
 **_basicConstraints:_** Presence: Yes; Critical: Yes; cA = True; May contain the _pathlenConstraint_ field. \
-**_certificatePolicies:_** Presence: Yes; Critical: No; Certificate Policy: Policy Identifier= anyPolicy {2.5.29.32.0}; Policy Qualifier Info: Policy Qualifier Id=id-qt-cps; Qualifier: HTTPS URL for the Issuing CA's Certificate Policy; Policy Qualifier Info:[^3]; Policy Qualifier Id=User Notice; Qualifier: Notice Text=Subordinate CA text. \
+**_certificatePolicies:_** Presence: Yes; Critical: No; Certificate Policy: Policy Identifier= anyPolicy {2.5.29.32.0}; Policy Qualifier Info: Policy Qualifier Id=id‐qt‐cps; Qualifier: HTTPS URL for the Issuing CA’s Certificate Policy; Policy Qualifier Info:[^3]; Policy Qualifier Id=User Notice; Qualifier: Notice Text=Subordinate CA text. \
 **_crlDistributionPoints:_** Presence: Yes; Critical: No; Contains the HTTP URL of the CA's CRL service. \
 **_keyUsage:_** Presence: Yes; Critical: Yes; _DigitalSignature_; _keyCertSign_; _cRLSign_. \
 **_subjectKeyIdentifier:_** Presence: Yes; Critical: No; Set as defined within in [Section 4.2.1.2 of RFC 5280](https://tools.ietf.org/html/rfc5280#section-4.2.1.2). \
@@ -3311,7 +3313,7 @@ All TrustID Certificate contents and extensions are based on [RFC 5280](https://
 **_signatureAlgorithm:_** Encoded value must be byte-for-byte identical to the _tbsCertificate.signature_. \
 **_authorityInformationAccess:_** Presence: Yes; Critical: No; {May} - _id-ad-ocsp_ (OID 1.3.6.1.5.5.7.48.1): A HTTP URL of the Issuing CA's OCSP responder _id-ad-caIssuers_ (OID 1.3.6.1.5.5.7.48.2): A HTTP URL of the Issuing CA's certificate. \
 **_authorityKeyIdentifier:_** Presence: Yes; Critical: No; Contains only the _keyIdentifier_ field identical to the _subjectKeyIdentifer_ field of the Issuing CA. \
-**_certificatePolicies:_** Presence: Yes; Critical: No; Certificate Policy:  Policy Identifier = One of these pairs: **TLS DV:** 2.23.140.1.2.1; 2.16.840.1.113839.0.6.5\; **TLS OV:** 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3\; **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9\; Policy Qualifier Info:; Policy Qualifier Id=id-qt-cps; Qualifier: HTTPS URL for the Issuing CA's Certificate Policy; Policy Qualifier Info:[^8]; Policy Qualifier Id=User Notice; Qualifier: Notice Text=Subordinate CA text. \
+**_certificatePolicies:_** Presence: Yes; Critical: No; Certificate Policy:  Policy Identifier = One of these pairs: **TLS DV:** 2.23.140.1.2.1; 2.16.840.1.113839.0.6.5\; **TLS OV:** 2.23.140.1.2.2; 2.16.840.1.113839.0.6.3\; **TLS EV:** 2.23.140.1.1; 2.16.840.1.113839.0.6.9\; Policy Qualifier Info: Presence: May; when present, it is included only in the policy information for the IdenTrust Policy OID and contains a single Policy Qualifier Id=id-qt-cps whose Qualifier is an HTTPS URL pointing to the Certificate Policy, Certification Practice Statement, or other online policy information provided by IdenTrust; no other policy qualifier is included[^8]. \
 **_extKeyUsage:_** Presence: Yes; Critical: No; _id-kp-serverAuth_, _id-kp-clientAuth_[^9] \
 **_subjectAltName:_**  Presence: Yes; Critical: No; dNSName fully qualified domain name(s) or wildcard name validated by the CA; or; iPAddress IPV4/IPV6 validated by the CA; when the _subject_ field is an empty sequence, this extension is marked critical. Effective March 15, 2026, this extension must not contain a Domain Name that ends in an IP Address Reverse Zone Suffix. \
 **_nameConstraints:_** Presence: No. \
@@ -3430,7 +3432,7 @@ No stipulation.
 
 ### **7.1.8 Policy Qualifiers Syntax and Semantics**
 
-Certificates with a Policy qualifier in the Certificate Policies extensions shall not contain a User Notice[^11].
+Subscriber Certificates and Subordinate CA Certificates issued on or after September 15, 2023 shall not contain a User Notice policy qualifier[^11]. Section 7.1.2.3 specifies the only policy qualifier permitted in Subscriber Certificates.
 
 ### **7.1.9 Processing Semantics for the Critical Certificate Policies Extension**
 
@@ -4038,7 +4040,7 @@ No stipulation.
 
     Locality level: Include country (ISO code), full state/province name, and full locality name (if the state/province regulates local registration).
 
-[^8]: Policy Qualifier **_Info-User_** Notice is not present on Certificates issued on or after September 15, 2023
+[^8]: Certificates issued before September 15, 2023 under earlier versions of this CP-CPS may also contain a Policy Qualifier **_Info-User_** Notice. The id-qt-cps Policy Qualifier is optional, consistent with the TLS Baseline Requirements, which mark policyQualifiers as NOT RECOMMENDED in Subscriber Certificates.
 
 [^9]: The **_id-kp-clientAuth_** _EKU_ is optional in Subscriber Certificates issued before March 15, 2027, and is not present  Subscriber Certificates issued after that date.
 
