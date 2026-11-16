@@ -1,12 +1,11 @@
 ---
 title: TLS Certificate Policy / Certification Practice Statement
 
-subtitle: Version 5.1.3
+subtitle: Version 5.1.4
 author:
   - IdenTrust Services LLC.
 
-date: November 15, 2026
-time: 11:15:00 MST
+date: November 16, 2026 at 17:00:00 MST
 
 copyright: Copyright © 2026 IdenTrust Services, LLC. All rights reserved.
 ---
@@ -44,7 +43,7 @@ D. This page must be included with every copy of the Policy.
 
 ### **1.2.1 Alphanumeric Identifier**
 
-The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the "TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on November 15, 2026 by the IdenTrust PMA.
+The name of this CP-CPS which follows the [RFC 3647](https://www.ietf.org/rfc/rfc3647.txt) framework, is the "TrustID TLS Certificate Policy / Certificate Practice Statement", approved for publication on November 16, 2026 by the IdenTrust PMA.
 
 The following table contains subsequent revisions: (Prior versions of IdenTrust CP, CPS and combined CP-CPS documents can be found in the "Policies -- Archived" Section of the [IdenTrust TrustID Document Library](https://www.identrust.com/support/documents/trustid)).
 
@@ -61,6 +60,7 @@ The following table contains subsequent revisions: (Prior versions of IdenTrust 
 | 5.1.1 | October 27, 2026 | Section 7.1.2.2.1 correct footnote|
 | 5.1.2 | October 29, 2026 | Section 7.1.2.3 address jurisdictionLocalityName field|
 | 5.1.3 | November 15, 2026 | Section 7.1.2.3 address policyQualifier field|
+| 5.1.4 | November 16, 2026 | Section 3.2 match domain validation reuse to EVG |
 
 ### **1.2.2 Object Identifier**
 
@@ -838,7 +838,7 @@ For EV Certificates, the age of all data used to support issuance of an EV Certi
 - Address of Place of Business – 398 days;
 - Verified Method of Communication – 398 days;
 - Operational existence – 398 days;
-- Domain Name – 398 days;
+- Domain Name – the maximum data reuse period specified for Domain Names in [Section 4.2.1 of the Baseline Requirements](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#421-performing-identification-and-authentication-functions);
 - Name, Title, Agency, and Authority – 398 days, unless a contract between IdenTrust and the Applicant specifies a different term, in which case, the term specified in such contract controls.
 - The 398-day period set forth above shall begin to run on the date the information was collected by IdenTrust.
 - IdenTrust may reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV  Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under a Subscriber Agreement.2.9 and [Section 3.2.2](#322-authentication-of-organization-and-domain-identity).
